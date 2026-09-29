@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Engineering Major Course Requirements | Centre College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow+Semi+Condensed:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#FFCD00; --gold-deep:#C69214; --black:#000; --white:#fff;
+  --navy:#2F3351; --teal:#115E67; --mist:#C6DAE7; --stone:#D9D9D6;
+  --bg:#fff; --fg:#000; --muted:#4a4f57; --rule:#000; --panel:#f3f4f2; --card:#fff; --line:#cfd1cc;
+  --display:"Barlow Condensed","Arial Narrow","Helvetica Neue Condensed",Impact,sans-serif;
+  --tag:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
+  --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#000;--fg:#fff;--muted:#b9bcc2;--rule:#fff;--panel:#16181c;--card:#0d0e10;--line:#3a3d44}
+}
+:root[data-theme="dark"]{--bg:#000;--fg:#fff;--muted:#b9bcc2;--rule:#fff;--panel:#16181c;--card:#0d0e10;--line:#3a3d44}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:#000;padding:.6rem 1rem;z-index:99;font-family:var(--tag);font-weight:600}
+.skip:focus{left:1rem}
+
+/* ---------- Top bar ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--gold);color:#000;border-bottom:1px solid #000}
+.bar .wrap{display:flex;align-items:center;gap:1.25rem;min-height:72px}
+.brand{display:flex;align-items:center;gap:.9rem;text-decoration:none;flex-shrink:0}
+.brand img{height:38px;width:auto}
+.brand .prog{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;border-left:1.5px solid #000;padding-left:.9rem;line-height:1}
+.nav{margin-left:auto;display:flex;gap:.1rem;flex-wrap:wrap}
+.nav a{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;text-decoration:none;padding:.5rem .6rem;border-bottom:3px solid transparent}
+.nav a:hover{border-bottom-color:#000}
+.nav a[aria-current="page"]{border-bottom-color:#000}
+.nav a.ext{border:1.5px solid #000;margin-left:.4rem;padding:.4rem .6rem}
+.nav a.ext:hover{background:#000;color:var(--gold)}
+.nav a.home{background:#000;color:var(--gold);border:1.5px solid #000;margin-left:.4rem;padding:.4rem .7rem}
+.nav a.home:hover{background:transparent;color:#000}
+.menu-btn{display:none;margin-left:auto;background:#000;color:var(--gold);border:0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.55rem .9rem;font-size:1rem;cursor:pointer}
+@media (max-width:1240px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--gold);flex-direction:column;padding:.5rem clamp(1.1rem,4vw,2.5rem) 1rem;border-bottom:1px solid #000}
+  .nav.open{display:flex}
+  .nav a{font-size:1.25rem;padding:.55rem 0;border-bottom:1px dotted #000}
+  .nav a[aria-current="page"]{border-bottom:1px solid #000;padding-left:.6rem;border-left:6px solid #000}
+  .nav a.ext,.nav a.home{margin:.6rem 0 0;padding:.55rem .6rem;align-self:flex-start;border:1.5px solid #000}
+}
+@media (max-width:520px){.brand .prog{display:none}}
+
+/* ---------- Type ---------- */
+.d{font-family:var(--display);text-transform:uppercase;font-weight:800;line-height:.92;letter-spacing:.005em;margin:0}
+h2.d{font-size:clamp(2.2rem,4.6vw,3.4rem)}
+h3.d{font-size:1.55rem;font-weight:700;line-height:1;margin:0 0 .5rem}
+h4{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.03em;font-size:1.2rem;margin:0 0 .35rem;line-height:1.05}
+.tag{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem;color:var(--gold-deep);margin:0 0 .6rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag{color:var(--gold)}}
+:root[data-theme="dark"] .tag{color:var(--gold)}
+.lede{font-size:1.28rem;line-height:1.55;max-width:38em}
+p{margin:0 0 1rem;max-width:40em}
+.muted{color:var(--muted)}
+ul.plain{list-style:none;padding:0;margin:0}
+ul.dash{list-style:none;padding:0;margin:0 0 1rem}
+ul.dash li{padding:.55rem 0 .55rem 1.4rem;border-bottom:1px dotted var(--line);position:relative;max-width:40em}
+ul.dash li::before{content:"";position:absolute;left:0;top:1.15rem;width:.55rem;height:.55rem;border-radius:50%;background:var(--gold)}
+
+/* ---------- Page system ---------- */
+.page{display:none}
+.page.on{display:block}
+.head{background:#000;color:#fff;padding:clamp(3rem,7vw,5.5rem) 0 clamp(2.5rem,6vw,4.5rem)}
+.head .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(1.5rem,4vw,4rem);align-items:end}
+.head h1{font-size:clamp(3rem,8vw,6.2rem);color:#fff}
+.head .aside{border-left:1.5px dotted var(--gold);padding-left:clamp(1rem,2.5vw,2rem)}
+.head .aside .tag{color:var(--gold)}
+.head .aside p{color:#e8e8e6}
+@media (max-width:800px){.head .wrap{grid-template-columns:1fr}}
+
+.sec{padding:clamp(2.8rem,6vw,4.8rem) 0;border-bottom:1px solid var(--line)}
+.sec:last-of-type{border-bottom:0}
+.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(1.5rem,4vw,4rem)}
+.split > .l{position:relative}
+.split > .l .stick{position:sticky;top:110px}
+@media (max-width:800px){.split{grid-template-columns:1fr}.split > .l .stick{position:static}}
+.panel{background:var(--panel)}
+.goldband{background:var(--gold);color:#000}
+.goldband .tag{color:#000}
+
+/* ---------- Hero ---------- */
+.hero{background:#000;color:#fff;overflow:hidden;position:relative}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:2rem;align-items:center;padding-top:clamp(3rem,7vw,6rem);padding-bottom:clamp(3rem,7vw,6rem)}
+.hero h1{font-size:clamp(3.4rem,9.4vw,7.6rem);color:var(--gold)}
+.hero .lede{color:#e9e9e7;margin-top:1.6rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem;text-decoration:none;padding:.8rem 1.25rem;border:2px solid currentColor;background:transparent;color:inherit;cursor:pointer;line-height:1}
+.btn.solid{background:var(--gold);border-color:var(--gold);color:#000}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#000}
+.btn.solid:hover{background:#fff;border-color:#fff}
+.btn.ink{border-color:var(--fg)}
+.btn.ink:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.goldband .btn:hover{background:#000;color:var(--gold);border-color:#000}
+.seal{width:100%;max-width:420px;justify-self:center}
+.seal svg{width:100%;height:auto;overflow:visible}
+.seal .ring{transform-origin:200px 200px}
+@media (prefers-reduced-motion:no-preference){
+  .seal .ring{animation:spinIn 1.6s cubic-bezier(.2,.7,.2,1) both}
+  .seal .core{animation:pop .9s .5s cubic-bezier(.2,.7,.2,1.2) both;transform-origin:200px 200px}
+}
+@keyframes spinIn{from{transform:rotate(-70deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+@media (max-width:800px){.hero .wrap{grid-template-columns:1fr}.seal{max-width:300px}}
+
+/* ---------- Audience doors ---------- */
+.doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--rule)}
+.door{padding:1.6rem 1.4rem 1.8rem 0;border-right:1px dotted var(--line);text-decoration:none;display:flex;flex-direction:column;gap:.5rem}
+.door + .door{padding-left:1.4rem}
+.door:last-child{border-right:0}
+.door h3{font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:2rem;line-height:.95;margin:0}
+.door p{font-size:1rem;margin:0}
+.door .go{margin-top:auto;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:3px solid var(--gold);align-self:flex-start;padding-bottom:.1rem}
+.door:hover h3{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:4px;text-underline-offset:5px}
+@media (max-width:800px){.doors{grid-template-columns:1fr}.door,.door+.door{padding:1.4rem 0;border-right:0;border-bottom:1px dotted var(--line)}}
+
+/* ---------- Course pair ---------- */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--rule)}
+.pair > div{padding:1.5rem}
+.pair > div + div{border-left:2px solid var(--rule)}
+.pair .code{font-family:var(--display);font-weight:800;font-size:3.2rem;line-height:.9}
+.pair .when{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:.8rem}
+.pair p{font-size:1rem;margin:0}
+@media (max-width:640px){.pair{grid-template-columns:1fr}.pair>div+div{border-left:0;border-top:2px solid var(--rule)}}
+
+/* ---------- Timeline ---------- */
+.tl{position:relative;margin-top:.5rem}
+.tl-sem{display:grid;grid-template-columns:150px minmax(0,1fr);gap:1.2rem;padding:1.2rem 0;border-top:2px solid var(--rule)}
+.tl-sem .sem{font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:1.9rem;line-height:.95}
+.tl-sem .sem small{display:block;font-size:1rem;font-weight:600;letter-spacing:.05em;color:var(--muted);margin-top:.3rem}
+.tl ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;position:relative}
+.tl ol::before{content:"";position:absolute;left:0;right:0;top:15px;border-top:2px dotted var(--fg);opacity:.5}
+.tl li{position:relative;padding:40px 1rem 0 0}
+.tl li::before{content:"";position:absolute;top:5px;left:0;width:22px;height:22px;border-radius:50%;background:var(--bg);border:2px solid var(--fg)}
+.tl li.ms::before{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 2px var(--fg)}
+.tl .date{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:1.05rem}
+.tl .what{font-size:.98rem;line-height:1.4}
+@media (max-width:800px){
+  .tl-sem{grid-template-columns:1fr}
+  .tl ol{grid-template-columns:1fr}
+  .tl ol::before{left:10px;right:auto;top:0;bottom:0;border-top:0;border-left:2px dotted var(--fg)}
+  .tl li{padding:0 0 1.1rem 2.4rem}
+  .tl li::before{top:2px}
+}
+.legend{font-family:var(--tag);font-size:.95rem;color:var(--muted);display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:.8rem}
+.legend span{display:inline-flex;align-items:center;gap:.45rem}
+.legend i{width:14px;height:14px;border-radius:50%;display:inline-block;border:2px solid var(--fg)}
+.legend i.g{background:var(--gold);border-color:var(--gold)}
+
+/* ---------- Journey steps ---------- */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--rule)}
+.steps li{list-style:none;counter-increment:s;padding:1.3rem 1.2rem 1.4rem 0;border-bottom:1px dotted var(--line)}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1;color:var(--gold-deep);margin-bottom:.35rem}
+.steps li p{font-size:1rem;margin:0}
+.steps{padding:0;margin:0}
+@media (max-width:800px){.steps{grid-template-columns:1fr}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .steps li::before{color:var(--gold)}}
+:root[data-theme="dark"] .steps li::before{color:var(--gold)}
+
+/* ---------- Modules ---------- */
+.mods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.mod{padding:1.4rem;border-top:8px solid var(--c);background:var(--card);border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mod .abbr{font-family:var(--display);font-weight:800;font-size:3.4rem;line-height:.85;color:var(--c)}
+.mod h3{margin-top:.4rem}
+.mod ul{padding-left:1.1rem;margin:.6rem 0 0;font-size:.98rem}
+.mod li{margin-bottom:.2rem}
+@media (max-width:900px){.mods{grid-template-columns:1fr}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mod.ed{--c:#69B3E7!important}:root:not([data-theme="light"]) .mod.pm{--c:#6BBBAE!important}}
+:root[data-theme="dark"] .mod.ed{--c:#69B3E7!important}:root[data-theme="dark"] .mod.pm{--c:#6BBBAE!important}
+
+/* ---------- Grade ring & tables ---------- */
+.deliv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:2px solid var(--rule)}
+.deliv div{padding:1rem 1rem 1rem 0;border-bottom:1px dotted var(--line)}
+.deliv b{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.03em;font-size:1.15rem;display:flex;justify-content:space-between;gap:1rem}
+.deliv b span{color:var(--gold-deep)}
+.deliv p{font-size:.98rem;margin:.2rem 0 0}
+@media (max-width:640px){.deliv{grid-template-columns:1fr}}
+.tbl-wrap{overflow-x:auto;border-top:2px solid var(--rule)}
+table{border-collapse:collapse;width:100%;font-size:1rem;min-width:560px}
+th,td{text-align:left;padding:.75rem .8rem .75rem 0;border-bottom:1px dotted var(--line);vertical-align:top}
+th{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:1rem}
+td.c,th.c{text-align:center}
+
+/* ---------- Cards / grids ---------- */
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+@media (max-width:900px){.g3{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.g2,.g3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);padding:1.35rem}
+.card p{font-size:1rem;margin-bottom:.6rem}
+.card.dark{background:#000;color:#fff;border-color:#000}
+.card.gold{background:var(--gold);color:#000;border-color:var(--gold)}
+.pill{display:inline-block;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.85rem;padding:.2rem .55rem;border:1.5px solid currentColor;margin-bottom:.7rem}
+.opt .letter{font-family:var(--display);font-weight:800;font-size:3rem;line-height:.85;display:block;margin-bottom:.4rem}
+.note{font-size:.98rem;border-left:6px solid var(--gold);padding:.9rem 1.1rem;background:var(--panel);max-width:46em}
+.note b{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+
+/* ---------- Docs ---------- */
+.doc{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:1rem;align-items:center;padding:1.1rem 0;border-bottom:1px dotted var(--line)}
+.doc .ico{width:48px;height:60px;border:2px solid var(--fg);position:relative;display:grid;place-items:end center;padding-bottom:6px;font-family:var(--display);font-weight:800;font-size:.78rem;letter-spacing:.04em}
+.doc .ico::before{content:"";position:absolute;top:-2px;right:-2px;width:14px;height:14px;background:var(--bg);border-left:2px solid var(--fg);border-bottom:2px solid var(--fg)}
+.doc .ico.g{background:var(--gold);color:#000;border-color:var(--gold)}
+.doc h4{margin:0}
+.doc p{font-size:.98rem;margin:.15rem 0 0}
+.doc .btn{font-size:.9rem;padding:.6rem .9rem;white-space:nowrap}
+@media (max-width:640px){.doc{grid-template-columns:auto minmax(0,1fr)}.doc .btn{grid-column:2;justify-self:start}}
+.std td a{text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+
+/* ---------- Projects & quotes ---------- */
+.proj{border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column}
+.proj .img{aspect-ratio:16/10;background:var(--navy);color:var(--gold);display:grid;place-items:center;position:relative;overflow:hidden}
+.proj .img svg{width:62%;height:auto}
+.proj .body{padding:1.2rem}
+.proj .body p{font-size:1rem}
+.proj.empty{border:2px dashed var(--line);background:transparent;justify-content:center;align-items:flex-start;padding:1.4rem;min-height:280px}
+.proj.empty .d{font-size:1.7rem;color:var(--muted)}
+.quote{padding:1.5rem;border-top:6px solid var(--gold);background:var(--panel);display:flex;flex-direction:column;gap:1rem}
+.quote blockquote{margin:0;font-size:1.2rem;font-style:italic;line-height:1.5;color:var(--muted)}
+.quote .who{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em;margin-top:auto}
+.quote .who span{display:block;font-family:var(--serif);text-transform:none;letter-spacing:0;font-weight:400;color:var(--muted);font-size:.95rem}
+
+/* ---------- Form ---------- */
+.form{display:grid;gap:1rem;max-width:44em}
+.form label{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em;font-size:1rem;display:block;margin-bottom:.3rem}
+.form input[type=text],.form input[type=email],.form textarea{width:100%;font:inherit;font-size:1rem;padding:.7rem .8rem;border:2px solid var(--fg);background:var(--bg);color:var(--fg);border-radius:0}
+.form textarea{min-height:110px;resize:vertical}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 1.2rem;border:0;padding:0;margin:0}
+.checks legend{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em;margin-bottom:.4rem}
+.checks label{font-family:var(--serif);text-transform:none;letter-spacing:0;font-weight:400;font-size:1rem;display:flex;gap:.6rem;align-items:flex-start;padding:.35rem 0;cursor:pointer}
+.checks input{width:18px;height:18px;margin-top:.25rem;accent-color:#000;flex-shrink:0}
+@media (max-width:640px){.checks{grid-template-columns:1fr}}
+.form .msg{font-size:.95rem;min-height:1.4em}
+
+/* ---------- Board teaser ---------- */
+.board{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.2rem,4vw,3rem);align-items:center}
+.board svg{width:170px;height:170px}
+@media (max-width:640px){.board{grid-template-columns:1fr}}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--rule)}
+.contact-grid > div{padding:1.6rem 1.6rem 1.6rem 0}
+.contact-grid > div + div{border-left:1px dotted var(--line);padding-left:1.6rem}
+.contact-grid dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.45rem 1rem;font-size:1rem}
+.contact-grid dt{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em}
+.contact-grid dd{margin:0}
+.contact-grid .name{font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:2.4rem;line-height:.95;margin:0 0 .3rem}
+@media (max-width:760px){.contact-grid{grid-template-columns:1fr}.contact-grid>div+div{border-left:0;padding-left:0;border-top:1px dotted var(--line)}}
+
+/* ---------- Footer ---------- */
+footer{background:#000;color:#fff;padding:3rem 0 2.2rem;margin-top:0}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:end}
+footer img{width:150px}
+footer p{font-size:.95rem;color:#cfcfcf;margin:0}
+footer nav{display:flex;flex-direction:column;gap:.2rem;text-align:right}
+footer nav a{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.05em;text-decoration:none;color:#fff}
+footer nav a:hover{color:var(--gold)}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}footer nav{text-align:left}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+[tabindex="-1"]:focus{outline:none}
+.wrap.wide{max-width:1480px}
+.head.slim{padding:clamp(2.4rem,5vw,4rem) 0 clamp(2rem,4vw,3rem)}
+
+.fc-sec{padding-top:2rem}
+.fc-tools{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem 2rem;padding-bottom:1.1rem;border-bottom:2px solid var(--rule);margin-bottom:1rem}
+.fc-tools .legend{margin:0;color:var(--fg)}
+.legend i.k{border-radius:2px;border:0;width:16px;height:16px}
+.legend i.k.egr{background:var(--navy)}
+.legend i.k.ms{background:var(--teal)}
+.legend i.k.cap{background:var(--gold)}
+.legend i.k.opt{background:transparent;border:2px dashed var(--fg)}
+.filters{display:flex;gap:0;border:2px solid var(--fg)}
+.fbtn{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.92rem;padding:.5rem .8rem;background:var(--bg);color:var(--fg);border:0;cursor:pointer}
+.fbtn + .fbtn{border-left:2px solid var(--fg)}
+.fbtn.on{background:var(--fg);color:var(--bg)}
+.scroll-hint{display:none;font-family:var(--tag);font-size:.95rem;color:var(--muted);margin:.2rem 0 .6rem}
+.fc-scroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding-bottom:.6rem}
+.fc{position:relative;transform-origin:0 0}
+.fc-note{font-size:.95rem;margin-top:1rem;max-width:60em}
+
+/* grid chrome */
+.fc .colh{position:absolute;top:0;font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em;font-size:.95rem;line-height:1.05;text-align:left;padding-top:26px}
+.fc .colh small{display:block;font-weight:600;color:var(--muted);font-size:.82rem;letter-spacing:.05em}
+.fc .yrh{position:absolute;top:0;height:20px;border-top:3px solid var(--fg);font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:1.05rem;letter-spacing:.04em;padding-top:2px}
+.fc .yrh.cap{border-top-color:var(--gold)}
+.fc .lane{position:absolute;left:0;right:0;border-top:1px dotted var(--line)}
+.fc .lane.alt{background:var(--panel)}
+.fc .lanel{position:absolute;left:0;font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em;font-size:.88rem;line-height:1.05;color:var(--muted);display:flex;align-items:center;padding-right:.6rem}
+
+/* nodes */
+.node{position:absolute;display:flex;flex-direction:column;justify-content:center;gap:.1rem;text-align:left;background:var(--card);color:var(--fg);border:1.5px solid var(--line);border-left:7px solid var(--k);padding:.4rem .55rem;font:inherit;cursor:pointer;transition:opacity .18s ease,transform .18s ease,box-shadow .18s ease;z-index:2}
+.node .c{font-family:var(--display);font-weight:800;font-size:1.12rem;letter-spacing:.02em;line-height:1}
+.node .t{font-family:var(--serif);font-size:.8rem;line-height:1.2;color:var(--muted)}
+.node.egr{--k:var(--navy)}
+.node.ms{--k:var(--teal)}
+.node.cap{--k:var(--gold);background:var(--gold);border-color:var(--gold);color:#000}
+.node.cap .t{color:#222}
+.node.opt{border:2px dashed var(--fg);border-left:7px solid var(--k);background:var(--bg)}
+.node.opt.core{--k:var(--navy)}
+.node.opt.des{--k:var(--gold-deep)}
+.node.opt.tech{--k:#7a7f87}
+.node .g{position:absolute;top:-.62rem;right:.4rem;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.68rem;background:var(--bg);padding:0 .3rem;line-height:1.2;color:var(--fg)}
+.node.cap .g{background:#000;color:var(--gold)}
+.node:hover,.node:focus-visible,.node.act{box-shadow:0 0 0 3px var(--fg);transform:translateY(-1px);z-index:4}
+.node:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.fc.focus .node{opacity:.22}
+.fc.focus .node.on,.fc.focus .node.act{opacity:1}
+.node.hide{opacity:.12!important;pointer-events:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .node.egr{--k:#69B3E7}:root:not([data-theme="light"]) .node.ms{--k:#6BBBAE}:root:not([data-theme="light"]) .node.opt.core{--k:#69B3E7}:root:not([data-theme="light"]) .legend i.k.egr{background:#69B3E7}:root:not([data-theme="light"]) .legend i.k.ms{background:#6BBBAE}}
+:root[data-theme="dark"] .node.egr{--k:#69B3E7}:root[data-theme="dark"] .node.ms{--k:#6BBBAE}:root[data-theme="dark"] .node.opt.core{--k:#69B3E7}
+
+/* edges */
+.edges{position:absolute;inset:0;overflow:visible;z-index:1;pointer-events:none}
+.edges path{fill:none;stroke:var(--fg);stroke-width:1.8;opacity:.55;transition:opacity .18s ease,stroke-width .18s ease}
+.edges path.rec{stroke-dasharray:6 5;stroke-width:1.5}
+.edges path.req{stroke-width:2.4;opacity:.75}
+.edges path.co{stroke:var(--gold-deep);stroke-dasharray:1 6;stroke-linecap:round;stroke-width:3.2;opacity:.95}
+.ahfill{fill:var(--fg)}
+.fc.focus .edges path{opacity:.07}
+.fc.focus .edges path.on{opacity:1;stroke-width:2.8}
+.fc.focus .edges path.co.on{stroke-width:3.6}
+.edges path.hide{opacity:.04!important}
+
+/* tooltip card */
+.tip{position:fixed;z-index:80;width:min(360px,calc(100vw - 24px));background:var(--card);color:var(--fg);border:2px solid var(--fg);border-top:10px solid var(--gold);padding:1rem 1.15rem 1.1rem;box-shadow:0 14px 40px rgba(0,0,0,.28);font-size:.98rem}
+.tip[hidden]{display:none}
+.tip-x{position:absolute;top:.35rem;right:.45rem;background:transparent;border:0;color:var(--fg);font-size:1.6rem;line-height:1;cursor:pointer;padding:.2rem .45rem;display:none}
+.tip.pinned .tip-x{display:block}
+.tip-kind{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.88rem;color:var(--gold-deep);margin:0 0 .25rem}
+.tip-code{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:2.1rem;line-height:.9;margin:0}
+.tip-title{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.02em;font-size:1.12rem;line-height:1.1;margin:.3rem 0 .7rem}
+.tip-meta{display:grid;grid-template-columns:auto 1fr;gap:.2rem .8rem;margin:0 0 .7rem;font-size:.92rem;padding:.55rem 0;border-top:1px dotted var(--line);border-bottom:1px dotted var(--line)}
+.tip-meta dt{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em}
+.tip-meta dd{margin:0}
+.tip-about{font-size:.95rem;line-height:1.5;margin:0 0 .6rem}
+.tip-rel{font-size:.9rem;margin-bottom:.8rem}
+.tip-rel p{margin:0 0 .25rem}
+.tip-rel b{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+.tip-links{display:flex;flex-wrap:wrap;gap:.5rem}
+.tip-links .btn{font-size:.92rem;padding:.6rem .85rem}
+.tip-hint{font-size:.85rem;color:var(--muted);margin:.6rem 0 0}
+.tip.pinned .tip-hint{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tip-kind{color:var(--gold)}}
+:root[data-theme="dark"] .tip-kind{color:var(--gold)}
+@media (max-width:640px){
+  .tip{left:0!important;right:0;top:auto!important;bottom:0;width:100%;max-height:75vh;overflow-y:auto;border-left:0;border-right:0;border-bottom:0;padding-bottom:calc(1.1rem + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:860px){.scroll-hint{display:block}}
+
+.node .c.sm{font-size:.95rem}
+
+.updated{font-family:var(--tag);font-size:.95rem;color:var(--muted);display:flex;align-items:center;gap:.5rem;margin:1.2rem 0 0}
+.updated::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--gold)}
+.head .updated,.hero .updated{color:#cfcfcf}
+footer .upd{color:var(--gold)!important;margin-top:.3rem!important}
+.updated{font-family:var(--tag);font-size:.95rem;color:var(--muted);display:flex;align-items:center;gap:.5rem;margin:1.2rem 0 0}
+.updated::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--gold);flex-shrink:0}
+.head .updated{color:#cfcfcf}
+footer .upd{color:var(--gold)!important;margin-top:.3rem!important}
+.done-badge{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--gold);color:#000;font-size:.75rem;font-family:var(--tag)}
+.node .ck{position:absolute;bottom:-.55rem;right:-.55rem;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#000;display:none;place-items:center;font-size:.8rem;font-weight:700;border:2px solid var(--bg);font-family:var(--tag)}
+.node.done .ck{display:grid}
+.node.cap.done .ck{background:#000;color:var(--gold)}
+.tip-rel dl{display:grid;grid-template-columns:auto 1fr;gap:.25rem .7rem;margin:0}
+.tip-rel dt{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:.9rem}
+.tip-rel dd{margin:0;font-size:.92rem}
+.tip-about{font-size:.93rem}
+.tip{width:min(390px,calc(100vw - 24px));max-height:calc(100vh - 100px);overflow-y:auto}
+/* requirement tables */
+.reqt td:first-child{white-space:nowrap}
+.reqt td a{font-family:var(--display);font-weight:700;letter-spacing:.03em;font-size:1.05rem;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+.reqt td.pre{font-size:.92rem;color:var(--muted)}
+.reqt .or td{padding-top:0;border-top:0;font-family:var(--display);font-weight:700;font-size:.85rem;color:var(--muted);letter-spacing:.05em}
+/* checklist */
+.checkgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.cgroup{border:1px solid var(--line);border-top:8px solid var(--c,var(--fg));background:var(--card);padding:1.2rem 1.3rem}
+.cgroup header{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.4rem}
+.cgroup header h3{margin:0}
+.cgroup .sub{font-size:.95rem;color:var(--muted);margin:0 0 .6rem}
+.cgroup label{display:flex;gap:.7rem;align-items:flex-start;padding:.45rem 0;border-bottom:1px dotted var(--line);font-size:1rem;cursor:pointer;line-height:1.35}
+.cgroup label:last-child{border-bottom:0}
+.cgroup input[type=checkbox]{width:19px;height:19px;margin-top:.12rem;accent-color:#000;flex-shrink:0}
+.cgroup label b{font-family:var(--display);font-weight:700;letter-spacing:.03em;font-size:1.05rem;min-width:5.4rem;display:inline-block}
+.cgroup input[type=text]{font:inherit;font-size:.9rem;padding:.25rem .45rem;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);width:9.5rem;margin-left:.4rem}
+@media (max-width:800px){.checkgrid{grid-template-columns:1fr}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cgroup input[type=checkbox]{accent-color:var(--gold)}}
+:root[data-theme="dark"] .cgroup input[type=checkbox]{accent-color:var(--gold)}
+.prog-top{display:flex;align-items:center;gap:1.4rem;padding-bottom:1.6rem;border-bottom:2px solid var(--rule);margin-bottom:1.6rem}
+.meter svg{width:96px;height:96px}
+#meterArc{transition:stroke-dasharray .5s ease}
+.big{font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:clamp(2rem,5vw,3rem);line-height:.95;margin:0}
+.report{margin-top:2rem;border-top:10px solid var(--gold);border-left:2px solid var(--rule);border-right:2px solid var(--rule);border-bottom:2px solid var(--rule);padding:1.6rem clamp(1rem,3vw,2rem);background:var(--card)}
+.report:focus{outline:none}
+.report .verdict{font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:clamp(2rem,5vw,3rem);line-height:.95;margin:0 0 .6rem}
+.report h3{margin:1.6rem 0 .6rem}
+.rgroups{display:grid;gap:0;border-top:2px solid var(--rule)}
+.rg{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:.3rem 1rem;align-items:start;padding:.8rem 0;border-bottom:1px dotted var(--line)}
+.rg .st{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-family:var(--tag);border:2px solid var(--fg)}
+.rg.ok .st{background:var(--gold);border-color:var(--gold);color:#000}
+.rg h4{margin:0}
+.rg p{margin:.15rem 0 0;font-size:.97rem}
+.rg .n{font-family:var(--display);font-weight:800;font-size:1.3rem;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin:.4rem 0 0;padding:0;list-style:none}
+.chips li a,.chips li span{display:inline-block;font-family:var(--display);font-weight:700;letter-spacing:.03em;padding:.3rem .6rem;border:2px solid var(--fg);text-decoration:none;font-size:.98rem}
+.chips li a:hover{background:var(--gold);border-color:var(--gold);color:#000}
+.chips.next li a{background:var(--gold);border-color:var(--gold);color:#000}
+.warn{list-style:none;padding:0;margin:.4rem 0 0}
+.warn li{padding:.55rem 0 .55rem 1.6rem;position:relative;border-bottom:1px dotted var(--line);font-size:.98rem;max-width:48em}
+.warn li::before{content:"!";position:absolute;left:0;top:.6rem;width:1.1rem;height:1.1rem;border-radius:50%;background:var(--fg);color:var(--bg);font-size:.75rem;display:grid;place-items:center;font-weight:700;font-family:var(--tag)}
+/* people */
+.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--rule)}
+.person{padding:1.6rem 1.4rem 1.6rem 0;display:flex;flex-direction:column;gap:.6rem}
+.person + .person{border-left:1px dotted var(--line);padding-left:1.4rem}
+.person .name{font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:2rem;line-height:.95;margin:0}
+.person .role{font-size:1rem;color:var(--muted);margin:0}
+.person dl{margin:.4rem 0 .6rem;display:grid;grid-template-columns:auto 1fr;gap:.4rem 1rem;font-size:1rem}
+.person dt{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em}
+.person dd{margin:0;overflow-wrap:anywhere}
+.person .btn{align-self:flex-start;margin-top:auto;font-size:.92rem}
+@media (max-width:900px){.people{grid-template-columns:1fr}.person,.person+.person{padding:1.4rem 0;border-left:0;border-bottom:1px dotted var(--line)}}
+@media print{
+  .bar,footer,.skip,.cta-row,.tip{display:none!important}
+  .page{display:none!important}
+  #checklist{display:block!important}
+  .head{background:#fff;color:#000;padding:1rem 0}
+  .head h1{color:#000;font-size:2.4rem}
+  .head .aside p{color:#000}
+  .cgroup,.rg{break-inside:avoid}
+  body{font-size:11pt}
+}
+
+.fc .lanel{font-size:.84rem}
+.node{padding:.35rem .55rem}
+.node .t{font-size:.78rem}
+
+.person .name a{text-decoration:none;background-image:linear-gradient(var(--gold),var(--gold));background-size:100% 4px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:2px}
+.person .name a:hover{background-size:100% 100%;color:#000}
+.person .name a::after{content:" ↗";font-size:.6em;vertical-align:.35em}
+.tip-lbl{display:block;font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:.9rem;margin-bottom:.2rem}
+
+.catlink{color:#fff;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:5px}
+.catlink:hover{color:var(--gold)}
+
+.head h1,.head.slim h1{font-size:clamp(2.6rem,5.4vw,4.4rem)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#flowchart" aria-label="Centre College Engineering Major Course Requirements home">
+      <img src="assets/logo.png" alt="Centre College">
+      <span class="prog">Engineering Major<br>Course Requirements</span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Site sections">
+      <a href="#flowchart">Flowchart</a>
+      <a href="#requirements">Requirements</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#advising">Advising</a>
+      <a class="home" href="index.html">← Home</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =============== FLOWCHART =============== -->
+<section class="page" id="flowchart" aria-labelledby="h-flowchart">
+  <div class="head slim"><div class="wrap wide">
+    <h1 class="d" id="h-flowchart" tabindex="-1">Centre your<br>engineering<br>path.</h1>
+    <div class="aside"><p class="tag">Engineering major · Catalog 2026–2027</p><p class="lede">Every course in the major, connected by the prerequisites listed in the Centre catalog. Hover over a course to see its description and prerequisites. Select it to pin the card and open the catalog page.</p><p class="updated">Last updated <time datetime="2026-09-29">September 29, 2026</time></p></div>
+  </div></div>
+
+  <div class="sec fc-sec">
+    <div class="wrap wide">
+      <div class="fc-tools">
+        <div class="legend" aria-label="Legend">
+          <span><i class="k egr"></i> Required engineering</span>
+          <span><i class="k ms"></i> Required math &amp; science</span>
+          <span><i class="k cap"></i> Capstone</span>
+          <span><i class="k opt"></i> Elective option</span>
+          <span><svg width="34" height="10" aria-hidden="true"><line x1="0" y1="5" x2="34" y2="5" stroke="currentColor" stroke-width="2.5"/></svg> Prerequisite</span>
+          <span><svg width="34" height="10" aria-hidden="true"><line x1="0" y1="5" x2="34" y2="5" stroke="var(--gold-deep)" stroke-width="3" stroke-dasharray="1 5" stroke-linecap="round"/></svg> Co-requisite (same term or earlier)</span>
+          <span><b class="done-badge" aria-hidden="true">✓</b> Marked complete in your checklist</span>
+        </div>
+        <div class="filters" role="group" aria-label="Show courses">
+          <button type="button" class="fbtn on" data-f="all" aria-pressed="true">All courses</button>
+          <button type="button" class="fbtn" data-f="req" aria-pressed="false">Required only</button>
+          <button type="button" class="fbtn" data-f="opt" aria-pressed="false">Electives only</button>
+        </div>
+      </div>
+      <p class="scroll-hint">Scroll sideways to see the whole chart →</p>
+      <div class="fc-scroll" id="fcScroll">
+        <div class="fc" id="fc">
+          <svg class="edges" id="edges" aria-hidden="true">
+            <defs><marker id="ahS" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahfill"/></marker></defs>
+          </svg>
+        </div>
+      </div>
+      <p class="muted fc-note">Arrows come from the prerequisite listed on each course's catalog page. Prerequisites that sit outside the major, such as placement, MAT 120, or instructor permission, appear in each course's card. Columns run left to right from courses with no prerequisites in the major to courses with the most.</p>
+    </div>
+  </div>
+
+  <div class="sec panel" id="howto" aria-labelledby="h-howto">
+    <div class="wrap">
+      <div class="split" style="margin-bottom:2rem">
+        <div class="l"><p class="tag">Using the flowchart</p><h2 class="d" id="h-howto">How to read it</h2></div>
+        <div><p class="lede">The chart reads left to right. A course sits to the right of everything it requires, and rows group related subjects so you can follow each thread.</p></div>
+      </div>
+      <ol class="steps">
+        <li><h4>Follow the arrows</h4><p>Each solid arrow points from a prerequisite to the course that requires it. Gold dotted lines mark co-requisites, which can be taken in the same term or earlier.</p></li>
+        <li><h4>Follow the rows</h4><p>Rows group subjects: engineering foundations and capstone, mechanics and design, mathematics, physics, chemistry, and environmental studies.</p></li>
+        <li><h4>Hover to trace a path</h4><p>Hovering a course highlights everything that leads to it and everything it opens. The rest of the chart fades back.</p></li>
+        <li><h4>Select to pin</h4><p>Click or tap a course to keep its card open. From the card, open the course's page in the Centre catalog.</p></li>
+        <li><h4>See your progress</h4><p>Courses you mark complete on the Checklist page show a check mark here, so you can see what's open to you next.</p></li>
+        <li><h4>Filter the view</h4><p>Use the buttons above the chart to show only required courses or only elective options. On a keyboard, Tab moves between courses, Enter pins a card, and Escape closes it.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- =============== REQUIREMENTS =============== -->
+<section class="page" id="requirements" aria-labelledby="h-requirements">
+  <div class="head"><div class="wrap">
+    <h1 class="d" id="h-requirements" tabindex="-1">Major<br>requirements</h1>
+    <div class="aside"><p class="tag">Catalog 2026–2027</p><p class="lede"><a class="catlink" href="https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/programs-of-study/engineering/engineering-major" target="_blank" rel="noopener">Engineering major in the catalog ↗</a></p><p class="updated">Last updated <time datetime="2026-09-29">September 29, 2026</time></p></div>
+  </div></div>
+  <div id="reqTables"></div>
+  <div class="sec">
+    <div class="wrap split">
+      <div class="l"><div class="stick"><p class="tag">Rules to know</p><h2 class="d">Fine print</h2></div></div>
+      <div>
+        <ul class="dash">
+          <li><b>PHY 370 and CHE 361 count once.</b> If you use one of them as a core elective, you can't use the other as your second core elective.</li>
+          <li><b>Unused core electives become technical electives.</b> Any core elective not used for the core group can count toward the four technical electives.</li>
+          <li><b>Any EGR 440–449 design course</b> can fill the design elective. EGR 450 requires a design elective as a co-requisite.</li>
+          <li><b>Chemistry: CHE 131 or CHE 135.</b> Students who complete CHE 135 can't register for CHE 131 or CHE 132, and the reverse. CHE 361 requires CHE 132 or CHE 135.</li>
+          <li><b>Some upper-level physics is offered in alternate years:</b> PHY 340, PHY 350, PHY 370, and PHY 380. Plan ahead.</li>
+        </ul>
+        <div class="cta-row" style="margin-top:1rem"><a class="btn ink" href="https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/programs-of-study/engineering/engineering-major" target="_blank" rel="noopener">Engineering major in the catalog ↗</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CHECKLIST =============== -->
+<section class="page" id="checklist" aria-labelledby="h-checklist">
+  <div class="head"><div class="wrap">
+    <h1 class="d" id="h-checklist" tabindex="-1">Checklist</h1>
+    <div class="aside"><p class="tag">Track and check</p><p class="lede">Mark the courses you've completed, then run a check. You'll see which requirements you've met, what's still missing, and which courses you can take next.</p>
+      <div class="cta-row"><button class="btn solid" type="button" id="runBtn">Run a check</button><button class="btn" type="button" id="printBtn">Print</button><button class="btn" type="button" id="resetBtn">Clear all</button></div>
+      <p class="updated">Saved in this browser only · Requirements last updated <time datetime="2026-09-29">September 29, 2026</time></p></div>
+  </div></div>
+
+  <div class="sec">
+    <div class="wrap">
+      <div class="prog-top">
+        <div class="meter" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="var(--line)" stroke-width="12"/><circle id="meterArc" cx="60" cy="60" r="50" fill="none" stroke="var(--gold)" stroke-width="12" stroke-dasharray="0 400" transform="rotate(-90 60 60)"/></svg></div>
+        <div><p class="tag" style="margin:0">Counting toward the major</p><p class="big" id="overall" aria-live="polite">0 of 23 courses</p></div>
+      </div>
+      <div class="checkgrid" id="checkgrid"></div>
+      <div class="cta-row" style="margin-top:1.6rem"><button class="btn ink" type="button" id="runBtn2">Run a check</button></div>
+      <div class="report" id="report" tabindex="-1" hidden></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== ADVISING =============== -->
+<section class="page" id="advising" aria-labelledby="h-advising">
+  <div class="head"><div class="wrap">
+    <h1 class="d" id="h-advising" tabindex="-1">Advising</h1>
+    <div class="aside"><p class="tag">Engineering faculty</p><p class="lede">Feel free to contact us if you have any questions.</p></div>
+  </div></div>
+  <div class="sec">
+    <div class="wrap">
+      <div class="people">
+        <div class="person">
+          <p class="name"><a href="https://www.centre.edu/about/faculty-staff/christine-goble" target="_blank" rel="noopener">Dr. Christine Goble</a></p>
+          <p class="role">Marlene &amp; David Grissom Chair of Engineering and Associate Professor of Engineering</p>
+          <dl>
+            <dt>Email</dt><dd><a href="mailto:christine.goble@centre.edu">christine.goble@centre.edu</a></dd>
+            <dt>Phone</dt><dd><a href="tel:+18592385434">(859) 238-5434</a></dd>
+            <dt>Office</dt><dd class="muted">See faculty profile</dd>
+          </dl>
+        </div>
+        <div class="person">
+          <p class="name"><a href="https://www.centre.edu/about/faculty-staff/lauren-mehanna" target="_blank" rel="noopener">Dr. Lauren Mehanna</a></p>
+          <p class="role">Assistant Professor of Engineering</p>
+          <dl>
+            <dt>Email</dt><dd><a href="mailto:lauren.mehanna@centre.edu">lauren.mehanna@centre.edu</a></dd>
+            <dt>Phone</dt><dd><a href="tel:+18592385420">(859) 238-5420</a></dd>
+            <dt>Office</dt><dd>Olin 217</dd>
+          </dl>
+        </div>
+        <div class="person">
+          <p class="name"><a href="https://www.centre.edu/about/faculty-staff/wanyu-xu" target="_blank" rel="noopener">Dr. Wanyu Xu</a></p>
+          <p class="role">Assistant Professor of Engineering</p>
+          <dl>
+            <dt>Email</dt><dd><a href="mailto:wanyu.xu@centre.edu">wanyu.xu@centre.edu</a></dd>
+            <dt>Phone</dt><dd><a href="tel:+18592385611">(859) 238-5611</a></dd>
+            <dt>Office</dt><dd>Olin 213B</dd>
+          </dl>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:1.4rem;font-size:.95rem">The Centre College catalog governs degree requirements, prerequisites, and credit hours. <a href="https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/programs-of-study/engineering/engineering-major" target="_blank" rel="noopener">Engineering major in the catalog ↗</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="tip" id="tip" role="dialog" aria-modal="false" aria-labelledby="tipCode" hidden>
+  <button class="tip-x" type="button" id="tipX" aria-label="Close course details">×</button>
+  <p class="tip-kind" id="tipKind"></p>
+  <p class="tip-code" id="tipCode"></p>
+  <p class="tip-title" id="tipTitle"></p>
+  <dl class="tip-meta" id="tipMeta"></dl>
+  <p class="tip-about" id="tipAbout"></p>
+  <div class="tip-rel" id="tipRel"></div>
+  <div class="tip-links" id="tipLinks"></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-rev.png" alt="Centre College">
+    <div><p>Engineering Major Course Requirements · Catalog 2026–2027</p><p>Centre College, Danville, Kentucky</p><p class="upd">Last updated <time datetime="2026-09-29">September 29, 2026</time></p></div>
+    <nav aria-label="Footer">
+      <a href="#flowchart">Flowchart</a>
+      <a href="#requirements">Requirements</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#advising">Advising</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</footer>
+
+<script>(function(){
+  /* ---------- routing ---------- */
+  var pages=[].slice.call(document.querySelectorAll('.page'));
+  var links=[].slice.call(document.querySelectorAll('.nav a:not(.ext):not(.home)'));
+  var nav=document.getElementById('nav'), mb=document.querySelector('.menu-btn');
+  var ids=pages.map(function(p){return p.id});
+  var inner={howto:'flowchart'};
+  var tt={requirements:'Requirements',checklist:'Checklist',advising:'Advising'};
+  function show(first){
+    var h=(location.hash||'#flowchart').slice(1);
+    var pid=ids.indexOf(h)>-1?h:(inner[h]||'flowchart');
+    pages.forEach(function(p){p.classList.toggle('on',p.id===pid)});
+    links.forEach(function(a){a.getAttribute('href')==='#'+pid?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
+    nav.classList.remove('open');mb.setAttribute('aria-expanded','false');
+    hideTip(true);
+    var tgt=inner[h]?document.getElementById(h):null;
+    if(tgt){tgt.scrollIntoView();}else{window.scrollTo(0,0);if(!first){var hd=document.getElementById('h-'+pid);if(hd)hd.focus({preventScroll:true});}}
+    document.title=(tt[pid]?tt[pid]+' | ':'')+'Engineering Major Course Requirements | Centre College';
+    if(pid==='flowchart'){paintDone();requestAnimationFrame(fit);}
+  }
+  mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+
+  /* ---------- catalog data (Centre College Catalog 2026–2027) ---------- */
+  var B='https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/course-descriptions/';
+  var E=B+'egr-engineering/',P=B+'phy-physics/',M=B+'mat-mathematics/',C=B+'che-chemistry/',N=B+'ens-environmental-studies/';
+  var KIND={egr:'Required · Engineering courses',ms:'Required · Math & science',cap:'Required · Capstone',core:'Core elective · choose 2',des:'Design elective · choose 1',tech:'Technical elective · choose 4'};
+  // id, code, title, credits, kind, col, row, description (summarized from the catalog), prerequisite (catalog wording), url, offered
+  var COURSES=[
+   ['egr110','EGR 110','Engineering Exploration','3','egr',0,0,'Introduces the engineering disciplines and the creative problem-solving that leads to innovation in technical fields, and discusses scientific ethics. Includes a collaborative, interdisciplinary project combining engineering design, modeling, 3D printing, and/or other manufacturing methods such as machining.','MAT 110, or placement in MAT 165 or higher',E+'100/egr-110'],
+   ['egr210','EGR 210','Introduction to Programming','4','egr',1,0,'Scientific programming in MATLAB: algorithmic thinking, numerical modeling, instrument control and data acquisition, and visual display of quantitative information.','EGR 110, MAT 165',E+'200/egr-210'],
+   ['egr450','EGR 450','Capstone I: Project Management','3','cap',4,0,'Project management, engineering economics, and a review of the engineering design process in preparation for Capstone II. Small groups with clearly defined roles select a complex system design project and develop a design proposal, cost estimate, and project timeline.','Co-requisite: one design elective numbered EGR 440–449',E+'400/egr-450'],
+   ['egr452','EGR 452','Capstone Design II','4','cap',5,0,'Continues the project plan from Capstone I with design refinement, prototype development, testing, and redesign. Applies elements of a life-cycle sustainability assessment to the group project, with written and oral reporting of progress and results.','EGR 450',E+'400/egr-452'],
+   ['egr215','EGR 215','Computer-Aided Design and Drafting','3','egr',0,1,'Introduces two computer-aided design programs: 3D solid modeling software to describe and define mechanical objects to current industry standards, and software for drafting, design, and modeling surfaces in 2D and 3D with documentation features.','None listed',E+'200/egr-215'],
+
+   ['egr220','EGR 220','Statics','Not listed','egr',2,2,'Force and moment systems for static equilibrium of rigid bodies: vector algebra, moments and couples, equivalent force systems, free-body diagrams, equilibrium of particles and rigid bodies, forces in trusses, frames, machines, and beams, friction, centroids, and area moment of inertia.','PHY 210',E+'200/egr-220'],
+   ['egr320','EGR 320','Mechanics of Materials','Not listed','core',3,2,'Stress, strain, and deformation of solids under tension, compression, shear, torsion, and bending, applied to linear elastic material behavior. Also covers combined loading, stress transformation, and column buckling.','EGR 220',E+'300/egr-320'],
+   ['egr442','EGR 442','Structural Design','3','des',4,2,'Applies the principles of statics and mechanics to the design of steel and reinforced concrete structures, including calculating design axial and shear forces and moments, and building code requirements.','EGR 320',E+'400/egr-442'],
+   ['egr322','EGR 322','Dynamics','Not listed','core',3,3,'Motion of particles and rigid bodies in two dimensions. Kinematics in Cartesian and polar coordinates, normal and tangential components, and translating and rotating reference frames; kinetics through laws of motion, work and energy, and impulse and momentum.','EGR 220',E+'300/egr-322'],
+   ['egr444','EGR 444','Mechanical Design','3','des',4,3,'Fundamentals of mechanical design, including methods of approximation and design optimization, applied to a variety of mechanical elements.','EGR 330, EGR 320, and EGR 322',E+'400/egr-444'],
+   ['egr330','EGR 330','Engineering Materials','4','egr',3,4,'Engineering properties of materials at micro- and macroscopic levels, including material selection, processing, and application to design. A companion lab tests material properties and analyzes data for a variety of engineering materials.','EGR 220',E+'300/egr-330'],
+   ['egr374','EGR 374','Fluid Mechanics','Not listed','core',4,4,'An introduction to fluid properties, statics, dynamics, and applications in engineering systems, building a fundamental understanding of fluid behavior and using mathematical models to analyze real-world flow problems.','MAT 360',E+'300/egr-374'],
+   ['egr3xx','EGR 3xx+','Additional EGR course','3','tech',5,4,'Any additional engineering course numbered 300 or higher counts as a technical elective, including an extra design course beyond your design elective.','See each course',B+'egr-engineering'],
+
+   ['mat165','MAT 165','Modern Calculus-I','3','ms',0,5,'Mathematical modeling and differential and integral calculus with an emphasis on scientific computing and real-world applications: functions as models of data, rates of change and accumulation, calculus of one and several variables, optimization, linear approximation, gradients, Lagrange multipliers, integration, and numerical methods.','MAT 120 or placement',M+'100/mat-165'],
+   ['mat185','MAT 185','Modern Calculus-II','3','ms',1,5,'Integral and differential calculus of several variables with numerical methods: differential equations, integration techniques, partial derivatives, gradients, contour plots, constrained and unconstrained optimization, sequences and series, Taylor series, multiple integration, and limits.','MAT 165 or placement',M+'100/mat-185'],
+   ['mat235','MAT 235','Modern Calculus-III','3','ms',2,5,'Calculus of multivariate functions, vector-valued functions, and vector fields, with the theory behind limits, derivatives, and integrals: vector operations, parameterizations, integration over regions, curves, and surfaces, and the fundamental theorems of vector calculus.','MAT 185 or placement',M+'200/mat-235'],
+   ['mat360','MAT 360','Differential Equations','3','ms',3,5,'Analytical, numerical, and graphical techniques for learning about solutions to linear, nonlinear, and systems of differential equations, which model many physical and social phenomena.','MAT 230 or MAT 235',M+'300/mat-360'],
+   ['mat240','MAT 240','Linear Algebra','3','ms',2,6,'Systems of linear equations and whether they have no, one, or infinitely many solutions: matrix algebra, Gaussian elimination, vector spaces, spanning, linear independence, basis, dimension, inner products, Gram-Schmidt, determinants, linear transformations, eigenvalues, and eigenvectors.','MAT 185',M+'200/mat-240'],
+
+   ['phy210','PHY 210','General Physics-I','4','ms',1,7,'Calculus-based mechanics of particles and rigid bodies, simple harmonic motion, wave motion, sound, and fluids. Laboratory work is required.','MAT 165 or MAT 170, or permission of the instructor',P+'200/phy-210'],
+   ['phy230','PHY 230','General Physics-II','4','ms',2,7,'Calculus-based electricity, magnetism, and geometrical and physical optics. Laboratory work is required.','PHY 210 and MAT 185 (or MAT 171), or permission of the instructor',P+'200/phy-230'],
+   ['phy300','PHY 300','Introduction to Electronics','4','core',3,7,'A laboratory-based course in circuit analysis, semiconductor devices, operational amplifiers, and digital electronics.','PHY 230, or permission of the instructor',P+'300/phy-300'],
+   ['phy340','PHY 340','Advanced Mechanics','4','tech',4,7,'Expands Newton\u2019s laws and reformulates them with Hamiltonian and Lagrangian methods; covers rigid-body motion, oscillating systems, continuum mechanics, nonlinear dynamics, and chaos, with a lab emphasizing computer modeling.','PHY 230 and MAT 360, or permission of the instructor',P+'300/phy-340','Alternate years'],
+   ['phy350','PHY 350','Advanced Electricity and Magnetism','4','tech',4,8,'Electricity and magnetism with emphasis on fields from static charges and steady currents: supporting mathematics, electric fields and dielectrics, magnetic fields and materials, scalar and vector potentials, and Maxwell\u2019s equations.','PHY 230 and MAT 360, or permission of the instructor',P+'300/phy-350','Alternate years'],
+   ['phy380','PHY 380','Optics','4','tech',5,8,'A laboratory-intensive study of light and its interaction with matter: electromagnetic theory, propagation, imaging, polarization, interference, and diffraction.','PHY 350',P+'300/phy-380','Alternate years'],
+   ['phy325','PHY 325','Advanced Laboratory Techniques','4','ms',4,9,'Advanced experimental physics skills: project design, technical writing, visual display of quantitative information, error analysis, and other laboratory skills. Taken for four credit hours.','PHY 230 and MAT 235; MAT 360 as co-requisite, or permission of the instructor',P+'300/phy-325'],
+   ['phy370','PHY 370','Thermal Physics & Statistical Mechanics','3 (course title says four credit hours)','core',4,10,'Principles of thermodynamics, kinetic theory, and statistical mechanics: equations of state, laws of thermodynamics, entropy, kinetic theory of an ideal gas, transport phenomena, and Boltzmann and quantum statistics.','PHY 230; MAT 360 as co-requisite, or permission of the instructor',P+'300/phy-370','Alternate years'],
+
+   ['che131','CHE 131','General Chemistry-I','4','ms',0,11,'Modern ideas of atomic and molecular structure: stoichiometry, gas laws, electronic and nuclear structure of the atom, chemical bonding and molecular structure, and periodic properties. Laboratory work is required. Satisfies the chemistry requirement, as does CHE 135.','MAT 120, or placement into MAT 165 or higher',C+'100/che-131'],
+   ['che361','CHE 361','Thermodynamics and Kinetics','4','core',2,11,'Kinetics, reaction dynamics, chemical thermodynamics, and statistical mechanics: kinetic theory of gases, rate laws and theory, catalysis, laws of thermodynamics, thermochemistry, phase behavior, equilibrium, the partition function, and the Boltzmann distribution. Counts as the same core option as PHY 370.','CHE 132 or CHE 135, MAT 171, and PHY 110 or PHY 210. Laboratory work is required.',C+'300/che-361'],
+   ['che135','CHE 135','Accelerated General Chemistry','4','ms',0,12,'Accelerated general chemistry for students with strong high school preparation. Briefly reviews stoichiometry and gas laws, then treats atomic and molecular theory, bonding theories, kinetics, equilibrium, acids and bases, and thermodynamics in more depth. Lab required. Students who complete CHE 135 may not take CHE 131 or 132, and vice versa.','MAT 120, or placement into MAT 165 or higher',C+'100/che-135'],
+
+   ['ens240','ENS 240','Alternative Energy Technology','3','tech',0,13,'Conventional and alternative energy for electricity and transportation fuels: technical principles of fossil fuels, biomass, hydroelectric, nuclear, solar, and wind power, evaluated on efficiency, scalability, and life-cycle cost, along with environmental, economic, and societal consequences.','MAT 110, MAT 120, or MAT 130, or placement into MAT 165 or higher',N+'200/ens-240'],
+   ['ens290','ENS 290','Environmental Geology','3','tech',1,13,'Geology topics that affect people, including natural hazards, resource extraction, and pollution, with threads on environmental inequity, science communication, and risk perception.','None listed',N+'200/ens-290']
+  ];
+  // from, to, type: req = catalog prerequisite, co = catalog co-requisite
+  var LINKS=[
+   ['egr110','egr210','req'],['mat165','egr210','req'],['phy210','egr220','req'],
+   ['egr220','egr320','req'],['egr220','egr322','req'],['egr220','egr330','req'],
+   ['mat360','egr374','req'],['egr320','egr442','req'],
+   ['egr330','egr444','req'],['egr320','egr444','req'],['egr322','egr444','req'],
+   ['egr442','egr450','co'],['egr444','egr450','co'],['egr450','egr452','req'],
+   ['mat165','mat185','req'],['mat185','mat235','req'],['mat185','mat240','req'],['mat235','mat360','req'],
+   ['mat165','phy210','req'],['phy210','phy230','req'],['mat185','phy230','req'],
+   ['phy230','phy300','req'],['phy230','phy340','req'],['mat360','phy340','req'],
+   ['phy230','phy350','req'],['mat360','phy350','req'],['phy350','phy380','req'],
+   ['phy230','phy325','req'],['mat235','phy325','req'],['mat360','phy325','co'],
+   ['phy230','phy370','req'],['mat360','phy370','co'],
+   ['che135','che361','req'],['phy210','che361','req']
+  ];
+  var LANES=[['Foundations & capstone',2],['Mechanics, materials & design',3],['Mathematics',2],['Physics',4],['Chemistry',2],['Environmental studies',1]];
+
+  // Official catalog descriptions, as provided
+  var DESC={"egr110": "Engineering Exploration introduces students to engineering disciplines and encourages creative problem-solving techniques that lead to innovation in technical fields. The course will also discuss scientific ethics and related topics. The course includes a combination of collaborative engineering design, modeling, 3D printing, and/or other manufacturing techniques such as machining, as part of a collaborative, interdisciplinary project.", "egr210": "Introduction to Programming using MATLAB will teach scientific programming techniques: algorithmic thinking, numerical modeling, instrument control and data acquisition, and visual display of quantitative information.", "egr215": "Introduction to the use of two computer aided design software programs. Introduction to 3D solid modeling software to describe and define mechanical objects using current industrial standards. Introduction to software for drafting, design, and modeling surfaces in 2D and 3D with documentation features.", "egr220": "A study of force and moment systems for static equilibrium of rigid bodies. Topics include vector algebra; moments and couples; equivalent force systems; free-body diagrams; equilibrium of particles and rigid bodies; forces in trusses, frames, machines and beams; friction forces; centroids; and area moment of inertia. Pre-requisites: PHY 210", "egr330": "A study of the engineering properties of materials on a micro- and macroscopic level including material selection, processing, and application to design. A companion lab will include material property testing to gather and analyze data for a variety of engineering materials. Pre-requisite: EGR 220", "egr450": "A study of project management, engineering economics, and review of the engineering design process in preparation for Capstone II: Design. The course will include selection of a complex system design project and development of a design proposal, cost estimate, and project timeline. Students will work in small groups and will have clearly defined roles and responsibilities. Co-requisite: One design elective numbered EGR 440-449", "egr452": "The course will continue with the project plan developed in Capstone I and include refinement of design, development of a prototype, testing, and redesign. The course will include application of elements of a life-cycle sustainability assessment to the group project. Written and oral communication of project progress and results will be required. Pre-requisite: EGR 450", "egr320": "A study of stress, strain, and deformation of solids due to tension, compression, shear, torsion, and bending with application to linear elastic material behavior. Additional topics will include combined loading, stress transformation and column buckling. Pre-requisites: EGR 220", "egr322": "Study of the motion of bodies. Kinematics: Cartesian and polar coordinate systems; normal and tangential components; translating and rotating reference frames. Kinetics of particles and rigid bodies: laws of motion; work and energy; impulse and momentum. A study of the motion of particles and rigid bodies including kinematics and kinetics, work, energy, impulse, and momentum in two dimensions. Pre-requisites: EGR 220", "phy370": "A presentation of the fundamental principles of thermodynamics, kinetic theory, and statistical mechanics including equations of state, laws of thermodynamics, entropy, kinetic theory of an ideal gas, transport phenomena, and Boltzmann and quantum statistics.", "che361": "A study of kinetics, reaction dynamics, chemical thermodynamics and statistical mechanics. Topics include the kinetic theory of gases, rate laws, reaction rate theory, factors affecting reaction rates, catalysis, the laws of thermodynamics, thermochemistry, phase behavior, chemical equilibrium, the development of the partition function, the Boltzmann distribution law, and the significance of statistical behavior in molecular systems.", "phy300": "A laboratory-based course in the basic principles of circuit analysis, semiconductor devices, operational amplifiers, and digital electronics.", "egr374": "This course provides an introduction to the principles of fluid mechanics, covering fluid properties, statics, dynamics, and applications in engineering systems. The focus is on developing a fundamental understanding of fluid behavior and applying mathematical models to analyze real-world fluid flow problems. Pre-requisites: MAT 360", "egr442": "This course will consider the application of the principles of statics and mechanics to the design of steel and reinforced concrete structures. Topics will include calculation of the design axial and shear forces and moments and building code requirements. Pre-requisite: EGR 320", "egr444": "The study of the fundamentals of mechanical design including methods of approximation and design optimization with application to a variety of mechanical elements. Pre-requisite: EGR 330, 320, & 322.", "phy340": "Advanced Mechanics greatly expands the range of application of Newton's fundamental laws and reformulates them using the elegant Hamiltonian and Lagrangian descriptions. The course provides a modern treatment of rigid-body motion, oscillating systems, continuum mechanics, nonlinear dynamics and chaos. The laboratory section emphasizes computer modeling techniques that complement traditional analytic problem solving methods.", "phy350": "A treatment of topics in electricity and magnetism with emphasis on the fields produced by static charges and steady currents. Topics include relevant mathematical prerequisite material, electric fields and dielectrics, magnetic fields and magnetic materials, scalar and vector potentials, and Maxwell's equations.", "phy380": "A laboratory-intensive study of light, our various descriptions of it, and its interaction with matter. Topics include electromagnetic theory, propagation, imaging, polarization, interference, and diffraction.", "ens240": "An overview of conventional and alternative sources of energy for production of electricity and transportation fuels. This course focuses on understanding the technical principles of energy generation from fossil fuels as well as biomass, hydroelectric, nuclear, solar, and wind power technologies. Fossil fuel alternatives will be evaluated on efficiency, scalability, and life-cycle costs while considering the environmental, economic, and societal consequences of each.", "ens290": "This course explores exciting topics in geology that impact humans, such as natural hazards (earthquakes, volcanoes, floods), resource extraction (mining, fossil fuels, groundwater pumping), and pollution (climate change, water quality). Pervasive threads in this course include environmental racism and inequities, science communication, and risk perception", "phy210": "A calculus-based study of the mechanics of particles, rigid bodies, simple harmonic motion, wave motion, sound, and fluids. Laboratory work is required.", "phy230": "A calculus-based study of electricity, magnetism, and geometrical and physical optics. Laboratory work is required.", "mat165": "An introduction to mathematical modeling and differential and integral calculus with an emphasis placed on scientific computing and real-world applications. Topics include: functions as models of data, rates of change and accumulation, differential calculus of functions of one and several variables, optimization, linear approximation, gradients, Lagrange multipliers, integration, and numerical methods. Applications are selected from various areas such as biology, chemistry, economics, physics, and engineering, with computational tools used throughout.", "mat185": "A study of integral and differential calculus of several variables, including numerical methods. This course focuses on developing the computational tools, techniques, and theory of multivariable calculus to solve problems in mathematical, natural, and social sciences. Topics include: differential equations, integration techniques, partial derivatives, gradients, contour plots, constrained and unconstrained optimization, sequences and series, Taylor Series, optimization of multivariable functions, multiple integration, and limits.", "mat235": "A study of the calculus of multivariate functions, vector-valued functions, and vector fields. This course also introduces the underlying theory behind the central ideas of calculus such as limits, derivatives and integrals. Topics include: vector operations, calculus of vector-valued functions; parameterizations and integration over regions, curves, and surfaces; the fundamental theorems of vector calculus; and the mathematical definitions of the limit, derivative, and integral.", "mat360": "Differential equations are used to mathematically model many physical and social phenomena. This course discusses techniques to gain information about the solution of linear, nonlinear, and systems of differential equations using analytical, numerical, and graphical methods.", "che131": "An introduction to modern ideas of atomic and molecular structure. Topics studied include stoichiometry, gas laws, electronic and nuclear structure of the atom, chemical bonding and molecular structure, and periodic properties of the elements. Laboratory work is required.", "che135": "An accelerated coverage of general chemistry for students with strong high school chemistry preparation. Many topics, such as stoichiometry and gas laws, are only briefly reviewed. Topics treated in more detail include atomic and molecular theory, chemical bonding theories, kinetics, equilibrium processes, acids and bases, and chemical thermodynamics. Laboratory work is required. Students who complete CHE 135 may not register for CHE 131 or CHE 132; students who complete CHE 131 or CHE 132 may not register for CHE 135.", "mat240": "The abstract study of systems of linear equations: the determination of whether a system has no, one, or infinitely many solutions and the techniques for obtaining such solutions. The topics include the algebra of matrices, Gaussian elimination, vector spaces, spanning, linear independence, basis, dimension, inner products, Gram-Schmidt orthogonalization, determinants, linear transformations and their matrix representations, eigenvalues and eigenvectors.", "phy325": "An introduction to advanced physics experimental skills including project design, technical writing, visual display of quantitative information, error analysis, and other laboratory skills. Prerequisite: PHY 310 or permission of the instructor."};
+  COURSES.forEach(function(c){if(DESC[c[0]])c[7]=DESC[c[0]].replace(/\s*(Pre-?requisites?|Co-requisites?)\s*:.*$/i,'');});
+  var byId={};
+  COURSES.forEach(function(c){byId[c[0]]={id:c[0],code:c[1],title:c[2],cr:c[3],kind:c[4],col:c[5],row:c[6],about:c[7],pre:c[8],url:c[9],off:c[10]||'',inE:[],outE:[]};});
+  LINKS.forEach(function(l){byId[l[0]].outE.push({id:l[1],t:l[2]});byId[l[1]].inE.push({id:l[0],t:l[2]});});
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+
+  /* ---------- layout ---------- */
+  var LW=132, CW=152, CG=66, RH=58, RG=26, TOP=14, NR=14;
+  var fc=document.getElementById('fc'), svg=document.getElementById('edges');
+  var W=LW+6*CW+5*CG+24, H=TOP+NR*RH+(NR-1)*RG+16;
+  fc.style.width=W+'px';fc.style.height=H+'px';svg.setAttribute('width',W);svg.setAttribute('height',H);
+  function x(c){return LW+c*(CW+CG)}
+  function y(r){return TOP+r*(RH+RG)}
+  var chrome='',r0=0;
+  LANES.forEach(function(l,i){
+    var top=y(r0)-RG/2, h=l[1]*(RH+RG);
+    chrome+='<div class="lane'+(i%2?' alt':'')+'" style="top:'+top+'px;height:'+h+'px"></div><div class="lanel" style="top:'+top+'px;height:'+h+'px;width:'+(LW-10)+'px">'+esc(l[0])+'</div>';
+    r0+=l[1];
+  });
+  fc.insertAdjacentHTML('afterbegin',chrome);
+
+  var nodes={};
+  COURSES.forEach(function(c){
+    var o=byId[c[0]], opt=['core','des','tech'].indexOf(o.kind)>-1;
+    var b=document.createElement('button');
+    b.type='button';b.className='node '+(opt?'opt '+o.kind:o.kind);
+    b.style.cssText='left:'+x(o.col)+'px;top:'+y(o.row)+'px;width:'+CW+'px;height:'+RH+'px';
+    b.innerHTML=(opt?'<span class="g">'+({core:'Core',des:'Design',tech:'Tech'})[o.kind]+'</span>':'')+'<span class="c'+(o.code.length>9?' sm':'')+'">'+o.code+'</span><span class="t">'+esc(o.title)+'</span><span class="ck" aria-hidden="true">✓</span>';
+    b.setAttribute('aria-label',o.code+', '+o.title+'. '+KIND[o.kind]+'. Show details.');
+    b.dataset.id=o.id;fc.appendChild(b);nodes[o.id]=b;
+  });
+
+  function rounded(pts,r){
+    var d='M'+pts[0][0]+','+pts[0][1];
+    for(var i=1;i<pts.length-1;i++){
+      var p0=pts[i-1],p1=pts[i],p2=pts[i+1];
+      var d1=Math.hypot(p1[0]-p0[0],p1[1]-p0[1]),d2=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]);
+      var rr=Math.min(r,d1/2,d2/2);
+      if(rr<1){d+=' L'+p1[0]+','+p1[1];continue;}
+      var a=[p1[0]+(p0[0]-p1[0])*rr/d1,p1[1]+(p0[1]-p1[1])*rr/d1],bb=[p1[0]+(p2[0]-p1[0])*rr/d2,p1[1]+(p2[1]-p1[1])*rr/d2];
+      d+=' L'+a[0]+','+a[1]+' Q'+p1[0]+','+p1[1]+' '+bb[0]+','+bb[1];
+    }
+    var e=pts[pts.length-1];return d+' L'+e[0]+','+e[1];
+  }
+  var edges=[];
+  LINKS.forEach(function(l,i){
+    var a=byId[l[0]],b=byId[l[1]],d;
+    var off=((i*7)%5-2)*4;
+    var sx=x(a.col)+CW, sy=y(a.row)+RH/2, tx=x(b.col)-4, ty=y(b.row)+RH/2;
+    if(a.col===b.col){ // same column: loop out through the right-hand gap
+      var gx=x(a.col)+CW+CG/2+off;
+      d=rounded([[sx,sy],[gx,sy],[gx,ty],[x(b.col)+CW+2,ty]],8);
+    }else if(b.col-a.col===1){
+      var dx=(tx-sx)*.55;
+      d='M'+sx+','+sy+' C'+(sx+dx)+','+sy+' '+(tx-dx)+','+ty+' '+tx+','+ty;
+    }else{ // skip columns: travel along the channel above the target row
+      var g1=x(a.col)+CW+CG/2+off, g2=x(b.col)-CG/2+off, ch=y(b.row)-RG/2+off/2;
+      if(a.row===b.row&&!blocked(a,b)){d='M'+sx+','+sy+' L'+tx+','+ty;}
+      else d=rounded([[sx,sy],[g1,sy],[g1,ch],[g2,ch],[g2,ty],[tx,ty]],8);
+    }
+    var p=document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('d',d);p.setAttribute('class',l[2]);
+    if(l[2]!=='co')p.setAttribute('marker-end','url(#ahS)');
+    p.dataset.a=a.id;p.dataset.b=b.id;svg.appendChild(p);edges.push(p);
+  });
+  function blocked(a,b){for(var k in byId){var o=byId[k];if(o.row===a.row&&o.col>a.col&&o.col<b.col)return true;}return false;}
+
+  /* ---------- path highlight ---------- */
+  function walk(id,dir,set){byId[id][dir].forEach(function(n){if(!set[n.id]){set[n.id]=1;walk(n.id,dir,set);}});return set;}
+  function focusOn(id){
+    var s={};s[id]=1;walk(id,'inE',s);walk(id,'outE',s);
+    fc.classList.add('focus');
+    Object.keys(nodes).forEach(function(k){nodes[k].classList.toggle('on',!!s[k]);nodes[k].classList.toggle('act',k===id);});
+    edges.forEach(function(p){p.classList.toggle('on',!!(s[p.dataset.a]&&s[p.dataset.b]));});
+  }
+  function clearFocus(){fc.classList.remove('focus');Object.keys(nodes).forEach(function(k){nodes[k].classList.remove('on','act')});edges.forEach(function(p){p.classList.remove('on')});}
+
+  /* ---------- tooltip ---------- */
+  var tip=document.getElementById('tip'),pinned=null,cur=null,hideT=null,lastTouch=0;
+  var canHover=window.matchMedia('(hover:hover)').matches;
+  function fill(o){
+    document.getElementById('tipKind').textContent=KIND[o.kind];
+    document.getElementById('tipCode').textContent=o.code;
+    document.getElementById('tipTitle').textContent=o.title;
+    document.getElementById('tipMeta').innerHTML='<dt>Credits</dt><dd>'+esc(o.cr)+'</dd>'+(o.off?'<dt>Offered</dt><dd>'+o.off+'</dd>':'')+(state[o.id]||(o.id==='egr3xx'&&(state.egr3xa||state.egr3xb))?'<dt>Status</dt><dd>Marked complete ✓</dd>':'');
+    document.getElementById('tipAbout').innerHTML='<b class="tip-lbl">'+(DESC[o.id]?'Catalog description':'About')+'</b>'+esc(o.about);
+    var leads=o.outE.map(function(n){return byId[n.id].code+(n.t==='co'?' (as co-requisite)':'')}).join(', ');
+    document.getElementById('tipRel').innerHTML='<dl><dt>Prerequisite</dt><dd>'+esc(o.pre)+'</dd>'+(leads?'<dt>Leads to</dt><dd>'+leads+'</dd>':'')+'</dl>';
+    document.getElementById('tipLinks').innerHTML='<a class="btn solid" href="'+o.url+'" target="_blank" rel="noopener">More details ↗</a><p class="tip-hint">Click the course to pin this card.</p>';
+  }
+  function place(b){
+    if(window.innerWidth<=640){tip.style.left='';tip.style.top='';return;}
+    var r=b.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight,m=12;
+    var left=r.right+m;if(left+tw>window.innerWidth-8)left=r.left-tw-m;
+    var top=r.top+r.height/2-th/2;top=Math.max(84,Math.min(window.innerHeight-th-8,top));
+    if(left<8){left=Math.max(8,Math.min(window.innerWidth-tw-8,r.left));top=r.bottom+m;if(top+th>window.innerHeight-8)top=Math.max(84,r.top-th-m);}
+    tip.style.left=left+'px';tip.style.top=top+'px';
+  }
+  function openTip(id,pin){clearTimeout(hideT);cur=id;fill(byId[id]);tip.hidden=false;tip.classList.toggle('pinned',!!pin);place(nodes[id]);focusOn(id);}
+  function hideTip(force){if(pinned&&!force)return;pinned=null;cur=null;tip.hidden=true;tip.classList.remove('pinned');clearFocus();}
+  function schedHide(){clearTimeout(hideT);hideT=setTimeout(function(){if(!pinned)hideTip();else openTip(pinned,true);},160);}
+  Object.keys(nodes).forEach(function(id){
+    var b=nodes[id];
+    b.addEventListener('mouseenter',function(){if(canHover&&!pinned)openTip(id,false)});
+    b.addEventListener('mouseleave',function(){if(canHover)schedHide()});
+    b.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')lastTouch=Date.now()});
+    b.addEventListener('focus',function(){if(!pinned&&Date.now()-lastTouch>800)openTip(id,false)});
+    b.addEventListener('blur',function(){if(!pinned)schedHide()});
+    b.addEventListener('click',function(e){e.stopPropagation();if(pinned===id){hideTip(true);return;}pinned=id;openTip(id,true);});
+  });
+  tip.addEventListener('mouseenter',function(){clearTimeout(hideT)});
+  tip.addEventListener('mouseleave',function(){if(!pinned)schedHide()});
+  tip.addEventListener('focusin',function(){clearTimeout(hideT)});
+  tip.addEventListener('click',function(e){e.stopPropagation()});
+  document.getElementById('tipX').addEventListener('click',function(){var p=pinned;hideTip(true);if(p)nodes[p].focus({preventScroll:true});});
+  document.addEventListener('click',function(){if(pinned)hideTip(true)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!tip.hidden){var p=pinned||cur;hideTip(true);if(p)nodes[p].focus({preventScroll:true});}});
+  window.addEventListener('scroll',function(){if(!tip.hidden&&cur)place(nodes[cur])},{passive:true});
+  document.getElementById('fcScroll').addEventListener('scroll',function(){if(!tip.hidden&&cur)place(nodes[cur])},{passive:true});
+
+  /* ---------- filters ---------- */
+  var fb=[].slice.call(document.querySelectorAll('.fbtn'));
+  fb.forEach(function(btn){btn.addEventListener('click',function(){
+    var f=btn.dataset.f;
+    fb.forEach(function(q){var on=q===btn;q.classList.toggle('on',on);q.setAttribute('aria-pressed',on)});
+    hideTip(true);
+    Object.keys(nodes).forEach(function(k){var opt=['core','des','tech'].indexOf(byId[k].kind)>-1;var h=(f==='req'&&opt)||(f==='opt'&&!opt);nodes[k].classList.toggle('hide',h);nodes[k].tabIndex=h?-1:0;});
+    edges.forEach(function(p){p.classList.toggle('hide',nodes[p.dataset.a].classList.contains('hide')||nodes[p.dataset.b].classList.contains('hide'))});
+  })});
+
+  var sc=document.getElementById('fcScroll');
+  function fit(){var avail=sc.clientWidth;if(!avail)return;var s=(avail<W&&avail>=840)?avail/W:1;fc.style.transform=s<1?'scale('+s+')':'';sc.style.height=(H*s+10)+'px';}
+  window.addEventListener('resize',function(){fit();if(!tip.hidden&&cur)place(nodes[cur])});
+
+  /* ---------- requirement tables ---------- */
+  var GROUPS=[
+    {id:'egr',name:'Engineering courses',rule:'Take all 7',need:7,items:['egr110','egr210','egr215','egr220','egr330','egr450','egr452']},
+    {id:'ms',name:'Math & science',rule:'Take all 9',need:9,items:['mat165','mat185','mat235','mat240','mat360','phy210','phy230','phy325','che131','che135'],note:'CHE 131 or CHE 135 satisfies the chemistry requirement.'},
+    {id:'core',name:'Core electives',rule:'Take 2',need:2,items:['egr320','egr322','phy370','che361','phy300','egr374'],note:'PHY 370 and CHE 361 count as one option; you may not use both for this group.'},
+    {id:'des',name:'Design elective',rule:'Take 1',need:1,items:['egr442','egr444'],note:'Any EGR design course numbered 440–449 may fulfill this requirement. A co-requisite for EGR 450.'},
+    {id:'tech',name:'Technical electives',rule:'Take 4',need:4,items:['phy340','phy350','phy380','ens240','ens290','egr3xx'],note:'Any core elective not used for the core group may count here.'}
+  ];
+  var rt='';
+  GROUPS.forEach(function(g,gi){
+    rt+='<div class="sec'+(gi%2?' panel':'')+'"><div class="wrap split"><div class="l"><div class="stick"><p class="tag">'+g.rule+'</p><h2 class="d">'+esc(g.name)+'</h2>'+(g.note?'<p style="margin-top:1rem;font-size:1rem">'+esc(g.note)+'</p>':'')+'</div></div><div class="tbl-wrap reqt"><table><thead><tr><th>Course</th><th>Title</th><th class="c">Credits</th><th>Prerequisite</th></tr></thead><tbody>';
+    g.items.forEach(function(id){var o=byId[id];
+      if((id==='che135'&&g.id==='ms')||(id==='che361'&&g.id==='core'))rt+='<tr class="or"><td colspan="4">OR</td></tr>';
+      rt+='<tr><td><a href="'+o.url+'" target="_blank" rel="noopener">'+o.code+'</a></td><td>'+esc(o.title)+(o.off?' <span class="muted" style="font-size:.9rem">· '+o.off.toLowerCase()+'</span>':'')+'</td><td class="c">'+(/^\d/.test(o.cr)?o.cr.charAt(0):'—')+'</td><td class="pre">'+esc(o.pre)+'</td></tr>';});
+    rt+='</tbody></table></div></div></div>';
+  });
+  document.getElementById('reqTables').innerHTML=rt;
+
+  /* ---------- checklist ---------- */
+  var CL=[
+    {id:'egr',name:'Engineering courses',need:7,c:'var(--navy)',sub:'Take all seven.',items:['egr110','egr210','egr215','egr220','egr330','egr450','egr452']},
+    {id:'ms',name:'Math & science',need:9,c:'var(--teal)',sub:'Take all nine. CHE 131 or CHE 135 counts once.',items:['mat165','mat185','mat235','mat240','mat360','phy210','phy230','phy325','che131','che135']},
+    {id:'core',name:'Core electives',need:2,c:'var(--navy)',sub:'Choose two. PHY 370 and CHE 361 count as one option.',items:['egr320','egr322','phy370','che361','phy300','egr374']},
+    {id:'des',name:'Design elective',need:1,c:'var(--gold-deep)',sub:'Choose one, EGR 440–449.',items:['egr442','egr444',['egr44x','EGR 44x','Other EGR design course (440–449)']]},
+    {id:'tech',name:'Technical electives',need:4,c:'var(--teal)',sub:'Choose four. Unused core electives count automatically.',items:['phy340','phy350','phy380','ens240','ens290',['egr3xa','EGR 3xx+','Additional EGR course, 300+'],['egr3xb','EGR 3xx+','Another EGR course, 300+']]}
+  ];
+  var KEY='centre-egr-flowchart-checklist-v1',state={};
+  try{var raw=localStorage.getItem(KEY);if(raw)state=JSON.parse(raw)||{};}catch(e){state={};}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+  var gh='';
+  CL.forEach(function(g){
+    gh+='<div class="cgroup" style="--c:'+g.c+'"><header><h3 class="d">'+esc(g.name)+'</h3></header><p class="sub">'+esc(g.sub)+'</p>';
+    g.items.forEach(function(it){
+      var id,code,title,extra='';
+      if(typeof it==='string'){id=it;code=byId[it].code;title=byId[it].title;}else{id=it[0];code=it[1];title=it[2];extra='<input type="text" data-n="'+id+'" placeholder="Course number" aria-label="Course number for '+esc(title)+'" value="'+esc(state[id+'_n']||'')+'">';}
+      gh+='<label><input type="checkbox" data-k="'+id+'"'+(state[id]?' checked':'')+'><span><b>'+code+'</b> '+esc(title)+extra+'</span></label>';
+    });
+    gh+='</div>';
+  });
+  var grid=document.getElementById('checkgrid');grid.innerHTML=gh;
+  grid.addEventListener('change',function(e){var k=e.target.getAttribute('data-k');if(k){if(e.target.checked)state[k]=1;else delete state[k];save();updateMeter();paintDone();if(!rep.hidden)run(false);}});
+  grid.addEventListener('input',function(e){var n=e.target.getAttribute('data-n');if(n){state[n+'_n']=e.target.value;save();}});
+  grid.addEventListener('click',function(e){if(e.target.tagName==='INPUT'&&e.target.type==='text')e.preventDefault&&0;});
+
+  function has(k){return !!state[k]}
+  function evaluate(){
+    var r={};
+    r.egr=CL[0].items.filter(has);
+    var ms=['mat165','mat185','mat235','mat240','mat360','phy210','phy230','phy325'].filter(has);
+    var chem=has('che131')||has('che135');
+    r.msCount=ms.length+(chem?1:0);r.ms=ms;r.chem=chem;
+    // core options
+    var coreOpts=[];
+    ['egr320','egr322','phy300','egr374'].forEach(function(k){if(has(k))coreOpts.push({k:k,label:byId[k].code});});
+    var thermo=['phy370','che361'].filter(has);
+    if(thermo.length)coreOpts.push({k:thermo[0],label:byId[thermo[0]].code});
+    var coreUsed=coreOpts.slice(0,2), coreLeft=coreOpts.slice(2);
+    if(thermo.length>1)coreLeft.push({k:thermo[1],label:byId[thermo[1]].code,flag:true});
+    r.coreUsed=coreUsed;
+    var des=['egr442','egr444','egr44x'].filter(has);
+    r.desUsed=des.slice(0,1);
+    var tech=['phy340','phy350','phy380','ens240','ens290','egr3xa','egr3xb'].filter(has).map(function(k){return {k:k,label:k.indexOf('egr3x')===0?(state[k+'_n']||'EGR 300+'):byId[k].code}});
+    coreLeft.forEach(function(c){tech.push({k:c.k,label:c.label+' (unused core)',flag:c.flag});});
+    des.slice(1).forEach(function(k){tech.push({k:k,label:(k==='egr44x'?(state.egr44x_n||'EGR 44x'):byId[k].code)+' (extra design, counts as EGR 300+)'});});
+    r.techUsed=tech.slice(0,4);r.techAll=tech;
+    r.total=Math.min(r.egr.length,7)+Math.min(r.msCount,9)+coreUsed.length+r.desUsed.length+r.techUsed.length;
+    return r;
+  }
+  function updateMeter(){
+    var r=evaluate();
+    document.getElementById('overall').textContent=r.total===23?'All 23 courses complete':r.total+' of 23 courses';
+    var circ=2*Math.PI*50;document.getElementById('meterArc').setAttribute('stroke-dasharray',(circ*r.total/23)+' '+circ);
+  }
+  function paintDone(){
+    Object.keys(nodes).forEach(function(k){var d=k==='egr3xx'?(has('egr3xa')||has('egr3xb')):has(k);nodes[k].classList.toggle('done',d);});
+  }
+
+  // prerequisites within the major, from the catalog (alternatives outside the major are noted)
+  var PRE={egr210:[['egr110','mat165']],egr220:[['phy210']],egr320:[['egr220']],egr322:[['egr220']],egr330:[['egr220']],egr374:[['mat360']],egr442:[['egr320']],egr444:[['egr330','egr320','egr322']],egr452:[['egr450']],
+    mat185:[['mat165'],'or placement'],mat235:[['mat185'],'or placement'],mat240:[['mat185']],mat360:[['mat235'],'or MAT 230'],
+    phy210:[['mat165'],'or MAT 170 or instructor permission'],phy230:[['phy210','mat185'],'or MAT 171 or instructor permission'],phy300:[['phy230'],'or instructor permission'],
+    phy325:[['phy230','mat235'],'or instructor permission'],phy340:[['phy230','mat360'],'or instructor permission'],phy350:[['phy230','mat360'],'or instructor permission'],phy370:[['phy230'],'or instructor permission'],phy380:[['phy350']],
+    che361:[['che135','phy210'],'CHE 132 can replace CHE 135; MAT 171 is also required']};
+  var CO={phy325:'mat360',phy370:'mat360'};
+  function link(id,label){var o=byId[id];return '<a href="'+o.url+'" target="_blank" rel="noopener">'+(label||o.code)+'</a>';}
+
+  var rep=document.getElementById('report');
+  function run(scroll){
+    var r=evaluate(),html='',warn=[];
+    var groupsOk=[r.egr.length>=7,r.msCount>=9,r.coreUsed.length>=2,r.desUsed.length>=1,r.techUsed.length>=4];
+    var all=groupsOk.every(Boolean);
+    html+='<p class="tag">Check result</p><p class="verdict">'+(all?'All major requirements met':(23-r.total)+' course'+(23-r.total===1?'':'s')+' to go')+'</p>';
+    html+='<p style="margin:0">'+(all?'Your checklist shows every requirement for the Engineering major. Confirm with your advisor and the registrar\u2019s degree audit.':'You have '+r.total+' of the 23 courses the major requires. Here\u2019s what\u2019s left, group by group.')+'</p>';
+    // groups
+    function row(ok,name,n,need,body){return '<div class="rg'+(ok?' ok':'')+'"><span class="st" aria-hidden="true">'+(ok?'✓':'')+'</span><div><h4>'+name+'</h4>'+body+'</div><span class="n">'+Math.min(n,need)+' / '+need+'</span></div>';}
+    function missingChips(ids){return '<ul class="chips">'+ids.map(function(id){return '<li>'+link(id)+'</li>'}).join('')+'</ul>';}
+    html+='<h3 class="d">Requirement groups</h3><div class="rgroups">';
+    var egrMiss=CL[0].items.filter(function(k){return !has(k)});
+    html+=row(groupsOk[0],'Engineering courses',r.egr.length,7,egrMiss.length?'<p>Still needed:</p>'+missingChips(egrMiss):'<p>Complete.</p>');
+    var msMiss=['mat165','mat185','mat235','mat240','mat360','phy210','phy230','phy325'].filter(function(k){return !has(k)});
+    var msBody=msMiss.length||!r.chem?'<p>Still needed:</p><ul class="chips">'+msMiss.map(function(id){return '<li>'+link(id)+'</li>'}).join('')+(r.chem?'':'<li>'+link('che131')+'</li><li><span>or</span></li><li>'+link('che135')+'</li>')+'</ul>':'<p>Complete.</p>';
+    html+=row(groupsOk[1],'Math & science',r.msCount,9,msBody);
+    var coreBody=r.coreUsed.length?'<p>Counting: '+r.coreUsed.map(function(c){return c.label}).join(', ')+'.</p>':'';
+    if(!groupsOk[2]){var opts=['egr320','egr322','phy300','egr374'].filter(function(k){return !has(k)});if(!has('phy370')&&!has('che361'))opts.push('phy370','che361');coreBody+='<p>Choose '+(2-r.coreUsed.length)+' more from:</p>'+missingChips(opts);}
+    html+=row(groupsOk[2],'Core electives',r.coreUsed.length,2,coreBody||'<p>Complete.</p>');
+    var desBody=r.desUsed.length?'<p>Counting: '+(r.desUsed[0]==='egr44x'?(state.egr44x_n||'EGR 44x'):byId[r.desUsed[0]].code)+'.</p>':'<p>Choose one:</p>'+missingChips(['egr442','egr444'])+'<p style="font-size:.92rem" class="muted">Or another EGR design course numbered 440–449.</p>';
+    html+=row(groupsOk[3],'Design elective',r.desUsed.length,1,desBody);
+    var techBody=r.techUsed.length?'<p>Counting: '+r.techUsed.map(function(t){return esc(t.label)}).join(', ')+'.</p>':'';
+    if(!groupsOk[4]){var topts=['phy340','phy350','phy380','ens240','ens290'].filter(function(k){return !has(k)});techBody+='<p>Choose '+(4-r.techUsed.length)+' more from:</p>'+missingChips(topts)+'<p style="font-size:.92rem" class="muted">Or any additional EGR course numbered 300 or higher, or a core elective you didn\u2019t use above.</p>';}
+    html+=row(groupsOk[4],'Technical electives',r.techUsed.length,4,techBody||'<p>Complete.</p>');
+    html+='</div>';
+    // warnings
+    Object.keys(PRE).forEach(function(id){
+      if(!has(id))return;var miss=PRE[id][0].filter(function(p){return !has(p)});
+      if(miss.length)warn.push('You marked <b>'+byId[id].code+'</b>, but not its prerequisite '+miss.map(function(m){return byId[m].code}).join(' and ')+'.'+(PRE[id][1]?' The catalog also allows: '+PRE[id][1]+'.':'')+' If this was covered another way, you can ignore this note.');
+    });
+    if(has('egr450')&&!r.desUsed.length)warn.push('<b>EGR 450</b> requires a design elective (EGR 440–449) as a co-requisite. Add the design elective you took or plan to take with it.');
+    if(has('che131')&&has('che135'))warn.push('You marked both <b>CHE 131</b> and <b>CHE 135</b>. The catalog says students who complete one may not register for the other. Only one counts.');
+    if(has('phy370')&&has('che361'))warn.push('You marked both <b>PHY 370</b> and <b>CHE 361</b>. Only one can count as a core elective; the other is counted here as a technical elective. Confirm this with your advisor.');
+    if(r.techAll.length>4||r.coreUsed.length>2){}
+    html+='<h3 class="d">Things to check</h3>'+(warn.length?'<ul class="warn">'+warn.map(function(w){return '<li>'+w+'</li>'}).join('')+'</ul>':'<p>No prerequisite or rule conflicts found in what you marked.</p>');
+    // next courses
+    if(!all){
+      var need={egr:!groupsOk[0],ms:!groupsOk[1],core:!groupsOk[2],des:!groupsOk[3],tech:!groupsOk[4]};
+      var next=[];
+      COURSES.forEach(function(c){
+        var id=c[0],k=c[4];if(id==='egr3xx'||has(id))return;
+        if(id==='che131'||id==='che135'){if(r.chem)return;}
+        if(id==='phy370'&&has('che361'))return; if(id==='che361'&&has('phy370'))return;
+        var relevant=(k==='egr'||k==='cap')?need.egr:k==='ms'?need.ms:k==='core'?(need.core||need.tech):k==='des'?need.des:need.tech;
+        if(!relevant)return;
+        var p=PRE[id];if(p&&p[0].some(function(q){return !has(q)}))return;
+        var note='';
+        if(id==='egr450'&&!r.desUsed.length)note=' + design elective';
+        if(CO[id]&&!has(CO[id]))note=' with MAT 360';
+        next.push('<li>'+link(id,byId[id].code+note)+'</li>');
+      });
+      html+='<h3 class="d">You can take next</h3><p style="margin:0 0 .3rem">Based on the prerequisites you\u2019ve completed. Check each term\u2019s schedule; some courses are offered only in alternate years.</p>'+(next.length?'<ul class="chips next">'+next.join('')+'</ul>':'<p>Nothing new opens yet. Start with the courses listed above.</p>');
+    }
+    html+='<p class="muted" style="font-size:.9rem;margin-top:1.4rem">This check is a planning aid based on the 2026–2027 catalog. Your official degree audit and your advisor have the final word.</p>';
+    rep.innerHTML=html;rep.hidden=false;
+    if(scroll){rep.scrollIntoView({behavior:'smooth',block:'start'});rep.focus({preventScroll:true});}
+  }
+  document.getElementById('runBtn').addEventListener('click',function(){run(true)});
+  document.getElementById('runBtn2').addEventListener('click',function(){run(true)});
+  document.getElementById('printBtn').addEventListener('click',function(){window.print()});
+  document.getElementById('resetBtn').addEventListener('click',function(){
+    if(!confirm('Clear every checked course?'))return;
+    state={};save();grid.querySelectorAll('input[type=checkbox]').forEach(function(i){i.checked=false});grid.querySelectorAll('input[type=text]').forEach(function(i){i.value=''});
+    rep.hidden=true;updateMeter();paintDone();
+  });
+  updateMeter();paintDone();
+
+  window.addEventListener('hashchange',function(){show(false)});
+  show(true);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Admin | Computer Requirements for Engineering Program</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow+Semi+Condensed:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#FFCD00; --gold-deep:#C69214; --black:#000; --white:#fff;
+  --navy:#2F3351; --teal:#115E67; --mist:#C6DAE7; --stone:#D9D9D6; --crimson:#9E1B32;
+  --bg:#fff; --fg:#000; --muted:#4a4f57; --rule:#000; --panel:#f3f4f2; --card:#fff; --line:#cfd1cc;
+  --ok:#115E67; --ok-fg:#fff; --bad:#9E1B32; --bad-fg:#fff;
+  --display:"Barlow Condensed","Arial Narrow","Helvetica Neue Condensed",Impact,sans-serif;
+  --tag:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
+  --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#000;--fg:#fff;--muted:#b9bcc2;--rule:#fff;--panel:#16181c;--card:#0d0e10;--line:#3a3d44;--ok:#6BBBAE;--ok-fg:#000;--bad:#F28B9C;--bad-fg:#000}
+}
+:root[data-theme="dark"]{--bg:#000;--fg:#fff;--muted:#b9bcc2;--rule:#fff;--panel:#16181c;--card:#0d0e10;--line:#3a3d44;--ok:#6BBBAE;--ok-fg:#000;--bad:#F28B9C;--bad-fg:#000}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em;background:var(--panel);padding:.08rem .35rem;border:1px solid var(--line)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:#000;padding:.6rem 1rem;z-index:99;font-family:var(--tag);font-weight:600}
+.skip:focus{left:1rem}
+
+/* Top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--gold);color:#000;border-bottom:1px solid #000}
+.bar .wrap{display:flex;align-items:center;gap:1.25rem;min-height:72px}
+.brand{display:flex;align-items:center;gap:.9rem;text-decoration:none;flex-shrink:0}
+.brand img{height:38px;width:auto}
+.brand .prog{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;border-left:1.5px solid #000;padding-left:.9rem;line-height:1}
+.nav{margin-left:auto;display:flex;gap:.1rem;flex-wrap:wrap}
+.nav a{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;text-decoration:none;padding:.5rem .6rem;border-bottom:3px solid transparent}
+.nav a:hover,.nav a[aria-current="page"]{border-bottom-color:#000}
+.nav a.ext{border:1.5px solid #000;margin-left:.4rem;padding:.4rem .6rem}
+.nav a.ext:hover{background:#000;color:var(--gold)}
+.menu-btn{display:none;margin-left:auto;background:#000;color:var(--gold);border:0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.55rem .9rem;font-size:1rem;cursor:pointer}
+@media (max-width:1240px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--gold);flex-direction:column;padding:.5rem clamp(1.1rem,4vw,2.5rem) 1rem;border-bottom:1px solid #000}
+  .nav.open{display:flex}
+  .nav a{font-size:1.25rem;padding:.55rem 0;border-bottom:1px dotted #000}
+  .nav a[aria-current="page"]{border-bottom:1px solid #000;padding-left:.6rem;border-left:6px solid #000}
+  .nav a.ext{margin:.6rem 0 0;padding:.55rem .6rem;align-self:flex-start}
+}
+@media (max-width:520px){.brand .prog{display:none}}
+
+/* Type */
+.d{font-family:var(--display);text-transform:uppercase;font-weight:800;line-height:.92;letter-spacing:.005em;margin:0}
+h2.d{font-size:clamp(2.2rem,4.6vw,3.4rem)}
+h3.d{font-size:1.55rem;font-weight:700;line-height:1;margin:0 0 .5rem}
+h4{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.03em;font-size:1.2rem;margin:0 0 .35rem;line-height:1.05}
+.tag{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem;color:var(--gold-deep);margin:0 0 .6rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag{color:var(--gold)}}
+:root[data-theme="dark"] .tag{color:var(--gold)}
+.lede{font-size:1.28rem;line-height:1.55;max-width:38em}
+p{margin:0 0 1rem;max-width:40em}
+.muted{color:var(--muted)}
+.small{font-size:.95rem}
+ul.dash{list-style:none;padding:0;margin:0 0 1rem}
+ul.dash li{padding:.55rem 0 .55rem 1.4rem;border-bottom:1px dotted var(--line);position:relative;max-width:44em}
+ul.dash li::before{content:"";position:absolute;left:0;top:1.15rem;width:.55rem;height:.55rem;border-radius:50%;background:var(--gold)}
+
+/* Pages */
+.page{display:none}
+.page.on{display:block}
+.head{background:#000;color:#fff;padding:clamp(3rem,7vw,5.5rem) 0 clamp(2.5rem,6vw,4.5rem)}
+.head .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(1.5rem,4vw,4rem);align-items:end}
+.head h1{font-size:clamp(2.8rem,6.6vw,5.6rem);color:#fff}
+#h-req{font-size:clamp(2.3rem,5vw,4.4rem)}
+.head .aside{border-left:1.5px dotted var(--gold);padding-left:clamp(1rem,2.5vw,2rem)}
+.head .aside .tag{color:var(--gold)}
+.head .aside p{color:#e8e8e6}
+@media (max-width:800px){.head .wrap{grid-template-columns:1fr}}
+.sec{padding:clamp(2.8rem,6vw,4.8rem) 0;border-bottom:1px solid var(--line)}
+.sec:last-child{border-bottom:0}
+.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(1.5rem,4vw,4rem)}
+.split > .l .stick{position:sticky;top:110px}
+@media (max-width:800px){.split{grid-template-columns:1fr}.split > .l .stick{position:static}}
+.panel{background:var(--panel)}
+
+/* Hero with live readout */
+.hero{background:#000;color:#fff}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2rem,5vw,4rem);align-items:center;padding-top:clamp(3rem,7vw,5.5rem);padding-bottom:clamp(3rem,7vw,5.5rem)}
+.hero h1{font-size:clamp(3.2rem,8.6vw,7rem);color:var(--gold)}
+.hero .lede{color:#e9e9e7;margin-top:1.4rem}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem;text-decoration:none;padding:.8rem 1.25rem;border:2px solid currentColor;background:transparent;color:inherit;cursor:pointer;line-height:1}
+.btn.solid{background:var(--gold);border-color:var(--gold);color:#000}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#000}
+.btn.solid:hover{background:#fff;border-color:#fff}
+.btn.ink{border-color:var(--fg)}
+.btn.ink:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn.ink.fill{background:var(--fg);color:var(--bg)}
+.btn.ink.fill:hover{background:var(--gold);border-color:var(--gold);color:#000}
+.btn[disabled]{opacity:.55;cursor:progress}
+
+.readout{border:2px solid var(--gold);padding:1.1rem 1.25rem 1.2rem;position:relative}
+.readout .rh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid var(--gold);padding-bottom:.55rem;margin-bottom:.35rem}
+.readout .rh b{font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:1.5rem;letter-spacing:.02em;color:var(--gold)}
+.readout .rh span{font-family:var(--tag);font-size:.95rem;color:#bdbdbd}
+.readout ol{list-style:none;margin:0;padding:0}
+.readout li{display:grid;grid-template-columns:12px minmax(0,9.5rem) minmax(0,1fr);gap:.7rem;align-items:baseline;padding:.42rem 0;border-bottom:1px dotted #3c3c3c;font-family:var(--tag);font-size:1rem}
+.readout li:last-child{border-bottom:0}
+.readout li i{width:10px;height:10px;border-radius:50%;border:1.5px solid #777;display:block;transform:translateY(1px)}
+.readout li .k{color:#bdbdbd}
+.readout li .v{color:#fff;overflow-wrap:anywhere}
+.readout li.done i{background:var(--gold);border-color:var(--gold)}
+.readout li.warn i{background:transparent;border-color:var(--gold)}
+.readout li.run i{border-color:var(--gold)}
+@media (prefers-reduced-motion:no-preference){
+  .readout li.run i{animation:blink .7s steps(2) infinite}
+  .readout li.done .v,.readout li.warn .v{animation:inV .35s ease-out both}
+}
+@keyframes blink{50%{background:var(--gold)}}
+@keyframes inV{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+
+/* OS picker */
+.ospick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:2px solid var(--rule);margin:0 0 1.6rem}
+.ospick label{position:relative;cursor:pointer;padding:1.1rem 1.2rem 1.2rem;display:flex;flex-direction:column;gap:.2rem;border-right:2px solid var(--rule)}
+.ospick label:last-child{border-right:0}
+.ospick input{position:absolute;opacity:0;pointer-events:none}
+.ospick .n{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(1.45rem,2.7vw,2.3rem);line-height:.9}
+.ospick .s{font-size:.95rem;color:var(--muted)}
+.ospick .det{font-family:var(--tag);font-size:.9rem;font-weight:600;margin-top:.35rem;visibility:hidden}
+.ospick label.detected .det{visibility:visible}
+.ospick label:has(input:checked){background:var(--gold);color:#000}
+.ospick label:has(input:checked) .s{color:#000}
+.ospick label:has(input:focus-visible){outline:3px solid var(--gold);outline-offset:-6px}
+.ospick label:has(input:checked):has(input:focus-visible){outline-color:#000}
+@media (max-width:640px){.ospick{grid-template-columns:1fr}.ospick label{border-right:0;border-bottom:2px solid var(--rule)}.ospick label:last-child{border-bottom:0}}
+
+/* Form */
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem 1.6rem;border-top:2px solid var(--rule);padding-top:1.4rem}
+@media (max-width:700px){.fields{grid-template-columns:1fr}}
+.field label,.field .lab{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em;font-size:1rem;display:flex;justify-content:space-between;align-items:flex-end;gap:.6rem;margin-bottom:.3rem}
+.field .src{flex-shrink:0}
+.field .src{font-family:var(--tag);text-transform:none;letter-spacing:0;font-weight:600;font-size:.85rem;padding:.05rem .45rem;border:1.5px solid currentColor}
+.field .src.auto{background:var(--gold);color:#000;border-color:var(--gold)}
+.field .src.need{color:var(--muted)}
+.field .src.ver{background:var(--ok);color:var(--ok-fg);border-color:var(--ok)}
+.field .src.ver::before{content:"✓ "}
+ol.xsteps{list-style:none;counter-reset:x;margin:0 0 1.4rem;padding:0}
+ol.xsteps li{counter-increment:x;position:relative;padding:.6rem 0 .6rem 2.8rem;border-bottom:1px dotted var(--line);font-size:1.02rem;max-width:44em}
+ol.xsteps li::before{content:counter(x);position:absolute;left:0;top:.55rem;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--gold);color:#000;font-family:var(--display);font-weight:800;font-size:1.15rem;display:grid;place-items:center}
+ol.xsteps b{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-weight:700}
+kbd{font-family:var(--tag);font-weight:600;font-size:.85em;border:1.5px solid var(--fg);border-bottom-width:3px;padding:0 .35rem;white-space:nowrap}
+.cmd{border:2px solid var(--rule)}
+.cmdbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.55rem .6rem .55rem .9rem;border-bottom:2px solid var(--rule);flex-wrap:wrap}
+.cmdbar span{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em}
+.cmdbar .btn{font-size:.95rem;padding:.6rem .95rem}
+.cmd pre{margin:0;max-height:300px;overflow:auto;background:#000;color:#e8e8e6;padding:1rem 1.1rem;font-size:.78rem;line-height:1.5}
+.cmd pre code{background:none;border:0;padding:0;color:inherit;font-size:inherit;white-space:pre}
+.pastebox{margin-top:2rem;padding-top:1.4rem;border-top:2px solid var(--rule)}
+.pastebox label{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em;display:block;margin-bottom:.4rem}
+.pastebox textarea{width:100%;min-height:96px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;padding:.7rem .8rem;border:2px solid var(--fg);background:var(--bg);color:var(--fg);border-radius:0;resize:vertical}
+.pastebox .msg.ok{color:var(--ok);font-weight:600}
+.pastebox .msg.err{color:var(--bad);font-weight:600}
+.field select,.field input{width:100%;font:inherit;font-size:1rem;padding:.65rem .75rem;border:2px solid var(--fg);background:var(--bg);color:var(--fg);border-radius:0;appearance:none;-webkit-appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 18px) 55%,calc(100% - 12px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.2rem}
+.field .hint{font-size:.9rem;color:var(--muted);margin:.35rem 0 0;line-height:1.4}
+.field.hide{display:none}
+.form-actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-top:1.6rem}
+.form-actions .msg{font-size:.95rem;color:var(--muted)}
+
+/* Tables */
+.tbl-wrap{overflow-x:auto;border-top:2px solid var(--rule)}
+table{border-collapse:collapse;width:100%;font-size:1rem;min-width:620px}
+th,td{text-align:left;padding:.7rem .8rem .7rem 0;border-bottom:1px dotted var(--line);vertical-align:top}
+th{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:1rem}
+td .sub{display:block;font-size:.88rem;color:var(--muted);line-height:1.35;margin-top:.2rem}
+td.srcc{font-family:var(--tag);font-size:.92rem;color:var(--muted);white-space:nowrap}
+
+/* Status chips */
+.st{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:.9rem;padding:.18rem .55rem;white-space:nowrap;border:1.5px solid transparent;line-height:1.2}
+.st::before{font-family:var(--tag);font-weight:600}
+.st.rec{background:var(--ok);color:var(--ok-fg)}
+.st.rec::before{content:"✓"}
+.st.basic{background:var(--gold);color:#000}
+.st.basic::before{content:"–"}
+.st.below{background:var(--bad);color:var(--bad-fg)}
+.st.below::before{content:"✕"}
+.st.unsupported{background:var(--bad);color:var(--bad-fg)}
+.st.unsupported::before{content:"✕"}
+.st.unknown{border-color:var(--fg);color:var(--fg)}
+.st.unknown::before{content:"?"}
+
+/* Course picker */
+.courses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--rule)}
+.courses label{cursor:pointer;padding:1.1rem 1.2rem 1.2rem 0;border-bottom:1px dotted var(--line);display:flex;gap:.8rem;align-items:flex-start}
+.courses label + label{padding-left:1.2rem;border-left:1px dotted var(--line)}
+.courses input{width:20px;height:20px;accent-color:#000;margin-top:.3rem;flex-shrink:0}
+.courses .code{font-family:var(--display);font-weight:800;font-size:2rem;line-height:.9;display:block}
+.courses .t{font-size:.98rem;display:block;margin-top:.25rem}
+.courses .sw{font-family:var(--tag);font-size:.9rem;color:var(--muted);display:block;margin-top:.3rem}
+@media (max-width:1000px) and (min-width:801px){.courses{grid-template-columns:1fr 1fr}.courses label:nth-child(3){padding-left:0;border-left:0}}
+@media (max-width:800px){.courses{grid-template-columns:1fr}.courses label+label{padding-left:0;border-left:0}}
+.swpick{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0 0}
+.swpick label{display:inline-flex;gap:.55rem;align-items:center;border:2px solid var(--fg);padding:.55rem .9rem;cursor:pointer;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.swpick input{width:18px;height:18px;accent-color:#000}
+.swpick label:has(input:checked){background:var(--fg);color:var(--bg)}
+
+/* Results */
+.summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem 2rem;align-items:end;border:2px solid var(--rule);padding:1.4rem 1.5rem;margin-bottom:2rem}
+.summary .big{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(2.2rem,5vw,3.6rem);line-height:.9;margin:0 0 .5rem}
+.summary p{margin:0;font-size:1rem}
+.summary .facts{font-family:var(--tag);font-size:1rem;text-align:right;line-height:1.5}
+.summary.rec{border-left:14px solid var(--ok)}
+.summary.basic{border-left:14px solid var(--gold)}
+.summary.below,.summary.unsupported{border-left:14px solid var(--bad)}
+@media (max-width:640px){.summary{grid-template-columns:1fr}.summary .facts{text-align:left}}
+.swres{margin-bottom:2.6rem}
+.swres .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:.6rem 1.5rem;margin-bottom:.8rem}
+.swres h3{margin:0}
+.swres .ver{font-family:var(--tag);color:var(--muted);font-size:1rem}
+.verdict{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.35rem;padding:.35rem .8rem;letter-spacing:.02em}
+.verdict.rec{background:var(--ok);color:var(--ok-fg)}
+.verdict.basic{background:var(--gold);color:#000}
+.verdict.below,.verdict.unsupported{background:var(--bad);color:var(--bad-fg)}
+.fix{margin:.9rem 0 0;padding:0;list-style:none}
+.fix li{padding:.45rem 0 .45rem 1.4rem;position:relative;font-size:1rem;max-width:48em}
+.fix li::before{content:"";position:absolute;left:0;top:1rem;width:.6rem;height:2px;background:var(--fg)}
+.legend{font-family:var(--tag);font-size:.95rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;margin:.2rem 0 1.4rem}
+
+.note{font-size:.98rem;border-left:6px solid var(--gold);padding:.9rem 1.1rem;background:var(--panel);max-width:48em}
+.note b{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+.empty{border:2px dashed var(--line);padding:1.6rem;max-width:46em}
+.empty .d{font-size:1.8rem;margin-bottom:.5rem}
+
+/* Help tabs */
+.tabs{display:flex;border-bottom:2px solid var(--rule);margin-bottom:1.6rem;flex-wrap:wrap}
+.tabs button{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.5rem;letter-spacing:.02em;background:transparent;border:0;color:var(--fg);padding:.55rem 1.1rem .45rem;cursor:pointer;border-bottom:6px solid transparent;margin-bottom:-2px}
+.tabs button[aria-selected="true"]{border-bottom-color:var(--gold)}
+.howto{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem}
+.howto div{padding:1rem 0;border-bottom:1px dotted var(--line)}
+.howto p{font-size:1rem;margin:0}
+@media (max-width:700px){.howto{grid-template-columns:1fr}}
+
+/* Requirements reference */
+.req-sw{margin-bottom:3rem}
+.req-sw .top{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;align-items:baseline;margin-bottom:.8rem}
+.req-sw .top a{font-family:var(--tag);font-size:.95rem}
+.req td b{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-weight:700;font-size:.9rem;display:block;margin-top:.35rem;color:var(--muted)}
+.req td b:first-child{margin-top:0}
+.req td.na{color:var(--muted);font-style:italic}
+
+footer{background:#000;color:#fff;padding:3rem 0 2.2rem}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:end}
+footer img{width:150px}
+footer p{font-size:.95rem;color:#cfcfcf;margin:0}
+footer nav{display:flex;flex-direction:column;gap:.2rem;text-align:right}
+footer nav a{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.05em;text-decoration:none;color:#fff}
+footer nav a:hover{color:var(--gold)}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}footer nav{text-align:left}}
+.cmp td,.cmp th{vertical-align:middle}
+.cmp td .nm{font-family:var(--display);text-transform:uppercase;font-weight:700;font-size:1.1rem;letter-spacing:.02em;display:block}
+.cmp .lnk{background:none;border:0;padding:0;font:inherit;font-size:.92rem;text-decoration:underline;cursor:pointer;color:inherit;margin-right:.8rem}
+.cmp tr.best td:first-child{box-shadow:inset 6px 0 0 var(--gold);padding-left:.8rem}
+.shop td:first-child{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-weight:700;width:22%}
+.shop td b{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-weight:700;font-size:.9rem;color:var(--muted);display:block}
+.lookfor{margin:.9rem 0 0;padding:0;list-style:none}
+.lookfor li{padding:.45rem 0 .45rem 1.4rem;position:relative;font-size:1rem;max-width:48em}
+.lookfor li::before{content:"→";position:absolute;left:0;top:.45rem;font-family:var(--tag);font-weight:600}
+.databanner{background:var(--mist);color:#000;font-size:.98rem;padding:.7rem 0;border-bottom:1px solid #000}
+.databanner b{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em}
+.reqdates{width:100%;margin:.2rem 0 0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+textarea.copybox{width:100%;min-height:200px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;border:2px solid var(--fg);background:var(--bg);color:var(--fg);padding:.7rem;margin-top:1rem;display:none}
+
+@media print{
+  .bar,footer,.skip,.noprint,.hero .cta-row{display:none!important}
+  body{font-size:11pt;background:#fff;color:#000}
+  .hero,.head{background:#fff;color:#000;padding:1rem 0}
+  .hero h1,.head h1{color:#000;font-size:28pt}
+  .readout{border-color:#000}.readout li .v,.readout .rh b{color:#000}.readout li .k{color:#444}
+  .sec{padding:1rem 0}
+  .swres{break-inside:avoid}
+}
+
+.adm-tabs{display:flex;gap:0;border-bottom:2px solid var(--rule);margin:0 0 1.6rem;flex-wrap:wrap}
+.adm-tabs button{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.35rem;background:none;border:0;color:var(--fg);padding:.55rem 1rem .45rem;cursor:pointer;border-bottom:6px solid transparent;margin-bottom:-2px}
+.adm-tabs button[aria-selected="true"]{border-bottom-color:var(--gold)}
+.pill-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.4rem}
+.pill-row button{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;border:2px solid var(--fg);background:var(--bg);color:var(--fg);padding:.5rem .9rem;cursor:pointer}
+.pill-row button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.item{border:1px solid var(--line);background:var(--card);margin:0 0 1rem}
+.item .ih{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.6rem .9rem;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+.item .ih b{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.1rem}
+.item .ih .ty{font-family:var(--tag);font-size:.88rem;color:var(--muted);margin-left:.6rem}
+.item .ib{padding:.9rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem 1.2rem}
+.item .ib .wide{grid-column:1/-1}
+@media (max-width:700px){.item .ib{grid-template-columns:1fr}}
+.mini{font-family:var(--tag);font-weight:600;font-size:.9rem;background:none;border:1.5px solid var(--fg);color:var(--fg);padding:.25rem .6rem;cursor:pointer;margin-left:.3rem}
+.mini:hover{background:var(--fg);color:var(--bg)}
+.mini.danger{border-color:var(--bad);color:var(--bad)}
+.oslist td,.oslist th{padding:.35rem .6rem .35rem 0;font-size:.95rem}
+.oslist input[type=text]{width:100%;font:inherit;font-size:.92rem;padding:.35rem .5rem;border:1.5px solid var(--line);background:var(--bg);color:var(--fg)}
+.oslist input[type=checkbox]{width:18px;height:18px;accent-color:#000}
+.field textarea{width:100%;font:inherit;font-size:1rem;padding:.6rem .75rem;border:2px solid var(--fg);background:var(--bg);color:var(--fg);min-height:80px;border-radius:0;resize:vertical}
+.changed{display:inline-block;font-family:var(--tag);font-weight:600;font-size:.85rem;background:var(--gold);color:#000;padding:.05rem .45rem;margin-left:.5rem}
+.statusbar{position:sticky;bottom:0;z-index:40;background:#000;color:#fff;padding:.7rem 0;padding-bottom:calc(.7rem + env(safe-area-inset-bottom,0px))}
+.statusbar .wrap{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.statusbar .btn{font-size:.95rem;padding:.6rem .95rem}
+.log{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;background:var(--panel);border:1px solid var(--line);padding:.8rem;white-space:pre-wrap;max-height:260px;overflow:auto}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="brand" href="computer-requirements.html" aria-label="Back to the site"><img src="assets/logo.png" alt="Centre College"><span class="prog">Computer Requirements<br>Admin</span></a>
+  <nav class="nav" style="display:flex;position:static;flex-direction:row;background:none;border:0;padding:0"><a href="computer-requirements.html">View site</a></nav>
+</div></header>
+<main id="main">
+<div class="head"><div class="wrap">
+  <h1 class="d" tabindex="-1">Maintain<br>the site</h1>
+  <div class="aside"><p class="tag">For site maintainers</p><p class="lede">Edit software requirements and courses, mark requirements as checked, preview your changes, and save them to GitHub.</p></div>
+</div></div>
+<div class="sec"><div class="wrap">
+  <div class="adm-tabs" role="tablist">
+    <button role="tab" data-tab="status" aria-selected="true">Status</button>
+    <button role="tab" data-tab="software" aria-selected="false">Software</button>
+    <button role="tab" data-tab="courses" aria-selected="false">Courses</button>
+    <button role="tab" data-tab="publish" aria-selected="false">Save &amp; publish</button>
+  </div>
+  <div id="loadMsg" class="note" style="display:none"></div>
+  <section data-panel="status"></section>
+  <section data-panel="software" hidden></section>
+  <section data-panel="courses" hidden></section>
+  <section data-panel="publish" hidden></section>
+</div></div>
+</main>
+<div class="statusbar"><div class="wrap"><span id="dirty">No unsaved changes.</span><span><button class="btn solid" type="button" id="barPreview">Preview on site</button> <button class="btn" type="button" id="barPublish">Save &amp; publish</button></span></div></div>
+<script>
+(function(){
+'use strict';
+var OSV={
+  windows:[['win11-25h2','Windows 11, 25H2'],['win11-24h2','Windows 11, 24H2'],['win11-23h2','Windows 11, 23H2'],['win11-old','Windows 11, before 23H2'],['win10-22h2','Windows 10, 22H2'],['win10-old','Windows 10, before 22H2'],['win-old','Windows 8.1 or older']],
+  mac:[['mac27','macOS 27'],['mac26','macOS 26 Tahoe'],['mac15','macOS 15 Sequoia'],['mac14','macOS 14 Sonoma'],['mac13','macOS 13 or older']],
+  linux:[['ubuntu2404','Ubuntu 24.04'],['ubuntu2204','Ubuntu 22.04'],['debian13','Debian 13'],['debian12','Debian 12'],['rhel10','RHEL 10'],['rhel9','RHEL 9'],['rhel8','RHEL 8'],['sled15','SUSE 15'],['linux-other','Another distribution']]};
+var ARCH={windows:[['x86-64','Intel or AMD (x64)'],['arm','ARM (Snapdragon)']],mac:[['apple','Apple silicon'],['x86-64','Intel']],linux:[['x86-64','Intel or AMD'],['arm','ARM (aarch64)']]};
+var OSN={windows:'Windows',mac:'Mac',linux:'Linux'};
+var TYPES={
+  'os':{name:'Operating system versions',tpl:function(os){return {type:'os',basic:OSV[os].map(function(x){return x[0]}),rec:OSV[os].map(function(x){return x[0]}),basicText:'',recText:'Same',notes:{}}}},
+  'arch':{name:'Processor type',tpl:function(os){return {type:'arch',basic:ARCH[os].map(function(x){return x[0]}),rec:[ARCH[os][0][0]],basicText:'',recText:'',notes:{}}}},
+  'number':{name:'Cores or memory (a number)',tpl:function(){return {type:'number',field:'ram',label:'Memory (RAM)',unit:'GB',basic:8,rec:16,basicText:'8 GB',recText:'16 GB',lowNote:''}}},
+  'avx2':{name:'AVX2 instruction support',tpl:function(){return {type:'avx2',note:''}}},
+  'storage':{name:'Free disk space',tpl:function(){return {type:'storage',basic:2,rec:2,basicText:'2 GB',recText:'2 GB'}}},
+  'internet':{name:'Internet speed',tpl:function(){return {type:'internet',basic:5,rec:25,basicText:'5 Mbps down',recText:'25+ Mbps down'}}},
+  'display':{name:'Screen resolution',tpl:function(){return {type:'display',basic:1366,rec:1920,basicText:'1366 × 768',recText:'1920 × 1080'}}},
+  'gpu-any':{name:'Graphics: any GPU passes',tpl:function(){return {type:'gpu-any'}}},
+  'gpu-optional':{name:'Graphics: any GPU, recommended VRAM',tpl:function(){return {type:'gpu-optional',rec:2}}},
+  'gpu-vram':{name:'Graphics: minimum and recommended VRAM',tpl:function(){return {type:'gpu-vram',basic:1,rec:4}}},
+  'gpu-mac':{name:'Graphics: built-in Mac graphics',tpl:function(){return {type:'gpu-mac'}}},
+  'mac-chip':{name:'Apple chip tier (Mac only)',tpl:function(){return {type:'mac-chip',label:'Processor type',basicText:'Apple M1',recText:'Apple M1 Max or newer'}}}
+};
+var DISPOPTS=[[1280,'Smaller than 1366 × 768'],[1366,'1366 × 768'],[1920,'1920 × 1080'],[2560,'2560 × 1440'],[3840,'3840 × 2160 (4K)']];
+var PRIM='(?:"(?:[^"\\\\]|\\\\.)*"|-?\\d+(?:\\.\\d+)?(?:e[+-]?\\d+)?|true|false|null)';
+var ARR=new RegExp('\\[\\s*('+PRIM+'(?:\\s*,\\s*'+PRIM+')*)\\s*\\]','g');
+function fmt(o){return JSON.stringify(o,null,2).replace(ARR,function(_,i){return '['+i.replace(/\s*\n\s*/g,' ')+']'})+'\n'}
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function today(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function fmtDate(iso){if(!iso)return '—';var p=iso.split('-');return new Date(+p[0],p[1]-1,+p[2]).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}
+function days(iso){var p=String(iso||'').split('-');var d=new Date(+p[0],(+p[1]||1)-1,+p[2]||1);return isNaN(d)?9999:Math.floor((Date.now()-d)/864e5)}
+function clone(o){return JSON.parse(JSON.stringify(o))}
+function strip(sw){var c=clone(sw);delete c.lastUpdated;delete c.lastChecked;delete c.storage;return JSON.stringify(c)}
+
+var D={req:null,courses:null},ORIG={req:'',courses:'',sw:{}},cur={tab:'status',sw:null,os:'windows'};
+var GH=(function(){try{return JSON.parse(localStorage.getItem('cc-admin-gh')||'{}')}catch(e){return {}}})();
+(function guess(){var h=location.hostname,m=h.match(/^([^.]+)\.github\.io$/i);if(m){GH.owner=GH.owner||m[1];var seg=location.pathname.split('/').filter(Boolean);GH.repo=GH.repo||(seg.length>1||(seg[0]&&!/\.html$/.test(seg[0]))?seg[0]:h)}GH.branch=GH.branch||'main'})();
+
+function getJSON(u){return fetch(u,{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(u+': '+r.status);return r.json()})}
+Promise.all([getJSON('data/requirements.json'),getJSON('data/courses.json')]).then(function(r){
+  D.req=r[0];D.courses=r[1];ORIG.req=fmt(D.req);ORIG.courses=fmt(D.courses);
+  Object.keys(D.req.software).forEach(function(id){ORIG.sw[id]=strip(D.req.software[id])});
+  var dr=null;try{dr=JSON.parse(localStorage.getItem('cc-admin-draft')||'null')}catch(e){}
+  if(dr&&dr.requirements&&(fmt(dr.requirements)!==ORIG.req||fmt(dr.courses)!==ORIG.courses)){
+    showMsg('You have unsaved changes from an earlier session. <button class="mini" id="restore">Restore them</button> <button class="mini" id="discard">Discard</button>');
+    $('#restore').onclick=function(){D.req=dr.requirements;D.courses=dr.courses;hideMsg();renderAll()};
+    $('#discard').onclick=function(){localStorage.removeItem('cc-admin-draft');hideMsg()};
+  }
+  cur.sw=Object.keys(D.req.software)[0];renderAll();
+}).catch(function(e){showMsg('<b>Couldn’t load the data files.</b> '+esc(e.message)+'. Open this page from the published site (or a local web server), not by double-clicking the file.')});
+function showMsg(h){var m=$('#loadMsg');m.innerHTML=h;m.style.display='block'}
+function hideMsg(){$('#loadMsg').style.display='none'}
+
+/* ---------- change tracking ---------- */
+function syncStorage(){Object.keys(D.req.software).forEach(function(id){var sw=D.req.software[id];sw.storage=sw.storage||{};
+  ['windows','mac','linux'].forEach(function(os){var p=sw.platforms[os];var it=p&&p.supported&&(p.items||[]).filter(function(x){return x.type==='storage'})[0];sw.storage[os]=it?[+it.basic||0,+it.rec||0]:[0,0]})})}
+function changedSw(){return Object.keys(D.req.software).filter(function(id){return ORIG.sw[id]!==strip(D.req.software[id])})}
+function isDirty(){syncStorage();return fmt(D.req)!==ORIG.req||fmt(D.courses)!==ORIG.courses}
+function touch(){var d=isDirty();$('#dirty').textContent=d?'You have unsaved changes.':'No unsaved changes.';
+  try{if(d)localStorage.setItem('cc-admin-draft',JSON.stringify({requirements:D.req,courses:D.courses}));else localStorage.removeItem('cc-admin-draft')}catch(e){}}
+function stampDates(){var t=today();changedSw().forEach(function(id){D.req.software[id].lastUpdated=t;D.req.software[id].lastChecked=t})}
+
+/* ---------- tabs ---------- */
+$$('.adm-tabs button').forEach(function(b){b.onclick=function(){cur.tab=b.dataset.tab;renderAll()}});
+function renderAll(){$$('.adm-tabs button').forEach(function(b){b.setAttribute('aria-selected',b.dataset.tab===cur.tab)});
+  $$('[data-panel]').forEach(function(p){p.hidden=p.dataset.panel!==cur.tab});
+  ({status:renderStatus,software:renderSoftware,courses:renderCourses,publish:renderPublish})[cur.tab]();touch()}
+
+/* ---------- Status ---------- */
+function issuesUrl(){return GH.owner&&GH.repo?'https://github.com/'+GH.owner+'/'+GH.repo+'/issues?q=is%3Aopen+label%3Avendor-check':''}
+function renderStatus(){var sw=D.req.software,ch=changedSw();
+  var h='<p class="lede">The monthly vendor check updates “Last checked” automatically when a vendor page hasn’t changed, and opens a GitHub issue when it has.'+(issuesUrl()?' <a href="'+issuesUrl()+'" target="_blank" rel="noopener">See open vendor-check issues</a>.':'')+'</p>';
+  h+='<div class="tbl-wrap"><table><thead><tr><th>Software</th><th>Version</th><th>Last checked</th><th>Last updated</th><th>Vendor pages</th><th></th></tr></thead><tbody>';
+  Object.keys(sw).forEach(function(id){var s=sw[id],old=days(s.lastChecked)>180;
+    h+='<tr><td><b style="font-family:var(--display);text-transform:uppercase;font-size:1.1rem">'+esc(s.name)+'</b>'+(ch.indexOf(id)>-1?'<span class="changed">Edited</span>':'')+'</td><td>'+esc(s.version)+'</td><td>'+fmtDate(s.lastChecked)+(old?' <span class="st unknown">Overdue</span>':'')+'</td><td>'+fmtDate(s.lastUpdated)+'</td><td>'+(s.links||[]).map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+'</a>'}).join('<br>')+'</td><td style="white-space:nowrap"><button class="mini" data-checked="'+id+'">Mark checked today</button><button class="mini" data-edit="'+id+'">Edit</button></td></tr>'});
+  h+='</tbody></table></div><p class="muted small" style="margin-top:.8rem">“Mark checked today” means you looked at the vendor page and nothing needs to change. Remember to save &amp; publish afterward.</p>';
+  var p=$('[data-panel=status]');p.innerHTML=h;
+  $$('[data-checked]',p).forEach(function(b){b.onclick=function(){D.req.software[b.dataset.checked].lastChecked=today();renderAll()}});
+  $$('[data-edit]',p).forEach(function(b){b.onclick=function(){cur.sw=b.dataset.edit;cur.tab='software';renderAll()}});
+}
+
+/* ---------- Software editor ---------- */
+function inp(label,val,attrs,wide,hint){return '<div class="field'+(wide?' wide':'')+'"><label>'+label+'</label><input type="text" value="'+esc(val)+'" '+attrs+'>'+(hint?'<p class="hint">'+hint+'</p>':'')+'</div>'}
+function num(label,val,attrs){return '<div class="field"><label>'+label+'</label><input type="number" step="any" value="'+esc(val)+'" '+attrs+'></div>'}
+function itemBody(it,os,k){var a=function(f,numeric){return 'data-item="'+k+'" data-f="'+f+'"'+(numeric?' data-num="1"':'')},h='';
+  var recHint='Write “Same” to reuse the basic text.';
+  switch(it.type){
+  case 'os':case 'arch':var list=(it.type==='os'?OSV:ARCH)[os];
+    h+=inp('Basic (shown to students)',it.basicText,a('basicText'))+inp('Recommended (shown to students)',it.recText,a('recText'),false,recHint);
+    h+='<div class="wide tbl-wrap" style="border-top:0"><table class="oslist" style="min-width:520px"><thead><tr><th>'+(it.type==='os'?'Version':'Processor')+'</th><th>Basic</th><th>Recommended</th><th>Note shown to students</th></tr></thead><tbody>'+
+      list.map(function(v){return '<tr><td>'+esc(v[1])+'</td><td><input type="checkbox" data-item="'+k+'" data-list="basic" value="'+v[0]+'"'+((it.basic||[]).indexOf(v[0])>-1?' checked':'')+' aria-label="'+esc(v[1])+' meets basic"></td><td><input type="checkbox" data-item="'+k+'" data-list="rec" value="'+v[0]+'"'+((it.rec||[]).indexOf(v[0])>-1?' checked':'')+' aria-label="'+esc(v[1])+' meets recommended"></td><td><input type="text" data-item="'+k+'" data-note="'+v[0]+'" value="'+esc((it.notes||{})[v[0]]||'')+'"></td></tr>'}).join('')+'</tbody></table></div>';break;
+  case 'number':h+='<div class="field"><label>Checks</label><select data-item="'+k+'" data-f="field"><option value="cores"'+(it.field==='cores'?' selected':'')+'>Logical cores (threads)</option><option value="ram"'+(it.field==='ram'?' selected':'')+'>Memory (GB)</option></select></div>'+inp('Row label',it.label,a('label'))+
+      num('Basic minimum',it.basic,a('basic',1))+num('Recommended minimum',it.rec,a('rec',1))+inp('Basic (shown to students)',it.basicText,a('basicText'))+inp('Recommended (shown to students)',it.recText,a('recText'),false,recHint)+inp('Unit',it.unit,a('unit'))+inp('Message when below basic (optional)',it.lowNote,a('lowNote'));break;
+  case 'storage':case 'internet':var u=it.type==='storage'?'GB':'Mbps';h+=num('Basic minimum ('+u+')',it.basic,a('basic',1))+num('Recommended minimum ('+u+')',it.rec,a('rec',1))+inp('Basic (shown to students)',it.basicText,a('basicText'))+inp('Recommended (shown to students)',it.recText,a('recText'));break;
+  case 'display':var sel=function(f){return '<div class="field"><label>'+(f==='basic'?'Basic minimum':'Recommended minimum')+'</label><select data-item="'+k+'" data-f="'+f+'" data-num="1">'+DISPOPTS.map(function(o){return '<option value="'+o[0]+'"'+(+it[f]===o[0]?' selected':'')+'>'+o[1]+'</option>'}).join('')+'</select></div>'};
+    h+=sel('basic')+sel('rec')+inp('Basic (shown to students)',it.basicText,a('basicText'))+inp('Recommended (shown to students)',it.recText,a('recText'));break;
+  case 'gpu-vram':h+=num('Basic minimum VRAM (GB)',it.basic,a('basic',1))+num('Recommended VRAM, dedicated card (GB)',it.rec,a('rec',1));break;
+  case 'gpu-optional':h+=num('Recommended VRAM (GB)',it.rec,a('rec',1))+'<p class="hint wide">Any graphics passes basic; a dedicated card with this much memory meets recommended.</p>';break;
+  case 'avx2':h+=inp('Note when a CPU lacks AVX2',it.note,a('note'),true);break;
+  case 'mac-chip':h+=inp('Row label',it.label,a('label'))+'<span></span>'+inp('Basic (shown to students)',it.basicText,a('basicText'))+inp('Recommended (shown to students)',it.recText,a('recText'))+'<p class="hint wide">Any Apple chip or Intel Mac meets basic; M-series Max or Ultra meets recommended.</p>';break;
+  default:h+='<p class="hint wide">No settings. Every computer passes this row.</p>'}
+  return h}
+function renderSoftware(){var p=$('[data-panel=software]'),S=D.req.software,ids=Object.keys(S);
+  if(!S[cur.sw])cur.sw=ids[0];var sw=S[cur.sw],ch=changedSw();
+  var h='<div class="pill-row">'+ids.map(function(id){return '<button type="button" data-sw="'+id+'" aria-pressed="'+(id===cur.sw)+'">'+esc(S[id].name)+(ch.indexOf(id)>-1?' •':'')+'</button>'}).join('')+'<button type="button" id="addSw">+ Add software</button></div>';
+  if(!sw){p.innerHTML=h;bindSw(p);return}
+  h+='<div class="item"><div class="ih"><b>About '+esc(sw.name)+'</b><span><button class="mini danger" id="delSw">Delete this software</button></span></div><div class="ib">'+
+    inp('Name',sw.name,'data-sw-f="name"')+inp('Version shown to students',sw.version,'data-sw-f="version"',false,'e.g. R2027a or “Current release.”')+inp('Vendor',sw.vendor,'data-sw-f="vendor"')+
+    '<div class="field"><label>Dates</label><p style="margin:.4rem 0 0">Checked '+fmtDate(sw.lastChecked)+' · Updated '+fmtDate(sw.lastUpdated)+'</p><p class="hint">Set automatically when you save changes.</p></div>'+
+    '<div class="field wide"><label>Extra notes on the requirements page</label><textarea data-sw-f="notes">'+esc(sw.notes||'')+'</textarea></div>'+
+    '<div class="field wide"><label>Vendor links</label>'+(sw.links||[]).map(function(l,i){return '<div style="display:grid;grid-template-columns:1fr 3fr auto;gap:.5rem;margin-bottom:.4rem"><input type="text" value="'+esc(l.label)+'" data-link="'+i+'" data-lf="label" aria-label="Link label"><input type="text" value="'+esc(l.url)+'" data-link="'+i+'" data-lf="url" aria-label="Link address"><button class="mini danger" data-dellink="'+i+'">Remove</button></div>'}).join('')+'<button class="mini" id="addLink">+ Add link</button></div></div></div>';
+  h+='<div class="tabs" role="tablist" style="margin-top:2rem">'+['windows','mac','linux'].map(function(os){return '<button role="tab" data-os="'+os+'" aria-selected="'+(os===cur.os)+'">'+OSN[os]+'</button>'}).join('')+'</div>';
+  var pl=sw.platforms[cur.os]=sw.platforms[cur.os]||{supported:false,why:'',alt:[]};
+  h+='<label style="display:flex;gap:.6rem;align-items:center;margin-bottom:1.2rem;font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em"><input type="checkbox" id="supp" style="width:20px;height:20px;accent-color:#000"'+(pl.supported?' checked':'')+'> '+esc(sw.name)+' runs on '+OSN[cur.os]+'</label>';
+  if(!pl.supported){h+='<div class="item"><div class="ib"><div class="field wide"><label>Why it doesn’t run (shown to students)</label><textarea data-pl-f="why">'+esc(pl.why||'')+'</textarea></div><div class="field wide"><label>Alternatives, one per line</label><textarea data-pl-f="alt">'+esc((pl.alt||[]).join('\n'))+'</textarea></div></div></div>'}
+  else{pl.items=pl.items||[];
+    pl.items.forEach(function(it,k){var t=TYPES[it.type]||{name:it.type};
+      h+='<div class="item"><div class="ih"><span><b>'+esc(it.label||t.name)+'</b><span class="ty">'+esc(t.name)+'</span></span><span><button class="mini" data-mv="'+k+'" data-d="-1" aria-label="Move up"'+(k===0?' disabled':'')+'>↑</button><button class="mini" data-mv="'+k+'" data-d="1" aria-label="Move down"'+(k===pl.items.length-1?' disabled':'')+'>↓</button><button class="mini danger" data-del="'+k+'">Remove</button></span></div><div class="ib">'+itemBody(it,cur.os,k)+'</div></div>'});
+    h+='<div class="field" style="max-width:32rem"><label for="addType">Add a requirement row</label><div style="display:flex;gap:.5rem"><select id="addType">'+Object.keys(TYPES).map(function(k){return '<option value="'+k+'">'+TYPES[k].name+'</option>'}).join('')+'</select><button class="btn ink" id="addItem" type="button">Add</button></div></div>';}
+  p.innerHTML=h;bindSw(p);
+}
+function bindSw(p){var S=D.req.software,sw=S[cur.sw];
+  $$('[data-sw]',p).forEach(function(b){b.onclick=function(){cur.sw=b.dataset.sw;renderAll()}});
+  $('#addSw',p).onclick=function(){var name=prompt('Name of the new software (e.g. SolidWorks):');if(!name)return;var id=name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'software';while(S[id])id+='-2';
+    var pl={};['windows','mac','linux'].forEach(function(os){pl[os]={supported:true,items:[TYPES.os.tpl(os),TYPES.arch.tpl(os),TYPES.number.tpl(),TYPES.storage.tpl(),os==='mac'?TYPES['gpu-mac'].tpl():TYPES['gpu-any'].tpl()]}});
+    S[id]={name:name,version:'Current release',vendor:'',lastUpdated:today(),lastChecked:today(),links:[],storage:{},notes:'',platforms:pl};ORIG.sw[id]='';cur.sw=id;renderAll()};
+  if(!sw)return;
+  var del=$('#delSw',p);if(del)del.onclick=function(){if(!confirm('Delete '+sw.name+'? Courses that use it will stop checking it.'))return;delete S[cur.sw];D.courses.courses.forEach(function(c){c.software=c.software.filter(function(x){return x!==cur.sw})});cur.sw=Object.keys(S)[0];renderAll()};
+  $$('[data-sw-f]',p).forEach(function(i){i.oninput=function(){sw[i.dataset.swF]=i.value;touch()}});
+  $$('[data-link]',p).forEach(function(i){i.oninput=function(){sw.links[+i.dataset.link][i.dataset.lf]=i.value;touch()}});
+  $$('[data-dellink]',p).forEach(function(b){b.onclick=function(){sw.links.splice(+b.dataset.dellink,1);renderAll()}});
+  var al=$('#addLink',p);if(al)al.onclick=function(){sw.links=sw.links||[];sw.links.push({label:'Requirements',url:'https://'});renderAll()};
+  $$('.tabs [data-os]',p).forEach(function(b){b.onclick=function(){cur.os=b.dataset.os;renderAll()}});
+  var pl=sw.platforms[cur.os];
+  $('#supp',p).onchange=function(){if(this.checked){pl.supported=true;pl.items=pl.items&&pl.items.length?pl.items:[TYPES.os.tpl(cur.os),TYPES.arch.tpl(cur.os),TYPES.number.tpl(),TYPES.storage.tpl()];delete pl.why;delete pl.alt}else{sw.platforms[cur.os]={supported:false,why:'',alt:[]}}renderAll()};
+  $$('[data-pl-f]',p).forEach(function(i){i.oninput=function(){pl[i.dataset.plF]=i.dataset.plF==='alt'?i.value.split('\n').map(function(s){return s.trim()}).filter(Boolean):i.value;touch()}});
+  $$('[data-item][data-f]',p).forEach(function(i){var h=function(){var it=pl.items[+i.dataset.item],f=i.dataset.f,old=it[f];it[f]=i.dataset.num?(i.value===''?'':+i.value):i.value;
+    // keep the student-facing text in step with the number ("16 GB" -> "32 GB")
+    var tf=f+'Text';if(i.dataset.num&&typeof it[tf]==='string'&&old!==''&&it[f]!==''&&String(old)!==String(it[f])){var re=new RegExp('^'+String(old).replace('.','\\.')+'(?![\\d.])');if(re.test(it[tf])){it[tf]=it[tf].replace(re,String(it[f]));var t=$('[data-item="'+i.dataset.item+'"][data-f="'+tf+'"]',p);if(t)t.value=it[tf]}}
+    touch()};i.oninput=h;i.onchange=h});
+  $$('[data-item][data-list]',p).forEach(function(c){c.onchange=function(){var it=pl.items[+c.dataset.item],L=it[c.dataset.list]=it[c.dataset.list]||[];var ix=L.indexOf(c.value);if(c.checked&&ix<0)L.push(c.value);if(!c.checked&&ix>-1)L.splice(ix,1);
+    if(c.dataset.list==='rec'&&c.checked&&it.basic.indexOf(c.value)<0){it.basic.push(c.value);renderAll();return}touch()}});
+  $$('[data-item][data-note]',p).forEach(function(i){i.oninput=function(){var it=pl.items[+i.dataset.item];it.notes=it.notes||{};if(i.value)it.notes[i.dataset.note]=i.value;else delete it.notes[i.dataset.note];touch()}});
+  $$('[data-del]',p).forEach(function(b){b.onclick=function(){pl.items.splice(+b.dataset.del,1);renderAll()}});
+  $$('[data-mv]',p).forEach(function(b){b.onclick=function(){var k=+b.dataset.mv,d=+b.dataset.d,t=pl.items[k];pl.items[k]=pl.items[k+d];pl.items[k+d]=t;renderAll()}});
+  var ai=$('#addItem',p);if(ai)ai.onclick=function(){pl.items.push(TYPES[$('#addType',p).value].tpl(cur.os));renderAll()};
+}
+
+/* ---------- Courses ---------- */
+function renderCourses(){var p=$('[data-panel=courses]'),C=D.courses.courses,S=D.req.software;
+  var h='<p class="lede">Courses appear on the course check and in the buying guide, in this order. The last course lets students pick any software.</p>';
+  C.forEach(function(c,k){h+='<div class="item"><div class="ih"><b>'+esc(c.code||'New course')+'</b><span><button class="mini" data-cmv="'+k+'" data-d="-1"'+(k===0?' disabled':'')+' aria-label="Move up">↑</button><button class="mini" data-cmv="'+k+'" data-d="1"'+(k===C.length-1?' disabled':'')+' aria-label="Move down">↓</button><button class="mini danger" data-cdel="'+k+'">Remove</button></span></div><div class="ib">'+
+    inp('Course code',c.code,'data-c="'+k+'" data-cf="code"')+inp('Title',c.title,'data-c="'+k+'" data-cf="title"')+inp('Catalog link (optional)',c.url||'','data-c="'+k+'" data-cf="url"',true)+
+    '<div class="field wide"><label>Software used</label><div class="swpick" style="margin:.2rem 0 0">'+Object.keys(S).map(function(id){return '<label><input type="checkbox" data-csw="'+k+'" value="'+id+'"'+((c.software||[]).indexOf(id)>-1?' checked':'')+'>'+esc(S[id].name)+'</label>'}).join('')+'</div><p class="hint">Leave all unticked to let students choose the software themselves.</p></div></div></div>'});
+  h+='<button class="btn ink" id="addCourse" type="button">+ Add course</button>';
+  p.innerHTML=h;
+  $$('[data-cf]',p).forEach(function(i){i.oninput=function(){var c=C[+i.dataset.c];c[i.dataset.cf]=i.value;if(i.dataset.cf==='code'&&!c._fixedId){c.id=i.value.toLowerCase().replace(/[^a-z0-9]+/g,'')||c.id}touch()}});
+  $$('[data-csw]',p).forEach(function(cb){cb.onchange=function(){C[+cb.dataset.csw].software=$$('[data-csw="'+cb.dataset.csw+'"]:checked',p).map(function(x){return x.value});touch()}});
+  $$('[data-cdel]',p).forEach(function(b){b.onclick=function(){C.splice(+b.dataset.cdel,1);renderAll()}});
+  $$('[data-cmv]',p).forEach(function(b){b.onclick=function(){var k=+b.dataset.cmv,d=+b.dataset.d,t=C[k];C[k]=C[k+d];C[k+d]=t;renderAll()}});
+  $('#addCourse',p).onclick=function(){C.splice(Math.max(0,C.length-1),0,{id:'new'+Date.now(),code:'EGR ',title:'',software:[],url:''});renderAll()};
+}
+
+/* ---------- Save & publish ---------- */
+function b64(str){var bytes=new TextEncoder().encode(str),bin='';for(var i=0;i<bytes.length;i+=0x8000)bin+=String.fromCharCode.apply(null,bytes.subarray(i,i+0x8000));return btoa(bin)}
+function out(){syncStorage();var c=clone(D.courses);c.courses.forEach(function(x){delete x._fixedId});return {req:fmt(D.req),courses:fmt(c)}}
+function download(name,text){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'application/json'}));a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500)}
+function renderPublish(){var p=$('[data-panel=publish]'),ch=changedSw();
+  var h='<div class="split"><div class="l"><p class="tag">1. Preview</p><h3 class="d">Check your changes</h3></div><div><p>Opens the site in a new tab using your unsaved changes. Only you see the preview.</p><button class="btn ink fill" id="prev" type="button">Preview on site</button></div></div>';
+  h+='<hr style="border:0;border-top:1px solid var(--line);margin:2rem 0"><div class="split"><div class="l"><p class="tag">2. Save</p><h3 class="d">Publish to GitHub</h3></div><div>'+
+    (ch.length?'<p>Edited: <b>'+ch.map(function(id){return esc(D.req.software[id].name)}).join(', ')+'</b>. Their “Last updated” and “Last checked” dates will be set to today.</p>':'')+
+    '<div class="fields" style="border-top:0;padding-top:0">'+inp('GitHub owner (user or organization)',GH.owner||'','id="gh-owner"')+inp('Repository name',GH.repo||'','id="gh-repo"')+inp('Branch',GH.branch||'main','id="gh-branch"')+
+    '<div class="field"><label for="gh-token">Access token</label><input id="gh-token" type="password" autocomplete="off" value="'+esc(GH.token||'')+'"><p class="hint">A fine-grained token with <b>Contents: Read and write</b> on this repository only. See the README.</p></div></div>'+
+    '<label style="display:flex;gap:.5rem;align-items:center;margin:.8rem 0;font-size:.98rem"><input type="checkbox" id="gh-remember"'+(GH.token?' checked':'')+'> Remember the token in this browser (only on your own computer)</label>'+
+    '<div class="field" style="margin:.4rem 0 1rem"><label for="gh-msg">Change description</label><input id="gh-msg" type="text" value="Update requirements via admin page"></div>'+
+    '<div class="form-actions"><button class="btn ink fill" id="pub" type="button">Save &amp; publish</button><span class="msg" id="pubMsg" role="status"></span></div>'+
+    '<p class="muted small" style="margin-top:1rem">The site updates about a minute after saving.</p></div></div>';
+  h+='<hr style="border:0;border-top:1px solid var(--line);margin:2rem 0"><div class="split"><div class="l"><p class="tag">Or</p><h3 class="d">Download the files</h3></div><div><p>Download the two data files and upload them to the <code>data</code> folder on GitHub yourself. No token needed.</p><button class="btn ink" id="dlReq" type="button">requirements.json</button> <button class="btn ink" id="dlCou" type="button">courses.json</button></div></div>';
+  p.innerHTML=h;
+  $('#prev').onclick=preview;
+  ['owner','repo','branch'].forEach(function(k){$('#gh-'+k).oninput=function(){GH[k]=this.value.trim();saveGH()}});
+  $('#gh-token').oninput=function(){GH.token=this.value.trim();saveGH()};$('#gh-remember').onchange=saveGH;
+  $('#dlReq').onclick=function(){stampDates();download('requirements.json',out().req)};$('#dlCou').onclick=function(){download('courses.json',out().courses)};
+  $('#pub').onclick=publish;
+}
+function saveGH(){var keep=$('#gh-remember')&&$('#gh-remember').checked,o={owner:GH.owner,repo:GH.repo,branch:GH.branch};if(keep)o.token=GH.token;try{localStorage.setItem('cc-admin-gh',JSON.stringify(o))}catch(e){}}
+function preview(){syncStorage();try{localStorage.setItem('cc-admin-draft',JSON.stringify({requirements:D.req,courses:D.courses}))}catch(e){}window.open('computer-requirements.html?preview=1','_blank')}
+$('#barPreview').onclick=preview;$('#barPublish').onclick=function(){cur.tab='publish';renderAll();$('#pub').focus()};
+async function publish(){var m=$('#pubMsg');m.className='msg';
+  if(!GH.owner||!GH.repo||!GH.token){m.className='msg err';m.textContent='Fill in the owner, repository, and token first.';return}
+  if(!isDirty()){m.textContent='Nothing has changed since the last save.';return}
+  stampDates();var o=out(),files=[];if(o.req!==ORIG.req)files.push(['data/requirements.json',o.req]);if(o.courses!==ORIG.courses)files.push(['data/courses.json',o.courses]);
+  var api='https://api.github.com/repos/'+encodeURIComponent(GH.owner)+'/'+encodeURIComponent(GH.repo)+'/contents/',hd={Authorization:'Bearer '+GH.token,Accept:'application/vnd.github+json'};
+  $('#pub').disabled=true;
+  try{for(var i=0;i<files.length;i++){var f=files[i];m.textContent='Saving '+f[0]+'…';
+      var r=await fetch(api+f[0]+'?ref='+encodeURIComponent(GH.branch),{headers:hd,cache:'no-store'});
+      if(r.status===401)throw new Error('GitHub rejected the token. Check that it hasn’t expired.');
+      if(r.status===404)throw new Error('Couldn’t find '+f[0]+' in '+GH.owner+'/'+GH.repo+' on branch '+GH.branch+'. Check the owner, repository, branch, and that the token can access this repository.');
+      var j=await r.json();
+      var put=await fetch(api+f[0],{method:'PUT',headers:hd,body:JSON.stringify({message:$('#gh-msg').value||'Update requirements',content:b64(f[1]),sha:j.sha,branch:GH.branch})});
+      if(put.status===403)throw new Error('The token can read but not write. Give it “Contents: Read and write” permission.');
+      if(put.status===409)throw new Error('Someone else changed '+f[0]+' since you loaded this page. Reload, redo your edit, and save again.');
+      if(!put.ok)throw new Error('GitHub answered '+put.status+': '+(await put.text()).slice(0,200));}
+    ORIG.req=o.req;ORIG.courses=o.courses;Object.keys(D.req.software).forEach(function(id){ORIG.sw[id]=strip(D.req.software[id])});
+    localStorage.removeItem('cc-admin-draft');m.className='msg ok';m.textContent='Saved. The site will show the changes in about a minute.';touch();
+  }catch(e){m.className='msg err';m.textContent=e.message}
+  $('#pub').disabled=false;
+}
+window.addEventListener('beforeunload',function(e){if(D.req&&isDirty()){e.preventDefault();e.returnValue=''}});
+})();
+</script>
+</body></html>

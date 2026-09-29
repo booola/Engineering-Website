@@ -1,0 +1,12 @@
+{
+  "name": "centre-engineering-computer-requirements",
+  "private": true,
+  "type": "module",
+  "description": "Computer Requirements for Engineering Program, Centre College",
+  "scripts": {
+    "check": "node scripts/check-vendors.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.47.0"
+  }
+}

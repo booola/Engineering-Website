@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Engineering at Centre | Centre College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow+Semi+Condensed:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#FFCD00;--gold-deep:#C69214;
+  --bg:#fff;--fg:#000;--muted:#4a4f57;--rule:#000;--panel:#f3f4f2;--line:#cfd1cc;
+  --display:"Barlow Condensed","Arial Narrow","Helvetica Neue Condensed",Impact,sans-serif;
+  --tag:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
+  --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#000;--fg:#fff;--muted:#b9bcc2;--rule:#fff;--panel:#16181c;--line:#3a3d44}
+}
+:root[data-theme="dark"]{--bg:#000;--fg:#fff;--muted:#b9bcc2;--rule:#fff;--panel:#16181c;--line:#3a3d44}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:#000;padding:.6rem 1rem;z-index:99;font-family:var(--tag);font-weight:600}
+.skip:focus{left:1rem}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--gold);color:#000;border-bottom:1px solid #000}
+.bar .wrap{display:flex;align-items:center;gap:1.25rem;min-height:72px}
+.brand{display:flex;align-items:center;gap:.9rem;text-decoration:none}
+.brand img{height:38px;width:auto}
+.brand .prog{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;border-left:1.5px solid #000;padding-left:.9rem;line-height:1}
+.nav{margin-left:auto;display:flex;gap:.1rem}
+.nav a{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;text-decoration:none;padding:.5rem .6rem;border-bottom:3px solid transparent}
+.nav a:hover{border-bottom-color:#000}
+@media (max-width:640px){.nav{display:none}}
+@media (max-width:420px){.brand .prog{display:none}}
+
+.d{font-family:var(--display);text-transform:uppercase;font-weight:800;line-height:.92;letter-spacing:.005em;margin:0}
+.tag{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem;color:var(--gold-deep);margin:0 0 .6rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag{color:var(--gold)}}
+:root[data-theme="dark"] .tag{color:var(--gold)}
+p{margin:0 0 1rem;max-width:40em}
+
+.hero{background:#000;color:#fff}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,4rem);align-items:end;padding-top:clamp(3rem,8vw,6.5rem);padding-bottom:clamp(3rem,7vw,5.5rem)}
+.hero h1{font-size:clamp(3.4rem,10vw,8rem);color:var(--gold)}
+.hero .aside{border-left:1.5px dotted var(--gold);padding-left:clamp(1rem,2.5vw,2rem)}
+.hero .aside .tag{color:var(--gold)}
+.hero .lede{font-size:1.28rem;line-height:1.55;color:#e9e9e7;margin:0}
+@media (max-width:800px){.hero .wrap{grid-template-columns:1fr}}
+
+.doors{padding:clamp(2.8rem,6vw,4.8rem) 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--rule)}
+.door{display:flex;flex-direction:column;gap:.9rem;padding:clamp(1.5rem,3.5vw,2.6rem);text-decoration:none;position:relative;transition:background .2s}
+.door + .door{border-left:2px solid var(--rule)}
+.door .num{font-family:var(--display);font-weight:800;font-size:clamp(4rem,9vw,6.5rem);line-height:.8;color:var(--gold)}
+.door h2{font-size:clamp(2.4rem,5.2vw,3.8rem)}
+.door .for{font-family:var(--tag);font-weight:600;font-size:1.05rem;color:var(--muted);margin:0}
+.door p.desc{margin:0}
+.door ul{list-style:none;padding:0;margin:.2rem 0 0;border-top:1px dotted var(--line)}
+.door li{padding:.5rem 0 .5rem 1.4rem;border-bottom:1px dotted var(--line);position:relative;font-size:1rem}
+.door li::before{content:"";position:absolute;left:0;top:1rem;width:.55rem;height:.55rem;border-radius:50%;background:var(--gold)}
+.door .go{margin-top:auto;padding-top:1rem;align-self:flex-start;display:inline-flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1.15rem;padding:.85rem 1.3rem;background:var(--gold);color:#000;border:2px solid var(--gold);line-height:1}
+.door .go span{transition:transform .2s}
+.door:hover{background:var(--panel)}
+.door:hover .go{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.door:hover .go span{transform:translateX(4px)}
+.door:hover h2{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:5px;text-underline-offset:6px}
+@media (max-width:800px){.grid{grid-template-columns:1fr}.door + .door{border-left:0;border-top:2px solid var(--rule)}}
+
+.band{background:var(--gold);color:#000;padding:clamp(2rem,4vw,3rem) 0}
+.band .wrap{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;align-items:baseline}
+.band b{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.6rem;letter-spacing:.02em}
+.band p{margin:0;font-size:1.1rem}
+
+footer{background:#000;color:#fff;padding:3rem 0 2.2rem}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:end}
+footer img{width:150px}
+footer p{font-size:.95rem;color:#cfcfcf;margin:0}
+footer nav{display:flex;flex-direction:column;gap:.2rem;text-align:right}
+footer nav a{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.05em;text-decoration:none}
+footer nav a:hover{color:var(--gold)}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}footer nav{text-align:left}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#main" aria-label="Centre College Engineering home">
+      <img src="assets/logo.png" alt="Centre College">
+      <span class="prog">Engineering<br>Program</span>
+    </a>
+    <nav class="nav" aria-label="Guides">
+      <a href="degree-plan.html">What it's like</a>
+      <a href="computer-requirements.html">Get ready</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap">
+      <h1 class="d" id="h1">Engineering<br>at Centre.</h1>
+      <div class="aside">
+        <p class="tag">Start here · 2026–2027</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="doors" aria-label="Guides">
+    <div class="wrap">
+      <div class="grid">
+        <a class="door" href="degree-plan.html">
+          <span class="num" aria-hidden="true">01</span>
+          <h2 class="d">What it's like</h2>
+          <p class="for">For anyone exploring or planning the major</p>
+          <p class="desc">See every course in the major and how the prerequisites connect them, from first-year foundations to the senior capstone.</p>
+          <ul>
+            <li>Interactive prerequisite flowchart</li>
+            <li>Full major requirements from the catalog</li>
+            <li>A checklist to track what you've finished</li>
+          </ul>
+          <span class="go">See the degree plan <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="door" href="computer-requirements.html">
+          <span class="num" aria-hidden="true">02</span>
+          <h2 class="d">Get ready</h2>
+          <p class="for">For declared and incoming engineering students</p>
+          <p class="desc">Find out whether your computer meets the program's requirements, and what to look for if you're buying a new one.</p>
+          <ul>
+            <li>Check your current laptop's specs</li>
+            <li>Compare a laptop before you buy</li>
+            <li>Software you'll use in your courses</li>
+          </ul>
+          <span class="go">Check your computer <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Questions">
+    <div class="wrap">
+      <b>Questions?</b>
+      <p>Talk with your academic advisor or the engineering program faculty.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-rev.png" alt="Centre College">
+    <div><p>Engineering Program · Centre College, Danville, Kentucky</p><p>Last updated <time datetime="2026-09-29">September 29, 2026</time></p></div>
+    <nav aria-label="Footer">
+      <a href="degree-plan.html">What it's like</a>
+      <a href="computer-requirements.html">Get ready</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

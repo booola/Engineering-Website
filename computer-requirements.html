@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Computer Requirements for Engineering Program | Centre College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow+Semi+Condensed:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#FFCD00; --gold-deep:#C69214; --black:#000; --white:#fff;
+  --navy:#2F3351; --teal:#115E67; --mist:#C6DAE7; --stone:#D9D9D6; --crimson:#9E1B32;
+  --bg:#fff; --fg:#000; --muted:#4a4f57; --rule:#000; --panel:#f3f4f2; --card:#fff; --line:#cfd1cc;
+  --ok:#115E67; --ok-fg:#fff; --bad:#9E1B32; --bad-fg:#fff;
+  --display:"Barlow Condensed","Arial Narrow","Helvetica Neue Condensed",Impact,sans-serif;
+  --tag:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
+  --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#000;--fg:#fff;--muted:#b9bcc2;--rule:#fff;--panel:#16181c;--card:#0d0e10;--line:#3a3d44;--ok:#6BBBAE;--ok-fg:#000;--bad:#F28B9C;--bad-fg:#000}
+}
+:root[data-theme="dark"]{--bg:#000;--fg:#fff;--muted:#b9bcc2;--rule:#fff;--panel:#16181c;--card:#0d0e10;--line:#3a3d44;--ok:#6BBBAE;--ok-fg:#000;--bad:#F28B9C;--bad-fg:#000}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em;background:var(--panel);padding:.08rem .35rem;border:1px solid var(--line)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:#000;padding:.6rem 1rem;z-index:99;font-family:var(--tag);font-weight:600}
+.skip:focus{left:1rem}
+
+/* Top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--gold);color:#000;border-bottom:1px solid #000}
+.bar .wrap{display:flex;align-items:center;gap:1.25rem;min-height:72px}
+.brand{display:flex;align-items:center;gap:.9rem;text-decoration:none;flex-shrink:0}
+.brand img{height:38px;width:auto}
+.brand .prog{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;border-left:1.5px solid #000;padding-left:.9rem;line-height:1}
+.nav{margin-left:auto;display:flex;gap:.1rem;flex-wrap:wrap}
+.nav a{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;text-decoration:none;padding:.5rem .6rem;border-bottom:3px solid transparent}
+.nav a:hover,.nav a[aria-current="page"]{border-bottom-color:#000}
+.nav a.ext{border:1.5px solid #000;margin-left:.4rem;padding:.4rem .6rem}
+.nav a.ext:hover{background:#000;color:var(--gold)}
+.nav a.home{background:#000;color:var(--gold);border:1.5px solid #000;margin-left:.4rem;padding:.4rem .7rem}
+.nav a.home:hover{background:transparent;color:#000}
+.menu-btn{display:none;margin-left:auto;background:#000;color:var(--gold);border:0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.55rem .9rem;font-size:1rem;cursor:pointer}
+@media (max-width:1240px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--gold);flex-direction:column;padding:.5rem clamp(1.1rem,4vw,2.5rem) 1rem;border-bottom:1px solid #000}
+  .nav.open{display:flex}
+  .nav a{font-size:1.25rem;padding:.55rem 0;border-bottom:1px dotted #000}
+  .nav a[aria-current="page"]{border-bottom:1px solid #000;padding-left:.6rem;border-left:6px solid #000}
+  .nav a.ext{margin:.6rem 0 0;padding:.55rem .6rem;align-self:flex-start}
+  .nav a.ext,.nav a.home{margin:.6rem 0 0;padding:.55rem .6rem;align-self:flex-start;border:1.5px solid #000}
+}
+@media (max-width:520px){.brand .prog{display:none}}
+
+/* Type */
+.d{font-family:var(--display);text-transform:uppercase;font-weight:800;line-height:.92;letter-spacing:.005em;margin:0}
+h2.d{font-size:clamp(2.2rem,4.6vw,3.4rem)}
+h3.d{font-size:1.55rem;font-weight:700;line-height:1;margin:0 0 .5rem}
+h4{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.03em;font-size:1.2rem;margin:0 0 .35rem;line-height:1.05}
+.tag{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem;color:var(--gold-deep);margin:0 0 .6rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag{color:var(--gold)}}
+:root[data-theme="dark"] .tag{color:var(--gold)}
+.lede{font-size:1.28rem;line-height:1.55;max-width:38em}
+p{margin:0 0 1rem;max-width:40em}
+.muted{color:var(--muted)}
+.small{font-size:.95rem}
+ul.dash{list-style:none;padding:0;margin:0 0 1rem}
+ul.dash li{padding:.55rem 0 .55rem 1.4rem;border-bottom:1px dotted var(--line);position:relative;max-width:44em}
+ul.dash li::before{content:"";position:absolute;left:0;top:1.15rem;width:.55rem;height:.55rem;border-radius:50%;background:var(--gold)}
+
+/* Pages */
+.page{display:none}
+.page.on{display:block}
+.head{background:#000;color:#fff;padding:clamp(3rem,7vw,5.5rem) 0 clamp(2.5rem,6vw,4.5rem)}
+.head .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(1.5rem,4vw,4rem);align-items:end}
+.head h1{font-size:clamp(2.8rem,6.6vw,5.6rem);color:#fff}
+#h-req{font-size:clamp(2.3rem,5vw,4.4rem)}
+.head .aside{border-left:1.5px dotted var(--gold);padding-left:clamp(1rem,2.5vw,2rem)}
+.head .aside .tag{color:var(--gold)}
+.head .aside p{color:#e8e8e6}
+@media (max-width:800px){.head .wrap{grid-template-columns:1fr}}
+.sec{padding:clamp(2.8rem,6vw,4.8rem) 0;border-bottom:1px solid var(--line)}
+.sec:last-child{border-bottom:0}
+.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(1.5rem,4vw,4rem)}
+.split > .l .stick{position:sticky;top:110px}
+@media (max-width:800px){.split{grid-template-columns:1fr}.split > .l .stick{position:static}}
+.panel{background:var(--panel)}
+
+/* Hero with live readout */
+.hero{background:#000;color:#fff}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2rem,5vw,4rem);align-items:center;padding-top:clamp(3rem,7vw,5.5rem);padding-bottom:clamp(3rem,7vw,5.5rem)}
+.hero h1{font-size:clamp(3.2rem,8.6vw,7rem);color:var(--gold)}
+.hero .lede{color:#e9e9e7;margin-top:1.4rem}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem;text-decoration:none;padding:.8rem 1.25rem;border:2px solid currentColor;background:transparent;color:inherit;cursor:pointer;line-height:1}
+.btn.solid{background:var(--gold);border-color:var(--gold);color:#000}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#000}
+.btn.solid:hover{background:#fff;border-color:#fff}
+.btn.ink{border-color:var(--fg)}
+.btn.ink:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn.ink.fill{background:var(--fg);color:var(--bg)}
+.btn.ink.fill:hover{background:var(--gold);border-color:var(--gold);color:#000}
+.btn[disabled]{opacity:.55;cursor:progress}
+
+.readout{border:2px solid var(--gold);padding:1.1rem 1.25rem 1.2rem;position:relative}
+.readout .rh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid var(--gold);padding-bottom:.55rem;margin-bottom:.35rem}
+.readout .rh b{font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:1.5rem;letter-spacing:.02em;color:var(--gold)}
+.readout .rh span{font-family:var(--tag);font-size:.95rem;color:#bdbdbd}
+.readout ol{list-style:none;margin:0;padding:0}
+.readout li{display:grid;grid-template-columns:12px minmax(0,9.5rem) minmax(0,1fr);gap:.7rem;align-items:baseline;padding:.42rem 0;border-bottom:1px dotted #3c3c3c;font-family:var(--tag);font-size:1rem}
+.readout li:last-child{border-bottom:0}
+.readout li i{width:10px;height:10px;border-radius:50%;border:1.5px solid #777;display:block;transform:translateY(1px)}
+.readout li .k{color:#bdbdbd}
+.readout li .v{color:#fff;overflow-wrap:anywhere}
+.readout li.done i{background:var(--gold);border-color:var(--gold)}
+.readout li.warn i{background:transparent;border-color:var(--gold)}
+.readout li.run i{border-color:var(--gold)}
+@media (prefers-reduced-motion:no-preference){
+  .readout li.run i{animation:blink .7s steps(2) infinite}
+  .readout li.done .v,.readout li.warn .v{animation:inV .35s ease-out both}
+}
+@keyframes blink{50%{background:var(--gold)}}
+@keyframes inV{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+
+/* OS picker */
+.ospick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:2px solid var(--rule);margin:0 0 1.6rem}
+.ospick label{position:relative;cursor:pointer;padding:1.1rem 1.2rem 1.2rem;display:flex;flex-direction:column;gap:.2rem;border-right:2px solid var(--rule)}
+.ospick label:last-child{border-right:0}
+.ospick input{position:absolute;opacity:0;pointer-events:none}
+.ospick .n{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(1.45rem,2.7vw,2.3rem);line-height:.9}
+.ospick .s{font-size:.95rem;color:var(--muted)}
+.ospick .det{font-family:var(--tag);font-size:.9rem;font-weight:600;margin-top:.35rem;visibility:hidden}
+.ospick label.detected .det{visibility:visible}
+.ospick label:has(input:checked){background:var(--gold);color:#000}
+.ospick label:has(input:checked) .s{color:#000}
+.ospick label:has(input:focus-visible){outline:3px solid var(--gold);outline-offset:-6px}
+.ospick label:has(input:checked):has(input:focus-visible){outline-color:#000}
+@media (max-width:640px){.ospick{grid-template-columns:1fr}.ospick label{border-right:0;border-bottom:2px solid var(--rule)}.ospick label:last-child{border-bottom:0}}
+
+/* Form */
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem 1.6rem;border-top:2px solid var(--rule);padding-top:1.4rem}
+@media (max-width:700px){.fields{grid-template-columns:1fr}}
+.field label,.field .lab{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em;font-size:1rem;display:flex;justify-content:space-between;align-items:flex-end;gap:.6rem;margin-bottom:.3rem}
+.field .src{flex-shrink:0}
+.field .src{font-family:var(--tag);text-transform:none;letter-spacing:0;font-weight:600;font-size:.85rem;padding:.05rem .45rem;border:1.5px solid currentColor}
+.field .src.auto{background:var(--gold);color:#000;border-color:var(--gold)}
+.field .src.need{color:var(--muted)}
+.field .src.ver{background:var(--ok);color:var(--ok-fg);border-color:var(--ok)}
+.field .src.ver::before{content:"✓ "}
+ol.xsteps{list-style:none;counter-reset:x;margin:0 0 1.4rem;padding:0}
+ol.xsteps li{counter-increment:x;position:relative;padding:.6rem 0 .6rem 2.8rem;border-bottom:1px dotted var(--line);font-size:1.02rem;max-width:44em}
+ol.xsteps li::before{content:counter(x);position:absolute;left:0;top:.55rem;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--gold);color:#000;font-family:var(--display);font-weight:800;font-size:1.15rem;display:grid;place-items:center}
+ol.xsteps b{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-weight:700}
+kbd{font-family:var(--tag);font-weight:600;font-size:.85em;border:1.5px solid var(--fg);border-bottom-width:3px;padding:0 .35rem;white-space:nowrap}
+.cmd{border:2px solid var(--rule)}
+.cmdbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.55rem .6rem .55rem .9rem;border-bottom:2px solid var(--rule);flex-wrap:wrap}
+.cmdbar span{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em}
+.cmdbar .btn{font-size:.95rem;padding:.6rem .95rem}
+.cmd pre{margin:0;max-height:300px;overflow:auto;background:#000;color:#e8e8e6;padding:1rem 1.1rem;font-size:.78rem;line-height:1.5}
+.cmd pre code{background:none;border:0;padding:0;color:inherit;font-size:inherit;white-space:pre}
+.pastebox{margin-top:2rem;padding-top:1.4rem;border-top:2px solid var(--rule)}
+.pastebox label{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.04em;display:block;margin-bottom:.4rem}
+.pastebox textarea{width:100%;min-height:96px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;padding:.7rem .8rem;border:2px solid var(--fg);background:var(--bg);color:var(--fg);border-radius:0;resize:vertical}
+.pastebox .msg.ok{color:var(--ok);font-weight:600}
+.pastebox .msg.err{color:var(--bad);font-weight:600}
+.field select,.field input{width:100%;font:inherit;font-size:1rem;padding:.65rem .75rem;border:2px solid var(--fg);background:var(--bg);color:var(--fg);border-radius:0;appearance:none;-webkit-appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 18px) 55%,calc(100% - 12px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.2rem}
+.field .hint{font-size:.9rem;color:var(--muted);margin:.35rem 0 0;line-height:1.4}
+.field.hide{display:none}
+.form-actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-top:1.6rem}
+.form-actions .msg{font-size:.95rem;color:var(--muted)}
+
+/* Tables */
+.tbl-wrap{overflow-x:auto;border-top:2px solid var(--rule)}
+table{border-collapse:collapse;width:100%;font-size:1rem;min-width:620px}
+th,td{text-align:left;padding:.7rem .8rem .7rem 0;border-bottom:1px dotted var(--line);vertical-align:top}
+th{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:1rem}
+td .sub{display:block;font-size:.88rem;color:var(--muted);line-height:1.35;margin-top:.2rem}
+td.srcc{font-family:var(--tag);font-size:.92rem;color:var(--muted);white-space:nowrap}
+
+/* Status chips */
+.st{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:.9rem;padding:.18rem .55rem;white-space:nowrap;border:1.5px solid transparent;line-height:1.2}
+.st::before{font-family:var(--tag);font-weight:600}
+.st.rec{background:var(--ok);color:var(--ok-fg)}
+.st.rec::before{content:"✓"}
+.st.basic{background:var(--gold);color:#000}
+.st.basic::before{content:"–"}
+.st.below{background:var(--bad);color:var(--bad-fg)}
+.st.below::before{content:"✕"}
+.st.unsupported{background:var(--bad);color:var(--bad-fg)}
+.st.unsupported::before{content:"✕"}
+.st.unknown{border-color:var(--fg);color:var(--fg)}
+.st.unknown::before{content:"?"}
+
+/* Course picker */
+.courses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--rule)}
+.courses label{cursor:pointer;padding:1.1rem 1.2rem 1.2rem 0;border-bottom:1px dotted var(--line);display:flex;gap:.8rem;align-items:flex-start}
+.courses label + label{padding-left:1.2rem;border-left:1px dotted var(--line)}
+.courses input{width:20px;height:20px;accent-color:#000;margin-top:.3rem;flex-shrink:0}
+.courses .code{font-family:var(--display);font-weight:800;font-size:2rem;line-height:.9;display:block}
+.courses .t{font-size:.98rem;display:block;margin-top:.25rem}
+.courses .sw{font-family:var(--tag);font-size:.9rem;color:var(--muted);display:block;margin-top:.3rem}
+@media (max-width:1000px) and (min-width:801px){.courses{grid-template-columns:1fr 1fr}.courses label:nth-child(3){padding-left:0;border-left:0}}
+@media (max-width:800px){.courses{grid-template-columns:1fr}.courses label+label{padding-left:0;border-left:0}}
+.swpick{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0 0}
+.swpick label{display:inline-flex;gap:.55rem;align-items:center;border:2px solid var(--fg);padding:.55rem .9rem;cursor:pointer;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.swpick input{width:18px;height:18px;accent-color:#000}
+.swpick label:has(input:checked){background:var(--fg);color:var(--bg)}
+
+/* Results */
+.summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem 2rem;align-items:end;border:2px solid var(--rule);padding:1.4rem 1.5rem;margin-bottom:2rem}
+.summary .big{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(2.2rem,5vw,3.6rem);line-height:.9;margin:0 0 .5rem}
+.summary p{margin:0;font-size:1rem}
+.summary .facts{font-family:var(--tag);font-size:1rem;text-align:right;line-height:1.5}
+.summary.rec{border-left:14px solid var(--ok)}
+.summary.basic{border-left:14px solid var(--gold)}
+.summary.below,.summary.unsupported{border-left:14px solid var(--bad)}
+@media (max-width:640px){.summary{grid-template-columns:1fr}.summary .facts{text-align:left}}
+.swres{margin-bottom:2.6rem}
+.swres .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:.6rem 1.5rem;margin-bottom:.8rem}
+.swres h3{margin:0}
+.swres .ver{font-family:var(--tag);color:var(--muted);font-size:1rem}
+.verdict{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.35rem;padding:.35rem .8rem;letter-spacing:.02em}
+.verdict.rec{background:var(--ok);color:var(--ok-fg)}
+.verdict.basic{background:var(--gold);color:#000}
+.verdict.below,.verdict.unsupported{background:var(--bad);color:var(--bad-fg)}
+.fix{margin:.9rem 0 0;padding:0;list-style:none}
+.fix li{padding:.45rem 0 .45rem 1.4rem;position:relative;font-size:1rem;max-width:48em}
+.fix li::before{content:"";position:absolute;left:0;top:1rem;width:.6rem;height:2px;background:var(--fg)}
+.legend{font-family:var(--tag);font-size:.95rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;margin:.2rem 0 1.4rem}
+
+.note{font-size:.98rem;border-left:6px solid var(--gold);padding:.9rem 1.1rem;background:var(--panel);max-width:48em}
+.note b{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+.empty{border:2px dashed var(--line);padding:1.6rem;max-width:46em}
+.empty .d{font-size:1.8rem;margin-bottom:.5rem}
+
+/* Help tabs */
+.tabs{display:flex;border-bottom:2px solid var(--rule);margin-bottom:1.6rem;flex-wrap:wrap}
+.tabs button{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.5rem;letter-spacing:.02em;background:transparent;border:0;color:var(--fg);padding:.55rem 1.1rem .45rem;cursor:pointer;border-bottom:6px solid transparent;margin-bottom:-2px}
+.tabs button[aria-selected="true"]{border-bottom-color:var(--gold)}
+.howto{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem}
+.howto div{padding:1rem 0;border-bottom:1px dotted var(--line)}
+.howto p{font-size:1rem;margin:0}
+@media (max-width:700px){.howto{grid-template-columns:1fr}}
+
+/* Requirements reference */
+.req-sw{margin-bottom:3rem}
+.req-sw .top{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;align-items:baseline;margin-bottom:.8rem}
+.req-sw .top a{font-family:var(--tag);font-size:.95rem}
+.req td b{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-weight:700;font-size:.9rem;display:block;margin-top:.35rem;color:var(--muted)}
+.req td b:first-child{margin-top:0}
+.req td.na{color:var(--muted);font-style:italic}
+
+footer{background:#000;color:#fff;padding:3rem 0 2.2rem}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:end}
+footer img{width:150px}
+footer p{font-size:.95rem;color:#cfcfcf;margin:0}
+footer nav{display:flex;flex-direction:column;gap:.2rem;text-align:right}
+footer nav a{font-family:var(--display);text-transform:uppercase;font-weight:700;letter-spacing:.05em;text-decoration:none;color:#fff}
+footer nav a:hover{color:var(--gold)}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}footer nav{text-align:left}}
+.cmp td,.cmp th{vertical-align:middle}
+.cmp td .nm{font-family:var(--display);text-transform:uppercase;font-weight:700;font-size:1.1rem;letter-spacing:.02em;display:block}
+.cmp .lnk{background:none;border:0;padding:0;font:inherit;font-size:.92rem;text-decoration:underline;cursor:pointer;color:inherit;margin-right:.8rem}
+.cmp tr.best td:first-child{box-shadow:inset 6px 0 0 var(--gold);padding-left:.8rem}
+.shop td:first-child{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-weight:700;width:22%}
+.shop td b{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-weight:700;font-size:.9rem;color:var(--muted);display:block}
+.lookfor{margin:.9rem 0 0;padding:0;list-style:none}
+.lookfor li{padding:.45rem 0 .45rem 1.4rem;position:relative;font-size:1rem;max-width:48em}
+.lookfor li::before{content:"→";position:absolute;left:0;top:.45rem;font-family:var(--tag);font-weight:600}
+.databanner{background:var(--mist);color:#000;font-size:.98rem;padding:.7rem 0;border-bottom:1px solid #000}
+.databanner b{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em}
+.reqdates{width:100%;margin:.2rem 0 0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+textarea.copybox{width:100%;min-height:200px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;border:2px solid var(--fg);background:var(--bg);color:var(--fg);padding:.7rem;margin-top:1rem;display:none}
+
+@media print{
+  .bar,footer,.skip,.noprint,.hero .cta-row{display:none!important}
+  body{font-size:11pt;background:#fff;color:#000}
+  .hero,.head{background:#fff;color:#000;padding:1rem 0}
+  .hero h1,.head h1{color:#000;font-size:28pt}
+  .readout{border-color:#000}.readout li .v,.readout .rh b{color:#000}.readout li .k{color:#444}
+  .sec{padding:1rem 0}
+  .swres{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#test" aria-label="Computer Requirements for Engineering Program home">
+      <img src="assets/logo.png" alt="Centre College">
+      <span class="prog">Computer Requirements<br>for Engineering Program</span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Site sections">
+      <a href="#test">Device test</a>
+      <a href="#check">Course check</a>
+      <a href="#requirements">Requirements</a>
+      <a href="#buy">Buying guide</a>
+      <a href="#howto">Find your specs</a>
+      <a class="home" href="index.html">← Home</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ 1. DEVICE TEST ============ -->
+<section class="page" id="test" aria-labelledby="h-test">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1 class="d" id="h-test" tabindex="-1">Will your<br>laptop keep<br>up?</h1>
+        <p class="lede">Engineering courses at Centre may need you to run MATLAB, Autodesk Fusion, and Bambu Studio on your own computer. Run a quick test in this browser, confirm what it finds, and see how your machine compares with each program's basic and recommended specs.</p>
+        <div class="cta-row">
+          <button class="btn solid" id="runBtn" type="button">Run the device test</button>
+          <a class="btn" href="#exact">Get exact specs</a>
+          <a class="btn" href="#howto">Find your specs</a>
+        </div>
+      </div>
+      <div class="readout" aria-live="polite">
+        <div class="rh"><b>Device readout</b><span id="roState">Not run yet</span></div>
+        <ol id="roList"></ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" id="exact">
+    <div class="wrap split">
+      <div class="l"><div class="stick">
+        <p class="tag">Optional · about 30 seconds</p>
+        <h2 class="d">Get exact specs</h2>
+        <p class="muted small" style="margin-top:1rem">The browser test can’t see your CPU cores and clock speed, full memory, graphics memory, or free disk space. One command can.</p>
+        <p class="small">The command only <b>reads</b> information. It installs nothing, changes nothing, sends nothing, and doesn’t need administrator rights. Every line is shown here so you can check it.</p>
+      </div></div>
+      <div>
+        <div class="tabs" role="tablist" aria-label="Your operating system">
+          <button role="tab" id="xtab-windows" aria-controls="x-windows" aria-selected="true" data-xtab="windows">Windows</button>
+          <button role="tab" id="xtab-mac" aria-controls="x-mac" aria-selected="false" data-xtab="mac">Mac</button>
+          <button role="tab" id="xtab-linux" aria-controls="x-linux" aria-selected="false" data-xtab="linux">Linux</button>
+        </div>
+
+        <div role="tabpanel" id="x-windows" aria-labelledby="xtab-windows">
+          <ol class="xsteps">
+            <li><b>Copy the command.</b> Use the button below.</li>
+            <li><b>Open PowerShell.</b> Press the <kbd>Windows</kbd> key, type <b>PowerShell</b>, and press <kbd>Enter</kbd>. Don’t choose “Run as administrator.”</li>
+            <li><b>Paste and run.</b> Right-click inside the blue or black window (or press <kbd>Ctrl</kbd>+<kbd>V</kbd>), then press <kbd>Enter</kbd>. If a box warns that you’re pasting multiple lines, choose <b>Paste anyway</b>.</li>
+            <li><b>Wait for the yellow line.</b> After a few seconds PowerShell prints “Your specs…” and copies the result for you.</li>
+            <li><b>Come back here</b> and paste into the box below with <kbd>Ctrl</kbd>+<kbd>V</kbd>.</li>
+          </ol>
+          <div class="cmd"><div class="cmdbar"><span>PowerShell · Windows 10 and 11</span><button class="btn ink fill" type="button" data-copycmd="windows">Copy command</button></div><pre tabindex="0" aria-label="Windows command"><code id="code-windows"></code></pre></div>
+        </div>
+
+        <div role="tabpanel" id="x-mac" aria-labelledby="xtab-mac" hidden>
+          <ol class="xsteps">
+            <li><b>Copy the command.</b> Use the button below.</li>
+            <li><b>Open Terminal.</b> Press <kbd>⌘</kbd>+<kbd>Space</kbd>, type <b>Terminal</b>, and press <kbd>Return</kbd>.</li>
+            <li><b>Paste and run.</b> Press <kbd>⌘</kbd>+<kbd>V</kbd>, then <kbd>Return</kbd>.</li>
+            <li><b>Wait a few seconds.</b> A line starting with <b>CCSPECS</b> appears, and it’s already copied for you.</li>
+            <li><b>Come back here</b> and paste into the box below with <kbd>⌘</kbd>+<kbd>V</kbd>.</li>
+          </ol>
+          <div class="cmd"><div class="cmdbar"><span>Terminal · macOS</span><button class="btn ink fill" type="button" data-copycmd="mac">Copy command</button></div><pre tabindex="0" aria-label="Mac command"><code id="code-mac"></code></pre></div>
+        </div>
+
+        <div role="tabpanel" id="x-linux" aria-labelledby="xtab-linux" hidden>
+          <ol class="xsteps">
+            <li><b>Copy the command.</b> Use the button below.</li>
+            <li><b>Open a terminal.</b> On Ubuntu, press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>.</li>
+            <li><b>Paste and run.</b> Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>, then <kbd>Enter</kbd>.</li>
+            <li><b>Copy the result.</b> Select the whole line starting with <b>CCSPECS</b> and press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>.</li>
+            <li><b>Come back here</b> and paste into the box below.</li>
+          </ol>
+          <div class="cmd"><div class="cmdbar"><span>Bash · Linux</span><button class="btn ink fill" type="button" data-copycmd="linux">Copy command</button></div><pre tabindex="0" aria-label="Linux command"><code id="code-linux"></code></pre></div>
+        </div>
+
+        <div class="pastebox">
+          <label for="pasteIn">Paste the result here</label>
+          <textarea id="pasteIn" spellcheck="false" placeholder="CCSPECS:{…}"></textarea>
+          <div class="form-actions" style="margin-top:.9rem">
+            <button class="btn ink fill" type="button" id="pasteBtn">Use these specs</button>
+            <span class="msg" id="pasteMsg" role="status"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/plain" id="cmd-windows"># Centre College Engineering - spec check. Reads information only; changes nothing.
+$ErrorActionPreference = 'SilentlyContinue'
+$os = Get-CimInstance Win32_OperatingSystem
+$nt = Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion'
+$cpu = @(Get-CimInstance Win32_Processor)
+$avx2 = 'unknown'
+try {
+  if (-not ('CC.K32' -as [type])) { Add-Type -Namespace CC -Name K32 -MemberDefinition '[DllImport("kernel32.dll")] public static extern bool IsProcessorFeaturePresent(uint f);' }
+  $avx2 = if ([CC.K32]::IsProcessorFeaturePresent(40)) {'yes'} else {'no'}
+} catch {}
+$ram = [math]::Round(((Get-CimInstance Win32_PhysicalMemory | Measure-Object Capacity -Sum).Sum) / 1GB)
+if (-not $ram) { $ram = [math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB) }
+$gpus = @(Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0*' |
+  Where-Object { $_.DriverDesc } | ForEach-Object {
+    $m = $_.'HardwareInformation.qwMemorySize'; if (-not $m) { $m = $_.'HardwareInformation.MemorySize' }
+    if ($m -is [byte[]]) { $m = [BitConverter]::ToUInt32($m, 0) }
+    [ordered]@{ name = "$($_.DriverDesc)"; vramGB = [math]::Round([double]$m / 1GB, 1) } })
+$vc = Get-CimInstance Win32_VideoController | Where-Object CurrentHorizontalResolution | Select-Object -First 1
+$drive = 'unknown'
+try { $n = (Get-Partition -DriveLetter C).DiskNumber; $drive = "$((Get-PhysicalDisk | Where-Object DeviceId -eq "$n").MediaType)" } catch {}
+$r = [ordered]@{ v = 1; os = 'windows'; osName = "$($os.Caption)"; osVersion = "$($nt.DisplayVersion)"; build = "$($os.BuildNumber)"
+  cpu = "$($cpu[0].Name)".Trim(); arch = "$($cpu[0].Architecture)"; cores = ($cpu | Measure-Object NumberOfCores -Sum).Sum
+  threads = ($cpu | Measure-Object NumberOfLogicalProcessors -Sum).Sum; baseGHz = [math]::Round($cpu[0].MaxClockSpeed / 1000, 1); avx2 = $avx2
+  ramGB = $ram; gpus = $gpus; display = "$($vc.CurrentHorizontalResolution)x$($vc.CurrentVerticalResolution)"
+  freeGB = [math]::Round((Get-PSDrive C).Free / 1GB); drive = $drive }
+$code = 'CCSPECS:' + ($r | ConvertTo-Json -Compress -Depth 4)
+$code | Set-Clipboard
+Write-Host "`nYour specs are copied. Go back to the Centre page and paste them:`n" -ForegroundColor Yellow
+Write-Host $code</script>
+
+<script type="text/plain" id="cmd-mac"># Centre College Engineering - spec check. Reads information only; changes nothing.
+g=$(system_profiler SPDisplaysDataType 2>/dev/null)
+f(){ printf '%s' "$1" | tr -d '"\\'; }
+out=$(printf 'CCSPECS:{"v":1,"os":"mac","osVersion":"%s","cpu":"%s","arm64":"%s","cores":"%s","perfCores":"%s","threads":"%s","hz":"%s","ramBytes":"%s","gpu":"%s","vram":"%s","display":"%s","freeKB":"%s","ssd":"%s"}' \
+ "$(sw_vers -productVersion)" \
+ "$(f "$(sysctl -n machdep.cpu.brand_string)")" \
+ "$(sysctl -n hw.optional.arm64 2>/dev/null)" \
+ "$(sysctl -n hw.physicalcpu)" \
+ "$(sysctl -n hw.perflevel0.physicalcpu 2>/dev/null)" \
+ "$(sysctl -n hw.logicalcpu)" \
+ "$(sysctl -n hw.cpufrequency 2>/dev/null)" \
+ "$(sysctl -n hw.memsize)" \
+ "$(f "$(printf '%s\n' "$g" | awk -F': ' '/Chipset Model/{print $2; exit}')")" \
+ "$(printf '%s\n' "$g" | awk -F': ' '/VRAM/{print $2; exit}')" \
+ "$(printf '%s\n' "$g" | awk -F': ' '/Resolution/{print $2; exit}')" \
+ "$(df -k /System/Volumes/Data 2>/dev/null | awk 'NR==2{print $4}')" \
+ "$(diskutil info / 2>/dev/null | awk -F': *' '/Solid State/{print $2; exit}')")
+printf '%s' "$out" | pbcopy
+printf '\nYour specs are copied. Go back to the Centre page and paste them:\n\n%s\n\n' "$out"</script>
+
+<script type="text/plain" id="cmd-linux"># Centre College Engineering - spec check. Reads information only; changes nothing.
+f(){ printf '%s' "$1" | tr -d '"\\'; }
+out=$(printf 'CCSPECS:{"v":1,"os":"linux","distro":"%s","cpu":"%s","arch":"%s","cores":"%s","threads":"%s","mhz":"%s","avx2":"%s","ramKB":"%s","gpu":"%s","vramMB":"%s","display":"%s","freeKB":"%s","rota":"%s"}' \
+ "$(f "$(. /etc/os-release; echo "$PRETTY_NAME")")" \
+ "$(f "$(lscpu | sed -n 's/^Model name: *//p' | head -1)")" \
+ "$(uname -m)" \
+ "$(lscpu -p=core,socket 2>/dev/null | grep -v '^#' | sort -u | wc -l)" \
+ "$(nproc --all)" \
+ "$(lscpu | sed -n 's/^CPU max MHz: *//p' | head -1)" \
+ "$(grep -q -m1 avx2 /proc/cpuinfo && echo yes || echo no)" \
+ "$(awk '/MemTotal/{print $2}' /proc/meminfo)" \
+ "$(f "$(lspci 2>/dev/null | grep -iE 'vga|3d' | sed 's/.*: //' | paste -sd ';')")" \
+ "$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits 2>/dev/null | head -1)" \
+ "$(xrandr 2>/dev/null | awk '/\*/{print $1; exit}')" \
+ "$(df -k --output=avail "$HOME" | tail -1 | tr -d ' ')" \
+ "$(lsblk -dno rota "$(findmnt -no source /)" 2>/dev/null | head -1 | tr -d ' ')")
+printf '\nCopy the line below and paste it into the Centre page:\n\n%s\n\n' "$out"</script>
+
+  <div class="sec" id="confirm">
+    <div class="wrap split">
+      <div class="l"><div class="stick">
+        <p class="tag">Step 1 of 2</p>
+        <h2 class="d">Confirm your specs</h2>
+        <p class="muted small" style="margin-top:1rem">A browser can only see part of your hardware. Fields marked <b>Detected</b> came from the test. Check them, and fill in the rest from your system settings.</p>
+        <p class="small"><a href="#exact">Get exact specs with one command</a> or <a href="#howto">look them up yourself</a>.</p>
+      </div></div>
+      <div>
+        <p class="tag" style="margin-bottom:.8rem">Your operating system</p>
+        <div class="ospick" role="radiogroup" aria-label="Operating system">
+          <label data-os="windows"><input type="radio" name="os" value="windows"><span class="n">Windows</span><span class="s">Windows 10 or 11 PC</span><span class="det">Detected</span></label>
+          <label data-os="mac"><input type="radio" name="os" value="mac"><span class="n">Mac</span><span class="s">macOS laptop or desktop</span><span class="det">Detected</span></label>
+          <label data-os="linux"><input type="radio" name="os" value="linux"><span class="n">Linux</span><span class="s">Ubuntu, Debian, Red Hat, SUSE</span><span class="det">Detected</span></label>
+        </div>
+        <div class="note" id="deviceWarn" style="display:none;margin-bottom:1.4rem"></div>
+
+        <div class="fields" id="fields">
+          <div class="field"><label for="f-osv">OS version <span class="src" data-src="osv"></span></label><select id="f-osv"></select><p class="hint" id="h-osv"></p></div>
+          <div class="field"><label for="f-arch">Processor type <span class="src" data-src="arch"></span></label><select id="f-arch"></select><p class="hint" id="h-arch"></p></div>
+          <div class="field hide" id="chipField"><label for="f-chip">Apple chip tier <span class="src" data-src="chip"></span></label><select id="f-chip"><option value="">Not sure</option><option value="base">M-series (M1, M2, M3, M4, M5)</option><option value="pro">M-series Pro</option><option value="max">M-series Max or Ultra</option></select><p class="hint">About This Mac shows the full chip name, such as “Apple M3 Pro.”</p></div>
+          <div class="field" data-hide-mac><label for="f-cores">Logical cores (threads) <span class="src" data-src="cores"></span></label><input id="f-cores" type="number" min="1" max="256" inputmode="numeric" placeholder="e.g. 8"><p class="hint">Browsers report logical processors (threads). MATLAB and Fusion both use this number.</p></div>
+          <div class="field" data-hide-mac><label for="f-avx2">AVX2 instruction support <span class="src" data-src="avx2"></span></label><select id="f-avx2"><option value="unknown">Not sure</option><option value="yes">Yes</option><option value="no">No</option></select><p class="hint">Most Intel CPUs from 2013 on and AMD Ryzen CPUs have it. Browsers can't check this.</p></div>
+          <div class="field"><label for="f-ram">Installed memory (RAM) <span class="src" data-src="ram"></span></label><select id="f-ram"><option value="">Choose…</option><option>4</option><option>6</option><option>8</option><option>12</option><option>16</option><option>18</option><option>24</option><option>32</option><option>36</option><option>48</option><option>64</option><option>96</option><option>128</option></select><p class="hint" id="h-ram">In GB.</p></div>
+          <div class="field"><label for="f-gpu">Graphics <span class="src" data-src="gpu"></span></label><select id="f-gpu"><option value="unknown">Not sure</option><option value="integrated">Integrated (built into the CPU)</option><option value="dedicated">Dedicated graphics card</option></select><p class="hint" id="h-gpu"></p></div>
+          <div class="field" id="vramField"><label for="f-vram">Dedicated graphics memory (VRAM) <span class="src need" data-src="vram">Enter</span></label><select id="f-vram"><option value="">Not sure</option><option value="0.5">Less than 1 GB</option><option value="1">1 GB</option><option value="2">2 GB</option><option value="4">4 GB</option><option value="6">6 GB</option><option value="8">8 GB</option><option value="12">12 GB or more</option></select><p class="hint">Browsers can't read VRAM. Task Manager shows it on Windows.</p></div>
+          <div class="field"><label for="f-disp">Display resolution <span class="src" data-src="disp"></span></label><select id="f-disp"><option value="">Not sure</option><option value="1280">Smaller than 1366 × 768</option><option value="1366">1366 × 768</option><option value="1920">1920 × 1080 (Full HD)</option><option value="2560">2560 × 1440 or 2560 × 1600</option><option value="3840">3840 × 2160 (4K) or higher</option></select><p class="hint">Your screen’s native resolution. Use your largest monitor if you have more than one.</p></div>
+          <div class="field"><label for="f-storage">Free disk space <span class="src need" data-src="storage">Enter</span></label><input id="f-storage" type="number" min="0" step="1" inputmode="numeric" placeholder="GB free"><p class="hint">In GB. Browsers can't see your disk.</p></div>
+          <div class="field"><label for="f-ssd">Drive type <span class="src need" data-src="ssd">Enter</span></label><select id="f-ssd"><option value="unknown">Not sure</option><option value="yes">SSD</option><option value="no">Hard disk (HDD)</option></select><p class="hint">Almost every laptop made since 2018 has an SSD.</p></div>
+          <div class="field"><label for="f-net">Internet download speed <span class="src" data-src="net"></span></label><input id="f-net" type="number" min="0" step="0.5" inputmode="decimal" placeholder="Mbps"><p class="hint">Fusion needs internet to sign in and save to the cloud.</p></div>
+        </div>
+        <div class="form-actions">
+          <button class="btn ink fill" id="saveBtn" type="button">Save and show report</button>
+          <button class="btn ink" id="resetBtn" type="button">Clear</button>
+          <span class="msg" id="saveMsg" role="status"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec panel" id="report">
+    <div class="wrap split">
+      <div class="l"><div class="stick">
+        <p class="tag">Device report</p>
+        <h2 class="d">Your computer</h2>
+        <div class="cta-row noprint">
+          <a class="btn ink fill" href="#check">Check a course</a>
+        </div>
+      </div></div>
+      <div id="reportBody">
+        <div class="empty"><p class="d">No report yet</p><p class="muted" style="margin:0">Run the device test or fill in the fields above, then choose Save and show report.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. COURSE CHECK ============ -->
+<section class="page" id="check" aria-labelledby="h-check">
+  <div class="head"><div class="wrap">
+    <h1 class="d" id="h-check" tabindex="-1">Course<br>check</h1>
+    <div class="aside"><p class="tag">Step 2 of 2</p><p class="lede">Pick your course and the software it uses. Each program is checked against its basic and recommended specs for the operating system you chose.</p></div>
+  </div></div>
+
+  <div class="sec">
+    <div class="wrap">
+      <p class="tag">Choose a course</p>
+      <div class="courses" id="courseList"></div>
+      <div class="swpick" id="swPick" aria-label="Software to check"></div>
+    </div>
+  </div>
+
+  <div class="sec panel">
+    <div class="wrap" id="results"></div>
+  </div>
+</section>
+
+<!-- ============ BUYING GUIDE ============ -->
+<section class="page" id="buy" aria-labelledby="h-buy">
+  <div class="head"><div class="wrap">
+    <h1 class="d" id="h-buy" tabindex="-1">Before<br>you buy</h1>
+    <div class="aside"><p class="tag">Shopping for a new computer</p><p class="lede">See what to look for in your courses, then check a laptop you’re considering. Paste its spec list from the store’s website, or fill in the details yourself.</p></div>
+  </div></div>
+
+  <div class="sec">
+    <div class="wrap split">
+      <div class="l"><div class="stick">
+        <p class="tag">Shopping list</p>
+        <h2 class="d">What to look for</h2>
+        <div class="field" style="margin-top:1.2rem"><label for="b-course">Course</label><select id="b-course"></select></div>
+        <div class="field" style="margin-top:1rem"><label for="b-listos">Computer type</label><select id="b-listos"><option value="windows">Windows laptop or PC</option><option value="mac">Mac</option></select></div>
+      </div></div>
+      <div id="shopList"></div>
+    </div>
+  </div>
+
+  <div class="sec panel" id="buycheck">
+    <div class="wrap split">
+      <div class="l"><div class="stick">
+        <p class="tag">Check a computer</p>
+        <h2 class="d">Will this one work?</h2>
+        <p class="muted small" style="margin-top:1rem">On the store’s product page, find the <b>Specifications</b> section, select it all, copy, and paste it here. Anything the page doesn’t list, fill in below.</p>
+        <p class="small">Tip: stores often skip the thread count. Search the processor model on <a href="https://www.intel.com/content/www/us/en/ark.html" target="_blank" rel="noopener">Intel</a> or <a href="https://www.amd.com/en/products/specifications/processors.html" target="_blank" rel="noopener">AMD</a> to find it.</p>
+      </div></div>
+      <div>
+        <div class="pastebox" style="margin-top:0;padding-top:0;border-top:0">
+          <label for="b-paste">Paste the product’s specs (optional)</label>
+          <textarea id="b-paste" placeholder="e.g. Windows 11 Home · Intel Core Ultra 7 155H (16 cores, 22 threads) · 32GB LPDDR5x · 1TB PCIe NVMe SSD · NVIDIA GeForce RTX 4060 8GB GDDR6 · 14.5&quot; 2880 x 1800 OLED"></textarea>
+          <div class="form-actions" style="margin-top:.9rem"><button class="btn ink" type="button" id="b-read">Read specs</button><span class="msg" id="b-readmsg" role="status"></span></div>
+        </div>
+
+        <div class="field" style="margin:1.6rem 0 1.2rem"><label for="b-name">Name this computer</label><input id="b-name" type="text" placeholder="e.g. Dell XPS 14, Best Buy $1,299"></div>
+        <div class="ospick" role="radiogroup" aria-label="Operating system of the computer">
+          <label data-os="windows"><input type="radio" name="bos" value="windows" checked><span class="n">Windows</span><span class="s">PC or laptop</span></label>
+          <label data-os="mac"><input type="radio" name="bos" value="mac"><span class="n">Mac</span><span class="s">MacBook, iMac, Mac mini</span></label>
+          <label data-os="linux"><input type="radio" name="bos" value="linux"><span class="n">Linux</span><span class="s">Ships with Ubuntu, etc.</span></label>
+        </div>
+        <div class="note" id="b-warn" style="display:none;margin-bottom:1.4rem"></div>
+        <div class="fields">
+          <div class="field"><label for="b-osv">Operating system</label><select id="b-osv"></select></div>
+          <div class="field"><label for="b-cpu">Processor model</label><input id="b-cpu" type="text" placeholder="e.g. Intel Core Ultra 7 155H"></div>
+          <div class="field"><label for="b-arch">Processor type</label><select id="b-arch"></select></div>
+          <div class="field hide" id="b-chipField"><label for="b-chip">Apple chip tier</label><select id="b-chip"><option value="">Not sure</option><option value="base">M-series (M1–M5)</option><option value="pro">M-series Pro</option><option value="max">M-series Max or Ultra</option></select></div>
+          <div class="field" id="b-thrField"><label for="b-threads">Threads</label><input id="b-threads" type="number" min="1" max="256" inputmode="numeric" placeholder="e.g. 16"><p class="hint">Sometimes listed as “logical processors.” Not the same as cores.</p></div>
+          <div class="field"><label for="b-ram">Memory (RAM)</label><select id="b-ram"><option value="">Choose…</option><option>4</option><option>8</option><option>12</option><option>16</option><option>18</option><option>24</option><option>32</option><option>36</option><option>48</option><option>64</option><option>96</option><option>128</option></select><p class="hint">In GB.</p></div>
+          <div class="field" id="b-gpuField"><label for="b-gpu">Graphics</label><select id="b-gpu"><option value="unknown">Not sure</option><option value="integrated">Integrated (Intel, AMD Radeon Graphics)</option><option value="dedicated">Dedicated card (NVIDIA RTX, AMD Radeon RX)</option></select><input id="b-gpuname" type="text" placeholder="Graphics model, e.g. NVIDIA GeForce RTX 4060" style="margin-top:.5rem"></div>
+          <div class="field hide" id="b-vramField"><label for="b-vram">Graphics memory (VRAM)</label><select id="b-vram"><option value="">Not sure</option><option value="0.5">Less than 1 GB</option><option value="1">1 GB</option><option value="2">2 GB</option><option value="4">4 GB</option><option value="6">6 GB</option><option value="8">8 GB</option><option value="12">12 GB or more</option></select></div>
+          <div class="field"><label for="b-cap">Storage size</label><select id="b-cap"><option value="">Choose…</option><option value="64">64 GB</option><option value="128">128 GB</option><option value="256">256 GB</option><option value="512">512 GB</option><option value="1024">1 TB</option><option value="2048">2 TB or more</option></select><p class="hint">Total drive size. About 10% goes to the operating system.</p></div>
+          <div class="field"><label for="b-ssd">Storage type</label><select id="b-ssd"><option value="yes">SSD (NVMe, PCIe, solid state)</option><option value="emmc">eMMC or UFS</option><option value="no">Hard disk (HDD)</option></select></div>
+          <div class="field"><label for="b-disp">Screen resolution</label><select id="b-disp"><option value="">Not sure</option><option value="1280">Smaller than 1366 × 768</option><option value="1366">1366 × 768 (HD)</option><option value="1920">1920 × 1080 or 1920 × 1200 (Full HD)</option><option value="2560">2560 × 1440 to 3200 × 2000 (QHD, 2.8K, 3K, Retina)</option><option value="3840">3840 × 2160 (4K) or higher</option></select></div>
+        </div>
+        <div class="form-actions">
+          <button class="btn ink fill" type="button" id="b-check">Check this computer</button>
+          <button class="btn ink" type="button" id="b-add">Add to comparison</button>
+          <button class="btn ink" type="button" id="b-clear">Clear</button>
+          <span class="msg" id="b-msg" role="status"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" id="b-resultsSec" style="display:none">
+    <div class="wrap" id="b-results"></div>
+  </div>
+
+  <div class="sec panel" id="b-compareSec" style="display:none">
+    <div class="wrap">
+      <p class="tag">Side by side</p>
+      <h2 class="d" style="margin-bottom:1.4rem">Your comparison</h2>
+      <div id="b-compare"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. REQUIREMENTS ============ -->
+<section class="page" id="requirements" aria-labelledby="h-req">
+  <div class="head"><div class="wrap">
+    <h1 class="d" id="h-req" tabindex="-1">Software<br>requirements</h1>
+    <div class="aside"><p class="tag">Basic and recommended</p><p class="lede">The published requirements behind every check on this site, by operating system. Vendors update these with each release, so follow the source links before buying a new computer.</p></div>
+  </div></div>
+  <div class="sec">
+    <div class="wrap" id="reqBody"></div>
+  </div>
+</section>
+
+<!-- ============ 4. HOW TO FIND SPECS ============ -->
+<section class="page" id="howto" aria-labelledby="h-howto">
+  <div class="head"><div class="wrap">
+    <h1 class="d" id="h-howto" tabindex="-1">Find your<br>specs</h1>
+    <div class="aside"><p class="tag">Two minutes, no downloads</p><p class="lede">Everything the browser test can't see is listed in your system settings. Pick your operating system for step-by-step directions.</p><p style="margin:1.4rem 0 0"><a class="btn" href="#test">← Back to device test</a></p></div>
+  </div></div>
+  <div class="sec">
+    <div class="wrap">
+      <div class="tabs" role="tablist" aria-label="Operating system">
+        <button role="tab" id="tab-windows" aria-controls="how-windows" aria-selected="true" data-tab="windows">Windows</button>
+        <button role="tab" id="tab-mac" aria-controls="how-mac" aria-selected="false" data-tab="mac">Mac</button>
+        <button role="tab" id="tab-linux" aria-controls="how-linux" aria-selected="false" data-tab="linux">Linux</button>
+      </div>
+
+      <div role="tabpanel" id="how-windows" aria-labelledby="tab-windows" class="howto">
+        <div><h4>OS version</h4><p>Open <b>Settings → System → About</b>. Under Windows specifications, read the <b>Edition</b> (Windows 10 or 11) and <b>Version</b> (for example 24H2).</p></div>
+        <div><h4>Processor and cores</h4><p>Press <b>Ctrl + Shift + Esc</b> to open Task Manager, then choose <b>Performance → CPU</b>. Use the number next to <b>Logical processors</b>. <b>System type</b> on the About page shows x64 or ARM.</p></div>
+        <div><h4>AVX2</h4><p>Search your processor model on the Intel or AMD website and look under Instruction Set Extensions. Intel Core 4th generation (2013) and later, and all AMD Ryzen chips, support AVX2.</p></div>
+        <div><h4>Memory (RAM)</h4><p><b>Settings → System → About</b> lists <b>Installed RAM</b>.</p></div>
+        <div><h4>Graphics and VRAM</h4><p>In Task Manager, open <b>Performance → GPU</b>. Laptops with two GPUs show GPU 0 and GPU 1. The one with <b>Dedicated GPU memory</b> above 1 GB (usually NVIDIA or AMD Radeon RX) is your dedicated card.</p></div>
+        <div><h4>Free space and drive type</h4><p>Open File Explorer → <b>This PC</b> for free space. Task Manager → <b>Performance → Disk</b> shows SSD or HDD in the heading.</p></div>
+      </div>
+
+      <div role="tabpanel" id="how-mac" aria-labelledby="tab-mac" class="howto" hidden>
+        <div><h4>macOS version</h4><p>Choose the Apple menu → <b>About This Mac</b>. The macOS name and number (for example Sequoia 15.5) appear under the chip.</p></div>
+        <div><h4>Chip</h4><p>The same window shows <b>Chip</b>: Apple M1 through M4 (or later) is Apple silicon. A <b>Processor</b> line that says Intel means an Intel Mac, which current MATLAB no longer supports.</p></div>
+        <div><h4>Memory</h4><p><b>About This Mac</b> lists <b>Memory</b>. Apple silicon shares this memory with graphics.</p></div>
+        <div><h4>Graphics</h4><p>Apple silicon graphics are built in and meet both programs' Mac requirements. On an Intel Mac, choose <b>More Info → System Report → Graphics/Displays</b> for VRAM.</p></div>
+        <div><h4>Free space</h4><p>Open <b>System Settings → General → Storage</b>. All Macs sold since 2020 use SSDs.</p></div>
+        <div><h4>Cores and AVX2</h4><p>Not needed on a Mac: neither vendor lists a core count or instruction set for macOS.</p></div>
+      </div>
+
+      <div role="tabpanel" id="how-linux" aria-labelledby="tab-linux" class="howto" hidden>
+        <div><h4>Distribution</h4><p>Run <code>cat /etc/os-release</code> and read <b>PRETTY_NAME</b>.</p></div>
+        <div><h4>Processor and cores</h4><p>Run <code>lscpu</code>. <b>Model name</b> is your CPU and <b>CPU(s)</b> is the logical core count.</p></div>
+        <div><h4>AVX2</h4><p>Run <code>grep -o -m1 avx2 /proc/cpuinfo</code>. If it prints <b>avx2</b>, you have it.</p></div>
+        <div><h4>Memory</h4><p>Run <code>free -h</code> and read the <b>total</b> column on the Mem row.</p></div>
+        <div><h4>Graphics and VRAM</h4><p>Run <code>lspci | grep -iE 'vga|3d'</code>. For NVIDIA cards, <code>nvidia-smi</code> shows total memory.</p></div>
+        <div><h4>Free space and drive type</h4><p><code>df -h ~</code> shows free space in your home folder. In <code>lsblk -d -o name,rota</code>, ROTA 0 means SSD.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-rev.png" alt="Centre College">
+    <div><p>Computer Requirements for Engineering Program</p><p>Centre College, Danville, Kentucky</p><p class="muted" style="margin-top:.6rem;font-size:.85rem">Test results stay in your browser. Nothing is sent to Centre or anyone else.</p></div>
+    <nav aria-label="Footer">
+      <a href="#test">Device test</a>
+      <a href="#check">Course check</a>
+      <a href="#buy">Buying guide</a>
+      <a href="index.html">Home</a>
+      <a href="admin.html" style="opacity:.6;font-size:.85rem">Maintainers</a>
+    </nav>
+  </div>
+</footer>
+
+<script type="application/json" id="fallback-data">{"requirements": {"software": {"matlab": {"name": "MATLAB", "version": "R2026b", "vendor": "MathWorks", "lastUpdated": "2026-09-29", "lastChecked": "2026-09-29", "links": [{"label": "Windows", "url": "https://www.mathworks.com/support/requirements/matlab-system-requirements.html"}, {"label": "Mac", "url": "https://www.mathworks.com/support/requirements/matlab-mac.html"}, {"label": "Linux", "url": "https://www.mathworks.com/support/requirements/matlab-linux.html"}], "storage": {"windows": [4.6, 8], "mac": [3.7, 6], "linux": [4.5, 7]}, "notes": "Storage: an all-products install needs about 25 GB on Windows, 17 GB on Mac, and 26 GB on Linux. Some toolboxes are not available on macOS; check the Mac page if your course uses one. GPU computing with Parallel Computing Toolbox is not available on macOS.", "platforms": {"windows": {"supported": true, "items": [{"type": "os", "basic": ["win11-25h2", "win11-24h2", "win10-22h2"], "rec": ["win11-25h2", "win11-24h2", "win10-22h2"], "basicText": "Windows 11 (24H2, 25H2) or Windows 10 (22H2)", "recText": "Same", "notes": {"win11-23h2": "MATLAB R2026b lists Windows 11 24H2 and 25H2. Run Windows Update to move past 23H2."}}, {"type": "arch", "basic": ["x86-64", "arm"], "rec": ["x86-64"], "basicText": "Any Intel or AMD x86-64, or Snapdragon X", "recText": "Intel or AMD x86-64", "notes": {"arm": "On Windows ARM, MATLAB runs in Prism emulation and some capabilities are not supported."}}, {"type": "number", "field": "cores", "label": "Logical cores", "unit": "", "basic": 1, "rec": 4, "basicText": "Any", "recText": "4 logical cores", "lowNote": ""}, {"type": "avx2", "note": "A future MATLAB release will require AVX2."}, {"type": "number", "field": "ram", "label": "Memory (RAM)", "unit": "GB", "basic": 8, "rec": 16, "basicText": "8 GB", "recText": "16 GB", "lowNote": ""}, {"type": "storage", "basic": 4.6, "rec": 8, "basicText": "4.6 GB (MATLAB only)", "recText": "5–8 GB typical install"}, {"type": "gpu-optional", "rec": 2}]}, "mac": {"supported": true, "items": [{"type": "os", "basic": ["mac27", "mac26", "mac15"], "rec": ["mac27", "mac26", "mac15"], "basicText": "macOS 27, 26 Tahoe, or 15 Sequoia", "recText": "Same", "notes": {"mac14": "macOS Sonoma is no longer supported. Update macOS first."}}, {"type": "arch", "basic": ["apple"], "rec": ["apple"], "basicText": "Apple silicon (A- or M-series)", "recText": "Apple silicon", "notes": {"x86-64": "MATLAB is no longer available for Macs with Intel processors. Use a campus lab computer or an older MATLAB release your instructor approves."}}, {"type": "number", "field": "ram", "label": "Memory (RAM)", "unit": "GB", "basic": 8, "rec": 16, "basicText": "8 GB", "recText": "16 GB", "lowNote": ""}, {"type": "storage", "basic": 3.7, "rec": 6, "basicText": "3.7 GB (MATLAB only)", "recText": "4–6 GB typical install"}, {"type": "gpu-mac"}]}, "linux": {"supported": true, "items": [{"type": "os", "basic": ["ubuntu2404", "ubuntu2204", "debian13", "debian12", "rhel10", "rhel9", "rhel8", "sled15", "linux-other"], "rec": ["ubuntu2404", "ubuntu2204", "debian13", "debian12", "rhel10", "rhel9", "rhel8", "sled15"], "basicText": "A listed distribution, or kernel 4.18+ and glibc 2.28+", "recText": "Ubuntu 24.04/22.04, Debian 13/12, RHEL 10/9/8, SUSE 15", "notes": {"linux-other": "Other distributions with kernel 4.18+ and glibc 2.28+ will likely work, but MathWorks support is limited."}}, {"type": "arch", "basic": ["x86-64"], "rec": ["x86-64"], "basicText": "Intel or AMD x86-64", "recText": "Intel or AMD x86-64", "notes": {"arm": "MATLAB for Linux requires an x86-64 processor."}}, {"type": "number", "field": "cores", "label": "Logical cores", "unit": "", "basic": 2, "rec": 4, "basicText": "2 cores", "recText": "4 cores", "lowNote": ""}, {"type": "avx2", "note": "A future MATLAB release will require AVX2."}, {"type": "number", "field": "ram", "label": "Memory (RAM)", "unit": "GB", "basic": 8, "rec": 16, "basicText": "8 GB", "recText": "16 GB", "lowNote": ""}, {"type": "storage", "basic": 4.5, "rec": 7, "basicText": "4.5 GB (MATLAB only)", "recText": "5–7 GB typical install"}, {"type": "gpu-optional", "rec": 2}]}}}, "fusion": {"name": "Autodesk Fusion", "version": "Current release", "vendor": "Autodesk", "lastUpdated": "2026-09-29", "lastChecked": "2026-09-29", "links": [{"label": "All platforms", "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/System-requirements-for-Autodesk-Fusion-360.html"}], "storage": {"windows": [8.5, 15], "mac": [8.5, 15], "linux": [0, 0]}, "notes": "Also required: a HID-compliant mouse or trackpad (Wacom tablets and 3Dconnexion SpaceMouse are optional), and TLS 1.2+. On Windows, .NET Framework 4.5+ is needed to send crash reports, and Insider or pre-release builds are not supported. On Mac, some commands prompt to install Rosetta 2, and Macs running OpenCore Legacy Patcher are not supported. For professional work Autodesk recommends certified graphics (Radeon Pro WX, Intel Arc Pro, NVIDIA Quadro); consumer cards like GeForce RTX 4000, Radeon RX 7000, or Arc A700 generally work but are not validated.", "platforms": {"windows": {"supported": true, "items": [{"type": "os", "basic": ["win11-25h2", "win11-24h2", "win11-23h2"], "rec": ["win11-25h2", "win11-24h2", "win11-23h2"], "basicText": "Windows 11, 23H2 (build 22631) or newer", "recText": "Same", "notes": {"win10-22h2": "Autodesk’s minimum is Windows 11 23H2. Fusion may still open on Windows 10, but it is not supported. Upgrade to Windows 11 if your PC is eligible.", "win10-old": "Autodesk’s minimum is Windows 11 23H2. Upgrade to Windows 11 if your PC is eligible.", "win11-old": "Run Windows Update to reach 23H2 (build 22631) or newer. Insider and pre-release builds are not supported."}}, {"type": "arch", "basic": ["x86-64", "arm"], "rec": ["x86-64"], "basicText": "x86-64 (ARM64 runs in Prism emulation)", "recText": "Intel or AMD x86-64", "notes": {"arm": "ARM64 devices run Fusion on Windows 11 through Prism emulation. Autodesk has not finished certifying this."}}, {"type": "number", "field": "cores", "label": "Cores and threads", "unit": "threads", "basic": 4, "rec": 16, "basicText": "2 performance cores, 4 threads, 3 GHz+ turbo (Core i3, Ryzen 3)", "recText": "8+ performance cores, 16+ threads, 3 GHz+ base (Core i7, Ryzen 7)", "lowNote": "Fusion needs at least 2 performance cores and 4 threads."}, {"type": "number", "field": "ram", "label": "Memory (RAM)", "unit": "GB", "basic": 8, "rec": 32, "basicText": "8 GB", "recText": "32 GB+", "lowNote": ""}, {"type": "gpu-vram", "basic": 1, "rec": 8}, {"type": "display", "basic": 1366, "rec": 3840, "basicText": "1366 × 768 at 60 Hz, 100% scale", "recText": "3840 × 2160 (4K) at 60 Hz, 200% scale"}, {"type": "storage", "basic": 8.5, "rec": 15, "basicText": "8.5 GB (hard disk OK)", "recText": "15 GB+ with cache"}, {"type": "internet", "basic": 5, "rec": 25, "basicText": "5 Mbps down, 1 Mbps up", "recText": "25+ Mbps down, 5 Mbps up"}]}, "mac": {"supported": true, "items": [{"type": "os", "basic": ["mac27", "mac26", "mac15", "mac14"], "rec": ["mac27", "mac26", "mac15"], "basicText": "macOS 14 Sonoma", "recText": "macOS 15.7 Sequoia or newer, or 26 Tahoe", "notes": {"mac15": "Autodesk recommends Sequoia 15.7 or newer. Install the latest 15.x update.", "mac14": "Supported. Update to Sequoia 15.7 or Tahoe for the recommended setup.", "mac13": "The minimum is macOS 14 Sonoma. Update macOS first. Macs using OpenCore Legacy Patcher are not supported."}}, {"type": "mac-chip", "label": "Processor type", "basicText": "1.4 GHz dual-core Intel Core i5 or Apple M1", "recText": "Apple M1 Max or newer"}, {"type": "number", "field": "ram", "label": "Memory (RAM)", "unit": "GB", "basic": 4, "rec": 16, "basicText": "4 GB", "recText": "16 GB+", "lowNote": ""}, {"type": "mac-chip", "label": "Graphics", "basicText": "Intel HD Graphics 5000 or Apple M1", "recText": "Apple M1 Max or newer"}, {"type": "display", "basic": 1366, "rec": 3840, "basicText": "1366 × 768 at 60 Hz, Retina scaling off", "recText": "3840 × 2160 (4K) at 60 Hz, Retina scaling on"}, {"type": "storage", "basic": 8.5, "rec": 15, "basicText": "8.5 GB (hard disk OK)", "recText": "15 GB+ with cache"}, {"type": "internet", "basic": 5, "rec": 25, "basicText": "5 Mbps down, 1 Mbps up", "recText": "25+ Mbps down, 5 Mbps up"}]}, "linux": {"supported": false, "why": "Autodesk does not make the Fusion desktop app for Linux.", "alt": ["Use Fusion in a web browser (Chrome, Firefox, or Edge). It needs a verified Education entitlement, 5 Mbps down and 1 Mbps up, under 100 ms latency, and a 1366 × 768 or larger screen (1920 × 1080 recommended).", "Use a campus computer lab machine with Fusion installed.", "Install Windows 11 alongside Linux (dual boot) on the same computer."]}}}, "bambu": {"name": "Bambu Studio", "version": "Current release", "vendor": "Bambu Lab", "lastUpdated": "2026-09-29", "lastChecked": "2026-09-29", "links": [{"label": "Download page", "url": "https://bambulab.com/en/download/studio"}, {"label": "Quick start", "url": "https://wiki.bambulab.com/en/software/bambu-studio/studio-quick-start"}], "storage": {"windows": [2, 2], "mac": [2, 2], "linux": [2, 2]}, "notes": "", "platforms": {"windows": {"supported": true, "items": [{"type": "os", "basic": ["win11-25h2", "win11-24h2", "win11-23h2", "win11-old", "win10-22h2", "win10-old"], "rec": ["win11-25h2", "win11-24h2", "win11-23h2", "win11-old", "win10-22h2", "win10-old"], "basicText": "Windows 10 or newer, 64-bit", "recText": "Same", "notes": {}}, {"type": "arch", "basic": ["x86-64", "arm"], "rec": ["x86-64"], "basicText": "64-bit Intel or AMD, 2 GHz or faster", "recText": "64-bit Intel or AMD", "notes": {"arm": "Bambu Lab lists Intel and AMD processors. On an ARM (Snapdragon) PC it runs through Windows emulation."}}, {"type": "number", "field": "cores", "label": "Logical cores", "unit": "", "basic": 2, "rec": 2, "basicText": "Dual-core (Intel Core 2, AMD Athlon 64, or newer)", "recText": "Same", "lowNote": ""}, {"type": "number", "field": "ram", "label": "Memory (RAM)", "unit": "GB", "basic": 4, "rec": 8, "basicText": "4 GB", "recText": "8 GB", "lowNote": ""}, {"type": "gpu-any"}, {"type": "storage", "basic": 2, "rec": 2, "basicText": "2 GB", "recText": "2 GB"}]}, "mac": {"supported": true, "items": [{"type": "os", "basic": ["mac27", "mac26", "mac15", "mac14", "mac13"], "rec": ["mac27", "mac26", "mac15", "mac14"], "basicText": "macOS 10.15 Catalina or newer", "recText": "Same", "notes": {"mac13": "Bambu Studio needs macOS 10.15 Catalina or newer. Ventura (13) and Monterey (12) are fine."}}, {"type": "arch", "basic": ["apple", "x86-64"], "rec": ["apple", "x86-64"], "basicText": "Apple silicon or Intel", "recText": "Same", "notes": {}}, {"type": "number", "field": "ram", "label": "Memory (RAM)", "unit": "GB", "basic": 4, "rec": 8, "basicText": "4 GB", "recText": "8 GB", "lowNote": ""}, {"type": "gpu-mac"}, {"type": "storage", "basic": 2, "rec": 2, "basicText": "2 GB", "recText": "2 GB"}]}, "linux": {"supported": true, "items": [{"type": "os", "basic": ["ubuntu2404", "ubuntu2204", "debian13", "debian12", "rhel10", "rhel9", "rhel8", "sled15", "linux-other"], "rec": ["ubuntu2404", "ubuntu2204"], "basicText": "Ubuntu 20.04+ or Fedora 36+ (other distributions usually work)", "recText": "Ubuntu 20.04 or newer, or Fedora 36 or newer", "notes": {"debian13": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.", "debian12": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.", "rhel10": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.", "rhel9": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.", "rhel8": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.", "sled15": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.", "linux-other": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support."}}, {"type": "arch", "basic": ["x86-64"], "rec": ["x86-64"], "basicText": "64-bit Intel or AMD", "recText": "64-bit Intel or AMD", "notes": {"arm": "Bambu Lab’s Linux download is built for Intel and AMD (x86-64) computers."}}, {"type": "number", "field": "cores", "label": "Logical cores", "unit": "", "basic": 2, "rec": 2, "basicText": "Dual-core, 2 GHz or faster", "recText": "Same", "lowNote": ""}, {"type": "number", "field": "ram", "label": "Memory (RAM)", "unit": "GB", "basic": 4, "rec": 8, "basicText": "4 GB", "recText": "8 GB", "lowNote": ""}, {"type": "gpu-any"}, {"type": "storage", "basic": 2, "rec": 2, "basicText": "2 GB", "recText": "2 GB"}]}}}}}, "courses": {"courses": [{"id": "egr110", "code": "EGR 110", "title": "Engineering Exploration", "software": ["bambu"], "url": "https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/course-descriptions/egr-engineering/100/egr-110"}, {"id": "egr210", "code": "EGR 210", "title": "Introduction to Programming", "software": ["matlab"], "url": "https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/course-descriptions/egr-engineering/200/egr-210"}, {"id": "egr215", "code": "EGR 215", "title": "Computer-Aided Design and Drafting", "software": ["fusion"], "url": "https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/course-descriptions/egr-engineering/200/egr-215"}, {"id": "any", "code": "Other", "title": "Choose the software yourself", "software": []}]}}</script>
+<script>
+(function(){
+'use strict';
+/* =====================================================================
+   EDIT HERE: courses and the software each one uses.
+   Add a course by adding a line; software ids must match SOFTWARE below.
+   ===================================================================== */
+var COURSES=[];   /* loaded from data/courses.json */
+
+/* ---------- OS version lists ---------- */
+var OSV={
+  windows:[['win11-25h2','Windows 11, version 25H2'],['win11-24h2','Windows 11, version 24H2'],['win11-23h2','Windows 11, version 23H2'],['win11-old','Windows 11, before 23H2'],['win10-22h2','Windows 10, version 22H2'],['win10-old','Windows 10, before 22H2'],['win-old','Windows 8.1 or older']],
+  mac:[['mac27','macOS 27 Golden Gate'],['mac26','macOS 26 Tahoe'],['mac15','macOS 15 Sequoia'],['mac14','macOS 14 Sonoma'],['mac13','macOS 13 Ventura or older']],
+  linux:[['ubuntu2404','Ubuntu 24.04 LTS'],['ubuntu2204','Ubuntu 22.04 LTS'],['debian13','Debian 13'],['debian12','Debian 12'],['rhel10','Red Hat Enterprise Linux 10'],['rhel9','Red Hat Enterprise Linux 9 (9.2+)'],['rhel8','Red Hat Enterprise Linux 8 (8.6+)'],['sled15','SUSE Linux Enterprise 15 (SP4+)'],['linux-other','Another distribution']]
+};
+var ARCH={
+  windows:[['x86-64','Intel or AMD (x64)'],['arm','ARM (Snapdragon X)']],
+  mac:[['apple','Apple silicon (M-series)'],['x86-64','Intel']],
+  linux:[['x86-64','Intel or AMD (x86-64)'],['arm','ARM (aarch64)']]
+};
+var OSNAME={windows:'Windows',mac:'macOS',linux:'Linux'};
+function lab(list,key){for(var i=0;i<list.length;i++)if(list[i][0]===key)return list[i][1];return key||'—'}
+function osvLabel(S){return S.os&&S.osv?lab(OSV[S.os],S.osv):'—'}
+
+/* ---------- Requirement item builders ---------- */
+function R(status,yours,note){return {status:status,yours:yours,note:note||''}}
+function OSREQ(basic,rec,basicText,recText,notes){return {label:'Operating system',basic:basicText,rec:recText,ev:function(S){
+  if(!S.osv)return R('unknown','Not entered');var y=osvLabel(S),n=(notes&&notes[S.osv])||'';
+  if(rec.indexOf(S.osv)>-1)return R('rec',y,n);if(basic.indexOf(S.osv)>-1)return R('basic',y,n);
+  return R('below',y,n||'This version is not supported. Update the operating system before installing.');}}}
+function ARCHREQ(basic,rec,basicText,recText,notes){return {label:'Processor type',basic:basicText,rec:recText,ev:function(S){
+  if(!S.arch)return R('unknown','Not entered');var y=lab(ARCH[S.os]||[],S.arch),n=(notes&&notes[S.arch])||'';
+  if(rec.indexOf(S.arch)>-1)return R('rec',y,n);if(basic.indexOf(S.arch)>-1)return R('basic',y,n);return R('below',y,n||'This processor type is not supported.');}}}
+function NUMREQ(field,label,unit,basic,rec,basicText,recText,lowNote){return {label:label,field:field,nb:basic,nr:rec,basic:basicText,rec:recText,ev:function(S){
+  var v=S[field];if(v==null||v===''||isNaN(v))return R('unknown','Not entered');v=+v;var y=v+(unit?' '+unit:'');
+  if(v>=rec)return R('rec',y);if(v>=basic)return R('basic',y,'Works, but below the recommended '+rec+(unit?' '+unit:'')+'.');return R('below',y,lowNote||('Needs at least '+basic+(unit?' '+unit:'')+'.'));}}}
+function AVX2REQ(note){return {label:'AVX2 instructions',basic:'Not required',rec:'Supported',ev:function(S){
+  if(S.arch!=='x86-64')return null;
+  if(S.avx2==='yes')return R('rec','Yes');if(S.avx2==='no')return R('basic','No',note);return R('unknown','Not sure','Check your CPU model. '+note);}}}
+function STOREQ(basic,rec,basicText,recText){return {label:'Free disk space',field:'storage',nb:basic,nr:rec,basic:basicText,rec:recText+' on an SSD',ev:function(S){
+  var v=S.storage;if(v==null||v===''||isNaN(v))return R('unknown','Not entered');v=+v;var y=v+' GB free'+(S.ssd==='yes'?', SSD':S.ssd==='no'?', HDD':'');
+  if(v<basic)return R('below',y,'Free up at least '+Math.ceil(basic-v)+' GB before installing.');
+  if(v>=rec&&S.ssd==='yes')return R('rec',y);
+  if(v>=rec&&S.ssd==='no')return R('basic',y,'An SSD is strongly recommended. Expect slow start-up on a hard disk.');
+  if(v>=rec)return R('basic',y,'Enough space. Confirm your drive is an SSD to meet the recommendation.');
+  return R('basic',y,'Enough for a minimal install, not the typical one.');}}}
+function NETREQ(min,rec,basicText,recText){rec=rec||min;return {label:'Internet connection',basic:basicText||(min+' Mbps download'),rec:recText||(rec+' Mbps or faster'),ev:function(S){
+  var v=S.net;if(v==null||v===''||isNaN(v))return R('unknown','Not entered');v=+v;var y=v+' Mbps down';
+  if(v<min)return R('below',y,'Sign-in, cloud saves, and opening shared designs will be slow or fail.');
+  if(v>=rec)return R('rec',y,'Upload speed matters too; check it with any speed test.');
+  return R('basic',y,'Enough to work. Opening large shared designs will be faster at '+rec+'+ Mbps.');}}}
+var DISP=[['1280','Smaller than 1366 × 768'],['1366','1366 × 768'],['1920','1920 × 1080 (Full HD)'],['2560','2560 × 1440 or 2560 × 1600'],['3840','3840 × 2160 (4K) or higher']];
+function DISPREQ(basicText,recText,bw,rw){bw=bw||1366;rw=rw||3840;return {label:'Display',basic:basicText,rec:recText,ev:function(S){
+  var v=+S.disp;if(!v)return R('unknown','Not entered');var y=lab(DISP,String(v));
+  if(v<bw)return R('below',y,'This program needs a larger screen. Use an external monitor.');
+  if(v>=rw)return R('rec',y);return R('basic',y,'Standard canvas graphics. Autodesk recommends a 4K display for high-resolution canvas graphics.');}}}
+var CHIP=[['base','M-series (M1, M2, M3, M4, M5)'],['pro','M-series Pro'],['max','M-series Max or Ultra']];
+function FUSMAC(label,basicText,recText){return {label:label,basic:basicText,rec:recText,ev:function(S){
+  if(S.arch==='x86-64')return R('basic','Intel Mac','Meets the minimum (1.4 GHz dual-core Core i5 or better). Some newer Fusion commands are moving to Apple silicon.');
+  if(S.arch!=='apple')return R('unknown','Not entered');
+  if(S.chip==='max')return R('rec','Apple silicon, Max or Ultra');
+  if(S.chip==='base'||S.chip==='pro')return R('basic',lab(CHIP,S.chip),'Runs Fusion well for coursework. Autodesk’s recommendation is an M1 Max or newer for large assemblies.');
+  return R('basic','Apple silicon','Choose your chip tier to check the recommendation (M1 Max or newer).');}}}
+function MACGPU(){return {label:'Graphics',basic:'Built-in Mac graphics',rec:'Built-in Mac graphics',ev:function(S){return R('rec','Mac graphics'+(S.gpuName?' ('+S.gpuName+')':''))}}}
+function MLGPU(recVram){return {label:'Graphics',field:'gpu',nb:0,nr:recVram,basic:'Any (slower without a GPU)',rec:'WebGL 2.0 GPU with '+recVram+' GB+ memory',ev:function(S){
+  var nm=S.gpuName?' · '+S.gpuName:'';
+  if(S.webgl2===false)return R('basic','No WebGL 2.0'+nm,'Update your graphics driver. Plots and apps may render slowly.');
+  if(S.gpu==='dedicated'){var v=S.vram;if(!v)return R('basic','Dedicated'+nm,'Enter your VRAM to check the recommendation.');v=+v;
+    return v>=recVram?R('rec','Dedicated, '+(v<1?'<1':v)+' GB'+nm):R('basic','Dedicated, '+(v<1?'<1':v)+' GB'+nm,'Below the recommended '+recVram+' GB.');}
+  if(S.gpu==='integrated')return R('basic','Integrated'+nm,'Integrated graphics share system memory. Fine for coursework plots; heavy 3-D figures may lag.');
+  return R('basic','Not sure'+nm,'MATLAB runs on any graphics; choose your type to check the recommendation.');}}}
+function FUSGPU(basicVram,recVram){return {label:'Graphics',field:'gpu',nb:basicVram,nr:recVram,dedRec:true,basic:'DirectX 11, '+basicVram+' GB memory, dedicated or integrated',rec:'Dedicated DirectX 11 GPU, '+recVram+' GB+ memory',ev:function(S){
+  var nm=S.gpuName?' · '+S.gpuName:'';
+  if(S.gpu==='dedicated'){var v=S.vram;if(!v)return R('unknown','Dedicated'+nm,'Enter your VRAM.');v=+v;var y='Dedicated, '+(v<1?'<1':v)+' GB'+nm;
+    if(v>=recVram)return R('rec',y);if(v>=basicVram)return R('basic',y,'Fine for parts and small assemblies; large assemblies and rendering will be slower.');return R('below',y,'Fusion needs at least '+basicVram+' GB of graphics memory.');}
+  if(S.gpu==='integrated')return R('basic','Integrated'+nm,'Integrated graphics (Intel UHD/Iris, AMD Radeon Vega) meet the minimum. Keep your driver up to date; legacy drivers are not supported.');
+  return R('unknown','Not sure'+nm,'Choose integrated or dedicated.');}}}
+
+var LXN='Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.';
+function BAMGPU(){return {label:'Graphics',field:'gpu',nb:0,nr:0,basic:'OpenGL 2.0 graphics (any current GPU)',rec:'Same',ev:function(S){
+  var nm=S.gpuName?' · '+S.gpuName:'';
+  if(S.webgl2===false)return R('basic','No WebGL 2.0'+nm,'Update your graphics driver so the 3-D preview draws correctly.');
+  return R('rec',({integrated:'Integrated',dedicated:'Dedicated'}[S.gpu]||'Graphics')+nm,S.gpu==='unknown'||!S.gpu?'Any graphics chip from the last decade supports OpenGL 2.0.':'');}}}
+/* ---------- SOFTWARE database ---------- */
+var SOFTWARE={};   /* loaded from data/requirements.json */
+
+/* Turn a JSON requirement description into a working check */
+function buildItem(d){switch(d.type){
+  case 'os':return OSREQ(d.basic,d.rec,d.basicText,d.recText,d.notes);
+  case 'arch':return ARCHREQ(d.basic,d.rec,d.basicText,d.recText,d.notes);
+  case 'number':return NUMREQ(d.field,d.label,d.unit,d.basic,d.rec,d.basicText,d.recText,d.lowNote);
+  case 'avx2':return AVX2REQ(d.note||'');
+  case 'storage':return STOREQ(d.basic,d.rec,d.basicText,d.recText);
+  case 'internet':return NETREQ(d.basic,d.rec,d.basicText,d.recText);
+  case 'display':return DISPREQ(d.basicText,d.recText,d.basic,d.rec);
+  case 'gpu-mac':return MACGPU();
+  case 'gpu-optional':return MLGPU(d.rec);
+  case 'gpu-vram':return FUSGPU(d.basic,d.rec);
+  case 'gpu-any':return BAMGPU();
+  case 'mac-chip':return FUSMAC(d.label,d.basicText,d.recText);
+}return null}
+function buildSoftware(json){var out={};Object.keys(json.software||{}).forEach(function(id){var sw=json.software[id],o={};
+  Object.keys(sw).forEach(function(k){if(k!=='platforms')o[k]=sw[k]});o.platforms={};
+  Object.keys(sw.platforms||{}).forEach(function(os){var p=sw.platforms[os];o.platforms[os]=p.supported?{supported:true,items:(p.items||[]).map(buildItem).filter(Boolean)}:{supported:false,why:p.why||'',alt:p.alt||[]}});
+  out[id]=o});return out}
+function fmtDate(iso){if(!iso)return '—';var p=String(iso).split('-');var d=new Date(+p[0],(+p[1]||1)-1,+p[2]||1);return isNaN(d)?iso:d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}
+function daysSince(iso){var p=String(iso||'').split('-');var d=new Date(+p[0],(+p[1]||1)-1,+p[2]||1);return isNaN(d)?9999:Math.floor((Date.now()-d)/864e5)}
+
+
+/* ---------- Small helpers ---------- */
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var STLABEL={rec:'Recommended',basic:'Basic',below:'Below basic',unknown:'Can’t verify',unsupported:'Not supported'};
+function chip(st){return '<span class="st '+st+'">'+STLABEL[st]+'</span>'}
+var KEY='cc-compreq-v1';
+function load(){try{var v=localStorage.getItem(KEY);return v?JSON.parse(v):null}catch(e){return null}}
+function persist(o){try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+
+/* ---------- State ---------- */
+var state=load()||{specs:null,detected:null,course:'egr110',sw:null};
+
+/* ---------- Page routing ---------- */
+var pages=$$('.page'),ids=pages.map(function(p){return p.id}),links=$$('.nav a:not(.ext):not(.home)'),nav=$('#nav'),mb=$('.menu-btn');
+var inner={confirm:'test',report:'test'};
+function show(first){
+  var h=(location.hash||'#test').slice(1);var pid=ids.indexOf(h)>-1?h:(inner[h]||'test');
+  pages.forEach(function(p){p.classList.toggle('on',p.id===pid)});
+  links.forEach(function(a){a.getAttribute('href')==='#'+pid?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
+  nav.classList.remove('open');mb.setAttribute('aria-expanded','false');
+  if(inner[h]){var t=document.getElementById(h);if(t)t.scrollIntoView()}else{window.scrollTo(0,0);if(!first){var hd=document.getElementById('h-'+(pid==='requirements'?'req':pid));if(hd)hd.focus({preventScroll:true})}}
+  var tt={buy:'Buying guide',check:'Course check',requirements:'Software requirements',howto:'Find your specs'};document.title=(tt[pid]?tt[pid]+' | ':'')+'Computer Requirements for Engineering Program | Centre College';
+  if(pid==='check')renderResults();if(pid==='buy')renderShop();
+}
+window.addEventListener('hashchange',function(){show(false)});
+mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+
+/* ---------- Detection ---------- */
+var PROBES=[['os','Operating system'],['osv','OS version'],['arch','Processor type'],['cores','Logical cores'],['ram','Memory'],['gpu','Graphics'],['webgl','WebGL 2.0'],['screen','Screen'],['net','Network'],['bench','Single-core test']];
+function drawReadout(vals){
+  $('#roList').innerHTML=PROBES.map(function(p){var v=vals&&vals[p[0]];var cls=v?(v.warn?'warn':'done'):'';
+    return '<li class="'+cls+'" data-p="'+p[0]+'"><i></i><span class="k">'+p[1]+'</span><span class="v">'+(v?esc(v.text):'<span style="color:#777">—</span>')+'</span></li>'}).join('');
+}
+var roVals={};
+function setProbe(k,text,warn){roVals[k]={text:text,warn:!!warn};var li=$('#roList li[data-p="'+k+'"]');if(!li)return;li.className=warn?'warn':'done';li.querySelector('.v').textContent=text;}
+function running(k){var li=$('#roList li[data-p="'+k+'"]');if(li){li.className='run';li.querySelector('.v').textContent='Checking…'}}
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function pause(ms){return new Promise(function(r){setTimeout(r,reduce?0:ms)})}
+
+function macName(maj){return {27:'macOS 27 Golden Gate',26:'macOS 26 Tahoe',15:'macOS 15 Sequoia',14:'macOS 14 Sonoma',13:'macOS 13 Ventura'}[maj]||('macOS '+maj)}
+function cleanGPU(r){if(!r)return '';var m=r.match(/ANGLE \(([^,]+),\s*([^,]+?)(?:\s*\(0x[0-9a-f]+\))?\s*(?:Direct3D|OpenGL|Metal|Vulkan|,|\))/i);
+  var s=m?m[2]:r;return s.replace(/\s*(Direct3D.*|OpenGL.*|vs_\d.*|, or similar)$/i,'').replace(/\(R\)|\(TM\)/g,'').replace(/\s+/g,' ').trim();}
+function gpuClass(n){if(!n)return 'unknown';var s=n.toLowerCase();
+  if(/apple|intel|uhd|iris|adreno|mali|qualcomm|radeon\s*graphics|radeon\(tm\)\s*graphics|vega \d+ graphics|radeon \d{3}m|microsoft basic|swiftshader|llvmpipe/.test(s))return 'integrated';
+  if(/nvidia|geforce|quadro|rtx|gtx|radeon (rx|pro)|\brx \d|arc a\d|arc\(tm\) a/.test(s))return 'dedicated';return 'unknown';}
+
+async function detect(){
+  var d={};roVals={};
+  var ua=navigator.userAgent||'',uad=navigator.userAgentData,hi={};
+  if(uad&&uad.getHighEntropyValues){try{hi=await uad.getHighEntropyValues(['architecture','bitness','platformVersion','model'])}catch(e){}}
+  var plat=(uad&&uad.platform)||'';
+  // GPU first (helps identify Apple silicon)
+  var gl=null,webgl2=false,gpuRaw='';
+  try{var c=document.createElement('canvas');gl=c.getContext('webgl2');webgl2=!!gl;if(!gl)gl=c.getContext('webgl')||c.getContext('experimental-webgl');
+    if(gl){var ext=gl.getExtension('WEBGL_debug_renderer_info');gpuRaw=ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER);}}catch(e){}
+  var gpuName=cleanGPU(gpuRaw);
+
+  running('os');await pause(260);
+  var os='',special='';
+  if(/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1))special='ios';
+  else if(/Android/.test(ua))special='android';
+  else if(/CrOS/.test(ua)||plat==='Chrome OS')special='chromeos';
+  else if(/Windows/.test(ua)||plat==='Windows')os='windows';
+  else if(/Macintosh|Mac OS X/.test(ua)||plat==='macOS')os='mac';
+  else if(/Linux|X11/.test(ua)||plat==='Linux')os='linux';
+  d.os=os;d.special=special;
+  var spName={ios:'iPhone or iPad',android:'Android device',chromeos:'Chromebook'}[special];
+  setProbe('os',spName||OSNAME[os]||'Unknown',!os);
+
+  running('osv');await pause(200);
+  var osvText='Can’t tell from this browser',osvWarn=true;
+  if(os==='windows'){var pv=parseInt((hi.platformVersion||'').split('.')[0],10);
+    if(!isNaN(pv)&&pv>=13){d.osv=pv>=19?'win11-24h2':pv>=15?'win11-23h2':'win11-old';osvText='Windows 11'+(pv>=19?' (24H2 or later)':pv>=15?' (23H2)':' (before 23H2)');osvWarn=false}
+    else if(!isNaN(pv)&&pv>0){d.osv='win10-22h2';osvText='Windows 10';osvWarn=false}
+    else osvText='Windows 10 or 11 (browser hides which)';}
+  else if(os==='mac'){var mv=(hi.platformVersion||'').split('.'),maj=parseInt(mv[0],10);
+    if(!isNaN(maj)&&maj>=11){d.osv=maj>=27?'mac27':maj===26?'mac26':maj===15?'mac15':maj===14?'mac14':'mac13';osvText=macName(maj)+(mv[1]?' ('+mv.slice(0,2).join('.')+')':'');osvWarn=false}
+    else osvText='Safari and Firefox hide the macOS version';}
+  else if(os==='linux')osvText='Browsers don’t report the distribution';
+  setProbe('osv',osvText,osvWarn);
+
+  running('arch');await pause(200);
+  var arch='',archText='Unknown';
+  if(os==='mac'){if(/apple m\d|apple gpu|apple/i.test(gpuName)&&!/intel|amd|radeon/i.test(gpuName)){arch='apple';archText='Apple silicon'+(/apple m\d/i.test(gpuName)?' ('+gpuName.match(/apple m\d\w*( pro| max| ultra)?/i)[0]+')':'')}
+    else if(/intel|amd|radeon/i.test(gpuName)){arch='x86-64';archText='Intel'}
+    else if(hi.architecture==='arm'){arch='apple';archText='Apple silicon'}
+    else if(hi.architecture==='x86'){arch='x86-64';archText='Intel'}}
+  else if(hi.architecture){arch=hi.architecture==='arm'?'arm':'x86-64';archText=(arch==='arm'?'ARM':'x86')+(hi.bitness?'-'+hi.bitness:'')}
+  else if(/Win64|x64|WOW64|x86_64|amd64/i.test(ua)){arch='x86-64';archText='x86-64'}
+  else if(/aarch64|arm64|armv8/i.test(ua)){arch='arm';archText='ARM'}
+  if(os==='windows'&&/snapdragon|qualcomm|adreno/i.test(gpuName)){arch='arm';archText='ARM (Snapdragon)'}
+  d.arch=arch;var cm=gpuName.match(/apple m\d+\s*(pro|max|ultra)?/i);if(arch==='apple'&&cm)d.chip=cm[1]?(/pro/i.test(cm[1])?'pro':'max'):'base';setProbe('arch',archText,!arch);
+
+  running('cores');await pause(180);
+  var cores=navigator.hardwareConcurrency||null;d.cores=cores;setProbe('cores',cores?cores+' logical':'Not reported',!cores);
+
+  running('ram');await pause(180);
+  var dm=navigator.deviceMemory,ramText;
+  if(dm){d.ramBrowser=dm;if(dm<8){d.ram=dm<=4?4:dm;ramText='About '+dm+' GB'}else{ramText='8 GB or more (browser limit)';d.ramCapped=true}}
+  else ramText='Not reported by this browser';
+  setProbe('ram',ramText,!dm||d.ramCapped);
+
+  running('gpu');await pause(220);
+  d.gpuName=gpuName;d.gpu=os==='mac'&&arch==='apple'?'integrated':gpuClass(gpuName);
+  var gtxt=gpuName?gpuName+(d.gpu==='dedicated'?' · dedicated':d.gpu==='integrated'?' · integrated':''):'Hidden by browser';
+  setProbe('gpu',gtxt,!gpuName||d.gpu==='unknown');
+
+  running('webgl');await pause(160);
+  d.webgl2=webgl2;setProbe('webgl',webgl2?'Supported':'Not available',!webgl2);
+
+  running('screen');await pause(140);
+  var dpr=window.devicePixelRatio||1,sw=Math.round(screen.width*dpr),sh=Math.round(screen.height*dpr);
+  d.screen=sw+' × '+sh;d.disp=sw>=3840?'3840':sw>=2560?'2560':sw>=1920?'1920':sw>=1366?'1366':'1280';setProbe('screen',sw+' × '+sh+' pixels'+(sw<1366?' (small for CAD)':''),sw<1366);
+
+  running('net');await pause(160);
+  var cn=navigator.connection;if(cn&&cn.downlink){d.net=cn.downlink;setProbe('net','About '+cn.downlink+' Mbps'+(cn.downlink>=10?'+':''),false)}else setProbe('net','Not reported',true);
+
+  running('bench');await pause(120);
+  var t0=performance.now(),n=0,x=0;while(performance.now()-t0<500){for(var i=1;i<60000;i++){x+=Math.sqrt(i)*Math.sin(i)}n++}
+  d.bench=Math.round(n*2);setProbe('bench',d.bench+' points',false);
+  d.at=new Date().toISOString();d.ro=roVals;
+  return d;
+}
+
+$('#runBtn').addEventListener('click',async function(){
+  var b=this;b.disabled=true;b.textContent='Testing…';$('#roState').textContent='Running';drawReadout(null);
+  try{var d=await detect();state.detected=d;if(d.os)selX(d.os);applyDetected(d);persist(state);$('#roState').textContent='Done · confirm below';
+    b.textContent='Run again';
+    if(d.special){showWarn('<b>Wrong device?</b> This looks like '+({ios:'an iPhone or iPad',android:'an Android device',chromeos:'a Chromebook'}[d.special])+'. MATLAB, Autodesk Fusion, and Bambu Studio need a Windows PC or Mac. Open this page on the computer you plan to use, or choose its operating system below and enter its specs by hand.')}
+    setTimeout(function(){$('#confirm').scrollIntoView({behavior:reduce?'auto':'smooth'})},reduce?0:500);
+  }catch(e){$('#roState').textContent='Test stopped';}
+  b.disabled=false;
+});
+function showWarn(h){var w=$('#deviceWarn');if(!h){w.style.display='none';return}w.innerHTML=h;w.style.display='block'}
+
+/* ---------- Form ---------- */
+var autoKeys={};
+function setSrc(k,auto){autoKeys[k]=auto;var el=$('[data-src="'+k+'"]');if(!el)return;el.className='src '+(auto==='ver'?'ver':auto?'auto':'need');el.textContent=auto==='ver'?'Verified':auto?'Detected':'Enter'}
+function fillSelect(sel,list,val){sel.innerHTML='<option value="">Choose…</option>'+list.map(function(o){return '<option value="'+o[0]+'"'+(o[0]===val?' selected':'')+'>'+esc(o[1])+'</option>'}).join('')}
+function currentOS(){var r=$('input[name=os]:checked');return r?r.value:''}
+function onOS(os,keep){
+  $$('.ospick label').forEach(function(l){l.classList.toggle('detected',!!(state.detected&&state.detected.os===l.dataset.os))});
+  fillSelect($('#f-osv'),OSV[os]||[],keep?keep.osv:'');fillSelect($('#f-arch'),ARCH[os]||[],keep?keep.arch:'');
+  $$('[data-hide-mac]').forEach(function(f){f.classList.toggle('hide',os==='mac')});
+  toggleChip();
+  $('#h-osv').textContent=os==='linux'?'Run  cat /etc/os-release  to check.':os==='mac'?'Apple menu → About This Mac.':os==='windows'?'Settings → System → About → Version.':'';
+  $('#h-arch').textContent=os==='mac'?'About This Mac shows Chip (Apple M-series) or Processor (Intel).':os==='windows'?'Settings → System → About → System type.':'';
+  $('#h-gpu').textContent=os==='mac'?'Apple silicon Macs use built-in graphics, which both programs accept.':os==='linux'?'Run  lspci | grep -iE \'vga|3d\'  to list graphics chips.':'Task Manager → Performance → GPU shows each graphics chip.';
+  toggleVram();
+}
+function toggleChip(){$('#chipField').classList.toggle('hide',!(currentOS()==='mac'&&$('#f-arch').value!=='x86-64'))}
+function toggleVram(){$('#vramField').classList.toggle('hide',!($('#f-gpu').value==='dedicated'&&currentOS()!=='mac'))}
+$$('input[name=os]').forEach(function(r){r.addEventListener('change',function(){var d=state.detected,same=d&&d.os===r.value;onOS(r.value,same?d:null);['osv','arch'].forEach(function(k){setSrc(k,!!(same&&d[k]))})})});
+$('#f-gpu').addEventListener('change',toggleVram);$('#f-arch').addEventListener('change',toggleChip);
+
+function applyDetected(d){
+  showWarn('');
+  if(d.os){$('input[name=os][value="'+d.os+'"]').checked=true;onOS(d.os,d)}
+  setSrc('osv',!!d.osv);setSrc('arch',!!d.arch);
+  if(d.cores){$('#f-cores').value=d.cores;setSrc('cores',true)}else setSrc('cores',false);
+  setSrc('avx2',false);
+  if(d.ram){$('#f-ram').value=String(d.ram);setSrc('ram',true);$('#h-ram').textContent='In GB. Detected from the browser.'}
+  else{setSrc('ram',false);$('#h-ram').textContent=d.ramCapped?'Your browser reports “8 GB or more” and can’t see higher. Pick your actual amount.':'In GB. Your browser doesn’t report memory.'}
+  if(d.gpu&&d.gpu!=='unknown'){$('#f-gpu').value=d.gpu;setSrc('gpu',true)}else setSrc('gpu',false);
+  if(d.net){$('#f-net').value=d.net;setSrc('net',true)}else setSrc('net',false);
+  if(d.disp){$('#f-disp').value=d.disp;setSrc('disp',true)}else setSrc('disp',false);
+  if(d.chip){$('#f-chip').value=d.chip;setSrc('chip',true)}else setSrc('chip',false);
+  toggleVram();toggleChip();
+}
+function readForm(){
+  var os=currentOS();var g=function(id){return $(id).value};
+  var num=function(id){var v=g(id);return v===''?null:+v};
+  return {os:os,osv:g('#f-osv'),arch:g('#f-arch'),cores:os==='mac'?null:num('#f-cores'),avx2:os==='mac'?'unknown':g('#f-avx2'),ram:num('#f-ram'),gpu:os==='mac'?'integrated':g('#f-gpu'),vram:num('#f-vram'),storage:num('#f-storage'),ssd:g('#f-ssd'),net:num('#f-net'),disp:g('#f-disp'),chip:os==='mac'?g('#f-chip'):'',
+    gpuName:(state.exact&&state.exact.os===os&&state.exact.gpuName)||(state.detected&&state.detected.os===os?state.detected.gpuName:''),webgl2:state.detected?state.detected.webgl2:null,auto:Object.assign({},autoKeys)};
+}
+function writeForm(s){
+  if(s.os){$('input[name=os][value="'+s.os+'"]').checked=true;onOS(s.os,s)}
+  $('#f-cores').value=s.cores==null?'':s.cores;$('#f-avx2').value=s.avx2||'unknown';$('#f-ram').value=s.ram==null?'':String(s.ram);
+  $('#f-gpu').value=s.gpu||'unknown';$('#f-vram').value=s.vram==null?'':String(s.vram);$('#f-storage').value=s.storage==null?'':s.storage;
+  $('#f-ssd').value=s.ssd||'unknown';$('#f-net').value=s.net==null?'':s.net;$('#f-disp').value=s.disp||'';$('#f-chip').value=s.chip||'';
+  var a=s.auto||{};['osv','arch','chip','cores','avx2','ram','gpu','vram','disp','storage','ssd','net'].forEach(function(k){setSrc(k,!!a[k])});toggleVram();toggleChip();
+}
+$('#saveBtn').addEventListener('click',function(){
+  var s=readForm(),m=$('#saveMsg');
+  if(!s.os){m.textContent='Choose Windows, Mac, or Linux first.';$('input[name=os]').focus();return}
+  state.specs=s;persist(state);renderReport();m.textContent='Saved in this browser.';
+  $('#report').scrollIntoView({behavior:reduce?'auto':'smooth'});
+});
+$('#resetBtn').addEventListener('click',function(){state={specs:null,detected:null,exact:null,course:state.course,sw:state.sw};$('#pasteIn').value='';$('#pasteMsg').textContent='';persist(state);
+  $$('input[name=os]').forEach(function(r){r.checked=false});$$('.ospick label').forEach(function(l){l.classList.remove('detected')});
+  $('#f-osv').innerHTML='<option value="">Choose an operating system first</option>';$('#f-arch').innerHTML='<option value="">Choose an operating system first</option>';
+  ['#f-cores','#f-storage','#f-net'].forEach(function(i){$(i).value=''});$('#f-ram').value='';$('#f-avx2').value='unknown';$('#f-gpu').value='unknown';$('#f-vram').value='';$('#f-ssd').value='unknown';$('#f-disp').value='';$('#f-chip').value='';
+  ['osv','arch','chip','cores','avx2','ram','gpu','vram','disp','storage','ssd','net'].forEach(function(k){setSrc(k,false)});$$('[data-hide-mac]').forEach(function(f){f.classList.remove('hide')});toggleVram();
+  drawReadout(null);$('#roState').textContent='Not run yet';$('#runBtn').textContent='Run the device test';showWarn('');$('#saveMsg').textContent='Cleared.';renderReport();});
+
+/* ---------- Device report ---------- */
+function specRows(s){
+  var d=state.detected||{},a=s.auto||{};
+  var src=function(k){return a[k]==='ver'?'Verified':a[k]?'Detected':'Entered'};
+  var ex=state.exact&&state.exact.os===s.os?state.exact:null;
+  var rows=[
+    ['Operating system',(OSNAME[s.os]||'—')+(ex&&ex.osName?'<span class="sub">'+esc(ex.osName)+(ex.build?', build '+esc(ex.build):'')+'</span>':''),ex?'Verified':state.detected&&state.detected.os===s.os?'Detected':'Entered'],
+    ['OS version',osvLabel(s),src('osv')],
+    ['Processor type',s.arch?lab(ARCH[s.os],s.arch):'—',src('arch')]];
+  if(ex&&ex.cpu)rows.push(['Processor model',esc(ex.cpu)+'<span class="sub">'+[ex.cores?ex.cores+' physical cores':'',ex.perf?ex.perf+' performance cores':'',ex.threads?ex.threads+' threads':'',ex.ghz?ex.ghz+' GHz'+(s.os==='windows'?' base':' max'):''].filter(Boolean).join(' · ')+'</span>','Verified']);
+  if(s.os==='mac'&&s.arch==='apple')rows.push(['Apple chip tier',s.chip?lab(CHIP,s.chip):'Not sure',src('chip')]);
+  if(s.os!=='mac'){rows.push(['Logical cores',s.cores||'—',src('cores')]);rows.push(['AVX2',{yes:'Yes',no:'No',unknown:'Not sure'}[s.avx2]||'—',src('avx2')])}
+  rows.push(['Memory (RAM)',s.ram?s.ram+' GB':'—',src('ram')]);
+  rows.push(['Graphics',(s.os==='mac'?'Built-in Mac graphics':{integrated:'Integrated',dedicated:'Dedicated',unknown:'Not sure'}[s.gpu]||'—')+(s.gpuName?'<span class="sub">'+esc(s.gpuName)+'</span>':''),src('gpu')]);
+  if(ex&&ex.gpus&&ex.gpus.length>1)rows.push(['All graphics chips',ex.gpus.map(function(g){return esc(g.name)+(g.vram>=0.5?' ('+g.vram+' GB)':'')}).join('<br>'),'Verified']);
+  if(s.gpu==='dedicated'&&s.os!=='mac')rows.push(['Graphics memory',s.vram?(s.vram<1?'Less than 1':s.vram)+' GB':'Not sure',src('vram')]);
+  rows.push(['Display',s.disp?lab(DISP,s.disp):'—',src('disp')]);
+  rows.push(['Free disk space',s.storage!=null?s.storage+' GB':'—',src('storage')]);
+  rows.push(['Drive type',{yes:'SSD',no:'Hard disk',unknown:'Not sure'}[s.ssd]||'—',src('ssd')]);
+  rows.push(['Internet speed',s.net!=null?s.net+' Mbps':'—',src('net')]);
+  if(d.webgl2!=null&&d.os===s.os)rows.push(['WebGL 2.0',d.webgl2?'Supported':'Not available','Detected']);
+  if(d.bench&&d.os===s.os)rows.push(['Single-core test',d.bench+' points<span class="sub">A relative JavaScript score. Useful for comparing two computers in the same browser, not for pass/fail.</span>','Detected']);
+  return rows;
+}
+function renderReport(){
+  var s=state.specs,el=$('#reportBody');
+  if(!s){el.innerHTML='<div class="empty"><p class="d">No report yet</p><p class="muted" style="margin:0">Run the device test or fill in the fields above, then choose Save and show report.</p></div>';return}
+  var rows=specRows(s),missing=[];
+  if(!s.osv)missing.push('OS version');if(!s.ram)missing.push('memory');if(s.storage==null)missing.push('free disk space');if(s.os!=='mac'&&s.gpu==='unknown')missing.push('graphics type');
+  var quick=Object.keys(SOFTWARE).map(function(id){var r=evaluate(id,s);return '<span style="margin-right:1.2rem;white-space:nowrap"><b style="font-family:var(--display);text-transform:uppercase;letter-spacing:.03em">'+SOFTWARE[id].name+'</b> '+chip(r.verdict)+'</span>'}).join('');
+  el.innerHTML='<p class="lede" style="margin-bottom:1rem">'+esc(OSNAME[s.os])+' · '+esc(osvLabel(s))+(s.ram?' · '+s.ram+' GB RAM':'')+'</p>'+
+    '<p style="margin:0 0 1.4rem">'+quick+'</p>'+
+    (missing.length?'<p class="note"><b>Add to improve accuracy:</b> '+missing.join(', ')+'.</p>':'')+
+    '<div class="tbl-wrap"><table><thead><tr><th>Spec</th><th>Your computer</th><th>Source</th></tr></thead><tbody>'+
+    rows.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td class="srcc">'+r[2]+'</td></tr>'}).join('')+'</tbody></table></div>'+
+    '<div class="cta-row noprint" style="margin-top:1.4rem"><button class="btn ink" type="button" data-print>Print or save as PDF</button><button class="btn ink" type="button" data-copy>Copy report as text</button></div><textarea class="copybox" readonly aria-label="Report text"></textarea>';
+}
+
+/* ---------- Evaluation ---------- */
+function evaluate(id,s){
+  var sw=SOFTWARE[id],p=sw.platforms[s.os];
+  if(!p)return {verdict:'unknown',rows:[],unknown:0};
+  if(!p.supported)return {verdict:'unsupported',rows:[],why:p.why,alt:p.alt};
+  var rows=[];p.items.forEach(function(it){var r=it.ev(s);if(r){r.label=it.label;r.basic=it.basic;r.rec=it.rec;rows.push(r)}});
+  var st=rows.map(function(r){return r.status}),unk=st.filter(function(x){return x==='unknown'}).length;
+  var v=st.indexOf('below')>-1?'below':st.indexOf('basic')>-1?'basic':unk===st.length?'unknown':'rec';
+  return {verdict:v,rows:rows,unknown:unk};
+}
+var VERDICT_TEXT={rec:'Meets recommended',basic:'Meets basic',below:'Below basic',unknown:'Not enough info',unsupported:'Not supported'};
+
+/* ---------- Course check UI ---------- */
+function renderCourses(){
+  $('#courseList').innerHTML=COURSES.map(function(c){return '<label><input type="radio" name="course" value="'+c.id+'"'+(state.course===c.id?' checked':'')+'><span><span class="code">'+esc(c.code)+'</span><span class="t">'+esc(c.title)+'</span><span class="sw">'+(c.software.length?c.software.map(function(i){return SOFTWARE[i].name}).join(' + '):'Any software on this site')+'</span>'+(c.url?'<a class="sw" href="'+c.url+'" target="_blank" rel="noopener">Course description</a>':'')+'</span></label>'}).join('');
+  $$('input[name=course]').forEach(function(r){r.addEventListener('change',function(){state.course=r.value;var c=COURSES.filter(function(x){return x.id===r.value})[0];state.sw=c.software.length?c.software.slice():Object.keys(SOFTWARE);persist(state);renderSwPick();renderResults()})});
+  if(!state.sw){var c=COURSES.filter(function(x){return x.id===state.course})[0]||COURSES[0];state.sw=c.software.length?c.software.slice():Object.keys(SOFTWARE)}
+  renderSwPick();
+}
+function renderSwPick(){
+  $('#swPick').innerHTML='<span class="tag" style="width:100%;margin:0">Software to check</span>'+Object.keys(SOFTWARE).map(function(id){return '<label><input type="checkbox" value="'+id+'"'+(state.sw.indexOf(id)>-1?' checked':'')+'>'+esc(SOFTWARE[id].name)+'</label>'}).join('');
+  $$('#swPick input').forEach(function(cb){cb.addEventListener('change',function(){state.sw=$$('#swPick input:checked').map(function(x){return x.value});persist(state);renderResults()})});
+}
+function renderResults(){
+  var el=$('#results'),s=state.specs;
+  if(!s){el.innerHTML='<div class="empty"><p class="d">Test your computer first</p><p class="muted">The course check needs your specs. It takes about a minute.</p><a class="btn ink fill" href="#test">Go to the device test</a></div>';return}
+  if(!state.sw.length){el.innerHTML='<div class="empty"><p class="d">Pick at least one program</p><p class="muted" style="margin:0">Select MATLAB, Autodesk Fusion, or both above.</p></div>';return}
+  var course=COURSES.filter(function(c){return c.id===state.course})[0]||COURSES[0];
+  var res=state.sw.map(function(id){return [id,evaluate(id,s)]});
+  var order=['unsupported','below','unknown','basic','rec'],worst='rec';
+  res.forEach(function(r){if(order.indexOf(r[1].verdict)<order.indexOf(worst))worst=r[1].verdict});
+  var sb=0,sr=0;res.forEach(function(r){var st=SOFTWARE[r[0]].storage[s.os];if(st&&r[1].verdict!=='unsupported'){sb+=st[0];sr+=st[1]}});
+  var head={rec:'Ready for this course',basic:'Works, with limits',below:'Needs upgrades',unknown:'Add your specs',unsupported:'Not usable as-is'}[worst];
+  var sub={rec:'Your computer meets the recommended specs for every program checked.',basic:'Everything runs. Some items fall short of the recommended specs, listed below.',below:'At least one program won’t install or run well. See the red items below.',unknown:'Fill in the missing specs on the device test to get a result.',unsupported:'At least one program isn’t available for '+OSNAME[s.os]+'. See the options below.'}[worst];
+  var html='<div class="summary '+worst+'"><div><p class="tag" style="margin:0 0 .4rem">'+esc(course.code)+(course.id!=='any'?' · '+esc(course.title):'')+'</p><p class="big">'+head+'</p><p>'+sub+'</p></div>'+
+    '<div class="facts">'+esc(OSNAME[s.os])+' · '+esc(osvLabel(s))+'<br>Disk needed: '+(Math.round(sb*10)/10)+(sr>sb?'–'+(Math.round(sr*10)/10):'')+' GB<br><a href="#test">Edit my specs</a></div></div>'+
+    '<div class="legend">'+['rec','basic','below','unknown'].map(function(k){return chip(k)}).join('')+'</div>';
+  res.forEach(function(r){var id=r[0],e=r[1],sw=SOFTWARE[id];
+    html+='<div class="swres"><div class="top"><div><h3 class="d">'+esc(sw.name)+'</h3><span class="ver">'+esc(sw.version)+' · '+esc(OSNAME[s.os])+'</span></div><span class="verdict '+e.verdict+'">'+VERDICT_TEXT[e.verdict]+(e.unknown&&e.verdict!=='unknown'?' · '+e.unknown+' unverified':'')+'</span></div>';
+    if(e.verdict==='unsupported'){html+='<p class="lede" style="font-size:1.1rem">'+esc(e.why)+'</p><ul class="dash">'+e.alt.map(function(a){return '<li>'+esc(a)+'</li>'}).join('')+'</ul></div>';return}
+    html+='<div class="tbl-wrap"><table><thead><tr><th>Spec</th><th>Basic</th><th>Recommended</th><th>Your computer</th><th>Result</th></tr></thead><tbody>'+
+      e.rows.map(function(x){return '<tr><td>'+esc(x.label)+'</td><td>'+esc(x.basic)+'</td><td>'+esc(x.rec==='Same'?x.basic:x.rec)+'</td><td>'+esc(x.yours)+(x.note?'<span class="sub">'+esc(x.note)+'</span>':'')+'</td><td>'+chip(x.status)+'</td></tr>'}).join('')+'</tbody></table></div>';
+    var fixes=e.rows.filter(function(x){return x.status==='below'}).map(function(x){return x.label+': '+(x.note||'upgrade needed')});
+    if(fixes.length)html+='<ul class="fix">'+fixes.map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>';
+    html+='</div>';});
+  html+='<p class="muted small">Requirements last checked: '+state.sw.map(function(id){return esc(SOFTWARE[id].name)+' '+fmtDate(SOFTWARE[id].lastChecked)}).join(' · ')+'. <a href="#requirements">See the full requirements</a>.</p>'+
+    '<div class="cta-row noprint"><button class="btn ink fill" type="button" data-print>Print or save as PDF</button><button class="btn ink" type="button" data-copy>Copy report as text</button></div><textarea class="copybox" readonly aria-label="Report text"></textarea>';
+  el.innerHTML=html;
+}
+
+/* ---------- Text report / print ---------- */
+function textReport(){
+  var s=state.specs;if(!s)return '';var L=[];
+  L.push('CENTRE COLLEGE ENGINEERING · COMPUTER REQUIREMENTS REPORT');L.push('Generated '+new Date().toLocaleString());L.push('');
+  L.push('MY COMPUTER');specRows(s).forEach(function(r){L.push('  '+r[0]+': '+String(r[1]).replace(/<[^>]+>/g,' · ').replace(/ · $/,'')+' ('+r[2]+')')});L.push('');
+  var course=COURSES.filter(function(c){return c.id===state.course})[0]||COURSES[0];
+  L.push('COURSE: '+course.code+(course.id!=='any'?' '+course.title:''));
+  (state.sw||[]).forEach(function(id){var e=evaluate(id,s),sw=SOFTWARE[id];L.push('');L.push(sw.name+' '+sw.version+': '+VERDICT_TEXT[e.verdict].toUpperCase());
+    if(e.verdict==='unsupported'){L.push('  '+e.why);return}
+    e.rows.forEach(function(x){L.push('  ['+STLABEL[x.status]+'] '+x.label+': '+x.yours+' (basic '+x.basic+'; recommended '+(x.rec==='Same'?x.basic:x.rec)+')'+(x.note?' — '+x.note:''))});});
+  L.push('');L.push('Requirements last checked: '+(state.sw||[]).map(function(id){return SOFTWARE[id].name+' '+fmtDate(SOFTWARE[id].lastChecked)}).join(', ')+'.');return L.join('\n');
+}
+document.addEventListener('click',function(ev){
+  var t=ev.target.closest('[data-print]');if(t){try{window.print()}catch(e){}return}
+  t=ev.target.closest('[data-copy]');if(t){var txt=textReport(),box=t.parentNode.nextElementSibling;
+    var done=function(){var o=t.textContent;t.textContent='Copied';setTimeout(function(){t.textContent=o},1600)};
+    var fallback=function(){box.value=txt;box.style.display='block';box.focus();box.select();t.textContent='Select and copy the text below'};
+    try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,fallback)}else fallback()}catch(e){fallback()}}
+});
+
+/* ---------- Requirements reference ---------- */
+function renderReq(){
+  var html='';
+  Object.keys(SOFTWARE).forEach(function(id){var sw=SOFTWARE[id];
+    var labels=[];['windows','mac','linux'].forEach(function(os){var p=sw.platforms[os];if(p.items)p.items.forEach(function(it){if(labels.indexOf(it.label)<0)labels.push(it.label)})});
+    html+='<div class="req-sw"><div class="top"><h2 class="d">'+esc(sw.name)+'</h2><span class="tag" style="margin:0">'+esc(sw.vendor)+' · '+esc(sw.version)+'</span>'+(sw.links||[]).map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">Official page: '+esc(l.label)+'</a>'}).join('')+'</div><p class="muted small reqdates">Last checked '+fmtDate(sw.lastChecked)+' · Last updated '+fmtDate(sw.lastUpdated)+(daysSince(sw.lastChecked)>180?' <span class="st unknown">Not checked recently</span>':'')+'</p><div>';
+    html+='<div class="tbl-wrap"><table class="req"><thead><tr><th>Spec</th><th>Windows</th><th>Mac</th><th>Linux</th></tr></thead><tbody>';
+    labels.forEach(function(lb){html+='<tr><td>'+esc(lb)+'</td>';['windows','mac','linux'].forEach(function(os){var p=sw.platforms[os];
+      if(!p.supported){html+=lb===labels[0]?'<td class="na" rowspan="'+labels.length+'">No desktop app. Fusion runs in a web browser with a verified Education entitlement: 5 Mbps down, 1 Mbps up, under 100 ms latency, 1366 × 768 screen (1920 × 1080 recommended).</td>':'';return}
+      var it=p.items.filter(function(x){return x.label===lb})[0];
+      if(!it){html+='<td class="na">Not specified</td>';return}
+      html+=it.rec==='Same'||it.rec===it.basic?'<td>'+esc(it.basic)+'</td>':'<td><b>Basic</b>'+esc(it.basic)+'<b>Recommended</b>'+esc(it.rec)+'</td>';});
+      html+='</tr>'});
+    html+='</tbody></table></div>';
+    if(sw.notes)html+='<p class="muted small" style="margin-top:.8rem">'+esc(sw.notes)+'</p>';
+    html+='</div>';});
+  html+='<p class="note"><b>Basic vs. recommended.</b> Basic is the vendor minimum: the software installs and runs, fine for learning and small models. Recommended is what the vendor suggests for smooth everyday work, larger assemblies, and simulations.</p>';
+  $('#reqBody').innerHTML=html;
+}
+
+/* ---------- Help tabs ---------- */
+var tabs=$$('#howto .tabs button');
+function selTab(os){tabs.forEach(function(b){var on=b.dataset.tab===os;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById('how-'+b.dataset.tab).hidden=!on})}
+tabs.forEach(function(b,i){b.addEventListener('click',function(){selTab(b.dataset.tab)});b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(k){var n=tabs[(i+k+tabs.length)%tabs.length];n.focus();selTab(n.dataset.tab)}})});
+
+
+/* ---------- Exact specs: commands, copy, paste ---------- */
+['windows','mac','linux'].forEach(function(os){$('#code-'+os).textContent=$('#cmd-'+os).textContent.trim()});
+var xtabs=$$('#exact .tabs button');
+function selX(os){xtabs.forEach(function(b){var on=b.dataset.xtab===os;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById('x-'+b.dataset.xtab).hidden=!on})}
+xtabs.forEach(function(b,i){b.addEventListener('click',function(){selX(b.dataset.xtab)});b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(k){var n=xtabs[(i+k+xtabs.length)%xtabs.length];n.focus();selX(n.dataset.xtab)}})});
+$$('[data-copycmd]').forEach(function(btn){btn.addEventListener('click',function(){
+  var os=btn.dataset.copycmd,code=$('#code-'+os),txt=code.textContent,orig='Copy command';
+  var ok=function(){btn.textContent='Copied ✓';setTimeout(function(){btn.textContent=orig},2200)};
+  var fallback=function(){var r=document.createRange();r.selectNodeContents(code);var sel=getSelection();sel.removeAllRanges();sel.addRange(r);
+    var done=false;try{done=document.execCommand('copy')}catch(e){}
+    if(done)ok();else btn.textContent=(os==='mac'?'Press ⌘C to copy':'Press Ctrl+C to copy')};
+  try{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(ok,fallback);else fallback()}catch(e){fallback()}
+})});
+
+var RAMS=[4,6,8,12,16,18,24,32,36,48,64,96,128,192,256];
+function snapRam(g){if(!g||isNaN(g))return null;var best=null;RAMS.forEach(function(r){if(g>=r*0.93)best=r});return best||Math.round(g)}
+function snapVram(g){if(!g||isNaN(g)||g<=0)return null;if(g<1)return 0.5;var o=[1,2,4,6,8,12],best=1;o.forEach(function(x){if(g>=x*0.9)best=x});return best}
+function dispBucket(w){w=+w;if(!w)return '';return w>=3840?'3840':w>=2560?'2560':w>=1920?'1920':w>=1366?'1366':'1280'}
+function pickGpu(list){list=list.filter(function(g){return g&&g.name});if(!list.length)return null;
+  var ded=list.filter(function(g){return gpuClass(g.name)==='dedicated'}).sort(function(a,b){return (b.vram||0)-(a.vram||0)});return ded[0]||list[0]}
+function parseSpecs(raw){
+  var t=String(raw||'').replace(/[\r\n]+/g,''),i=t.indexOf('CCSPECS:');if(i<0)throw new Error('missing');
+  t=t.slice(i+8);var a=t.indexOf('{'),z=t.lastIndexOf('}');if(a<0||z<a)throw new Error('cut');
+  var j=JSON.parse(t.slice(a,z+1)),o={os:j.os},x={os:j.os};
+  var n=function(v){v=parseFloat(v);return isNaN(v)?null:v};
+  if(j.os==='windows'){
+    var bn=n(j.build)||0,dv=String(j.osVersion||'').toUpperCase(),w11=/Windows 11/i.test(j.osName)||bn>=22000;
+    if(w11){o.osv=dv==='25H2'||bn>=26200?'win11-25h2':dv==='24H2'||bn>=26100?'win11-24h2':dv==='23H2'||bn>=22631?'win11-23h2':'win11-old'}
+    else if(bn>=10240||/Windows 10/i.test(j.osName)){o.osv=bn>=19045||dv==='22H2'?'win10-22h2':'win10-old'}else if(bn)o.osv='win-old';
+    o.arch=j.arch==='12'||j.arch==='5'?'arm':j.arch==='9'?'x86-64':'';
+    o.cores=n(j.threads);o.avx2=j.avx2==='yes'||j.avx2==='no'?j.avx2:'unknown';o.ram=snapRam(n(j.ramGB));
+    var gl=(Array.isArray(j.gpus)?j.gpus:[j.gpus]).filter(Boolean).map(function(g){return {name:String(g.name||'').replace(/\(R\)|\(TM\)/g,'').replace(/\s+/g,' ').trim(),vram:n(g.vramGB)||0}});
+    var g=pickGpu(gl);if(g){o.gpu=gpuClass(g.name);o.vram=o.gpu==='dedicated'?snapVram(g.vram):null;x.gpuName=g.name}
+    o.disp=dispBucket(String(j.display||'').split('x')[0]);o.storage=n(j.freeGB);
+    o.ssd=/SSD/i.test(j.drive)?'yes':/HDD/i.test(j.drive)?'no':'unknown';
+    x.cpu=String(j.cpu||'').replace(/\(R\)|\(TM\)/g,'').replace(/\s+/g,' ').trim();x.cores=n(j.cores);x.threads=n(j.threads);x.ghz=n(j.baseGHz);x.gpus=gl;x.osName=j.osName;x.build=j.build;
+  }else if(j.os==='mac'){
+    var mj=parseInt(String(j.osVersion).split('.')[0],10);o.osv=mj>=27?'mac27':mj===26?'mac26':mj===15?'mac15':mj===14?'mac14':mj?'mac13':'';
+    o.arch=j.arm64==='1'?'apple':'x86-64';var cpu=String(j.cpu||'').replace(/\(R\)|\(TM\)/g,'').replace(/\s+/g,' ').trim();
+    if(o.arch==='apple'){o.chip=/max|ultra/i.test(cpu)?'max':/pro/i.test(cpu)?'pro':/apple m\d/i.test(cpu)?'base':'';o.gpu='integrated'}
+    else{o.gpu=gpuClass(j.gpu);var vm=String(j.vram||'').match(/([\d.]+)\s*(MB|GB)/i);if(vm&&o.gpu==='dedicated')o.vram=snapVram(parseFloat(vm[1])/(/MB/i.test(vm[2])?1024:1))}
+    o.ram=snapRam((n(j.ramBytes)||0)/1073741824);o.disp=dispBucket((String(j.display||'').match(/(\d{3,5})\s*x/)||[])[1]);
+    o.storage=j.freeKB?Math.round(n(j.freeKB)/1048576):null;o.ssd=/^yes/i.test(j.ssd)?'yes':/^no/i.test(j.ssd)?'no':'unknown';
+    x.cpu=cpu;x.cores=n(j.cores);x.perf=o.arch==='apple'?n(j.perfCores):null;x.threads=n(j.threads);x.ghz=j.hz?Math.round(n(j.hz)/1e8)/10:null;x.gpuName=j.gpu||cpu;x.gpus=j.gpu?[{name:j.gpu,vram:0}]:[];x.osName='macOS '+j.osVersion;
+  }else if(j.os==='linux'){
+    var d=String(j.distro||'');
+    o.osv=/ubuntu 24\.04/i.test(d)?'ubuntu2404':/ubuntu 22\.04/i.test(d)?'ubuntu2204':/debian.*(13|trixie)/i.test(d)?'debian13':/debian.*(12|bookworm)/i.test(d)?'debian12':/red hat.*\b10/i.test(d)?'rhel10':/red hat.*\b9/i.test(d)?'rhel9':/red hat.*\b8/i.test(d)?'rhel8':/suse.*15/i.test(d)?'sled15':'linux-other';
+    o.arch=/x86_64|amd64/.test(j.arch)?'x86-64':/aarch64|arm/.test(j.arch)?'arm':'';o.cores=n(j.threads);o.avx2=j.avx2==='yes'?'yes':'no';
+    o.ram=snapRam((n(j.ramKB)||0)/1048576);
+    var ll=String(j.gpu||'').split(';').filter(Boolean).map(function(s){return {name:s.trim(),vram:0}});var vr=n(j.vramMB);
+    var lg=pickGpu(ll);if(lg){o.gpu=gpuClass(lg.name);if(o.gpu==='dedicated'&&vr){o.vram=snapVram(vr/1024);lg.vram=Math.round(vr/102.4)/10}x.gpuName=lg.name}
+    o.disp=dispBucket(String(j.display||'').split('x')[0]);o.storage=j.freeKB?Math.round(n(j.freeKB)/1048576):null;o.ssd=j.rota==='0'?'yes':j.rota==='1'?'no':'unknown';
+    x.cpu=j.cpu;x.cores=n(j.cores);x.threads=n(j.threads);x.ghz=j.mhz?Math.round(n(j.mhz)/100)/10:null;x.gpus=ll;x.osName=d;
+  }else throw new Error('os');
+  return {form:o,exact:x};
+}
+$('#pasteBtn').addEventListener('click',function(){
+  var m=$('#pasteMsg'),r;m.className='msg';
+  try{r=parseSpecs($('#pasteIn').value)}catch(e){m.className='msg err';
+    m.textContent=/missing/.test(e.message)?'That doesn’t look like the result. Paste the whole line that starts with CCSPECS.':'The result looks cut off. Copy the whole CCSPECS line again and paste it.';return}
+  var o=r.form,os=o.os;state.exact=r.exact;
+  $('input[name=os][value="'+os+'"]').checked=true;onOS(os,{osv:o.osv||'',arch:o.arch||''});
+  var set=function(id,v,key){if(v==null||v===''||v==='unknown')return false;$(id).value=String(v);if(key)setSrc(key,'ver');return true};
+  $('#f-chip').value='';$('#f-cores').value='';$('#f-avx2').value='unknown';$('#f-ram').value='';$('#f-gpu').value='unknown';$('#f-vram').value='';$('#f-disp').value='';$('#f-storage').value='';$('#f-ssd').value='unknown';
+  ['chip','cores','avx2','ram','gpu','vram','disp','storage','ssd'].forEach(function(k){setSrc(k,false)});
+  var found=0;
+  if(o.osv){setSrc('osv','ver');found++}else setSrc('osv',false);
+  if(o.arch){setSrc('arch','ver');found++}else setSrc('arch',false);
+  if(set('#f-chip',o.chip,'chip'))found++;
+  if(set('#f-cores',o.cores,'cores'))found++;
+  if(os!=='mac'&&set('#f-avx2',o.avx2,'avx2'))found++;
+  if(set('#f-ram',o.ram,'ram'))found++;
+  if(o.gpu&&o.gpu!=='unknown'){$('#f-gpu').value=o.gpu;setSrc('gpu','ver');found++}
+  if(set('#f-vram',o.vram,'vram'))found++;
+  if(set('#f-disp',o.disp,'disp'))found++;
+  if(set('#f-storage',o.storage,'storage'))found++;
+  if(set('#f-ssd',o.ssd,'ssd'))found++;
+  setSrc('os','ver');toggleVram();toggleChip();
+  state.specs=readForm();persist(state);renderReport();
+  var left=[];if($('#f-net').value==='')left.push('internet speed');if(o.gpu==='dedicated'&&!o.vram)left.push('graphics memory');if(!o.osv)left.push('OS version');if(o.ssd==='unknown')left.push('drive type');
+  m.className='msg ok';m.textContent='Filled in '+found+' specs from your computer.'+(left.length?' Still to enter: '+left.join(', ')+'.':'');
+  setTimeout(function(){$('#report').scrollIntoView({behavior:reduce?'auto':'smooth'})},reduce?0:900);
+});
+var xg=(state.exact&&state.exact.os)||(state.detected&&state.detected.os)||'';
+
+
+/* ---------- Buying guide ---------- */
+var BOSV={windows:[['win11-25h2','Windows 11 (new computer)'],['win10-22h2','Windows 10 (used or refurbished)'],['win-old','Windows 8.1 or older']],
+  mac:[['mac26','Current macOS (new Mac)'],['mac15','macOS 15 Sequoia (used Mac)'],['mac14','macOS 14 Sonoma (older used Mac)'],['mac13','macOS 13 or older']],
+  linux:OSV.linux};
+function courseSw(cid){var c=COURSES.filter(function(x){return x.id===cid})[0]||COURSES[0];return c.software.length?c.software:Object.keys(SOFTWARE)}
+function renderCourseSelect(){$('#b-course').innerHTML=COURSES.map(function(c){return '<option value="'+c.id+'"'+(c.id===(state.buyCourse||state.course)?' selected':'')+'>'+esc(c.code+(c.id!=='any'?' · '+c.title:': all software'))+'</option>'}).join('')}
+function maxOf(items,field,k){var m=null;items.forEach(function(it){if(it.field===field&&it[k]!=null)m=m==null?it[k]:Math.max(m,it[k])});return m}
+function renderShop(){
+  var cid=$('#b-course').value||state.course,os=$('#b-listos').value,sws=courseSw(cid);
+  var its=[],names=[];sws.forEach(function(id){var p=SOFTWARE[id].platforms[os];if(p&&p.supported){names.push(SOFTWARE[id].name);p.items.forEach(function(it){its.push(it)})}});
+  var row=function(k,b,r){return '<tr><td>'+k+'</td><td>'+b+'</td><td>'+r+'</td></tr>'};
+  var h='<p class="lede" style="margin-bottom:1.2rem">For '+esc(names.join(' and '))+' on '+(os==='mac'?'a Mac':'Windows')+'.</p><div class="tbl-wrap"><table class="shop"><thead><tr><th>Look for</th><th>Basic (it will run)</th><th>Recommended (runs smoothly)</th></tr></thead><tbody>';
+  var sT=function(field){var b=0,r=0;sws.forEach(function(id){var p=SOFTWARE[id].platforms[os];if(p&&p.supported)p.items.forEach(function(it){if(it.field===field){b+=it.nb;r+=it.nr}})});return [b,r]};
+  if(os==='windows'){
+    h+=row('Operating system',sws.indexOf('fusion')>-1?'Windows 11 (23H2 or newer)':'Windows 10 or 11','Windows 11 (any new PC)');
+    var hasF=sws.indexOf('fusion')>-1,hasM=sws.indexOf('matlab')>-1;
+    h+=row('Processor','Intel or AMD (x86-64).'+(hasF||hasM?' Avoid Snapdragon/ARM: '+[hasF?'Fusion isn’t certified':'',hasM?'MATLAB runs in emulation':''].filter(Boolean).join(' and ')+'.':''),'Intel Core i7, Core Ultra 7, or AMD Ryzen 7 class or better');
+    h+=row('Threads',(maxOf(its,'cores','nb')||2)+' threads',(maxOf(its,'cores','nr')||4)+'+ threads');
+    h+=row('Memory (RAM)',(maxOf(its,'ram','nb')||8)+' GB',(maxOf(its,'ram','nr')||16)+' GB or more');
+    var gr=maxOf(its,'gpu','nr');h+=row('Graphics','Integrated graphics are fine',gr?'Dedicated card with '+gr+' GB+ VRAM, such as NVIDIA GeForce RTX':'Integrated graphics are fine');
+  }else{
+    h+=row('Operating system',sws.indexOf('fusion')>-1?'macOS 14 Sonoma or newer':sws.indexOf('matlab')>-1?'macOS 15 Sequoia or newer':'macOS 10.15 Catalina or newer','Any new Mac (current macOS)');
+    h+=row('Chip',sws.indexOf('matlab')>-1?'Apple silicon (M1 or newer). Don’t buy an Intel Mac: current MATLAB doesn’t run on it.':'Apple silicon (M1 or newer) or a recent Intel Mac',sws.indexOf('fusion')>-1?'M-series Max (M1 Max or newer) for heavy CAD; any M-series Pro handles coursework':'Any M-series chip');
+    h+=row('Memory (RAM)',(maxOf(its,'ram','nb')||8)+' GB',(maxOf(its,'ram','nr')||16)+' GB or more');
+  }
+  var st=sT('storage');h+=row('Storage','256 GB SSD (course software needs about '+Math.ceil(st[0])+' GB)','512 GB SSD or larger (about '+Math.ceil(st[1])+' GB for software, plus room for projects)');
+  if(sws.indexOf('fusion')>-1)h+=row('Screen','1366 × 768 or higher','1920 × 1080 is comfortable; Autodesk recommends 4K for high-resolution graphics');
+  h+='</tbody></table></div><p class="muted small" style="margin-top:.9rem">Chromebooks, iPads, and Android tablets can’t run the desktop versions of these programs.</p>';
+  $('#shopList').innerHTML=h;
+}
+$('#b-course').addEventListener('change',function(){state.buyCourse=this.value;persist(state);renderShop();if(lastBuy)showBuy(lastBuy);renderCompare()});
+$('#b-listos').addEventListener('change',renderShop);
+
+function bOS(){var r=$('input[name=bos]:checked');return r?r.value:'windows'}
+function onBOS(os){fillSelect($('#b-osv'),BOSV[os],BOSV[os][0][0]);fillSelect($('#b-arch'),ARCH[os],ARCH[os][0][0]);bToggle()}
+function bToggle(){var os=bOS(),mac=os==='mac';$('#b-chipField').classList.toggle('hide',!(mac&&$('#b-arch').value==='apple'));$('#b-thrField').classList.toggle('hide',mac);$('#b-gpuField').classList.toggle('hide',mac);$('#b-vramField').classList.toggle('hide',mac||$('#b-gpu').value!=='dedicated');
+  var w='';if(os==='mac'&&$('#b-arch').value==='x86-64')w='<b>Intel Mac.</b> Current MATLAB doesn’t run on Intel Macs. Choose a Mac with Apple silicon (M1 or newer).';
+  else if(os==='windows'&&$('#b-arch').value==='arm')w='<b>ARM (Snapdragon) PC.</b> MATLAB runs in emulation with some features missing, and Autodesk hasn’t certified Fusion on ARM. An Intel or AMD laptop is the safer choice.';
+  var bw=$('#b-warn');bw.innerHTML=w;bw.style.display=w?'block':'none';}
+$$('input[name=bos]').forEach(function(r){r.addEventListener('change',function(){onBOS(r.value)})});
+['#b-arch','#b-gpu'].forEach(function(i){$(i).addEventListener('change',bToggle)});
+
+function readBuy(){var os=bOS(),g=function(i){return $(i).value},n=function(i){var v=g(i);return v===''?null:+v};
+  return {name:g('#b-name').trim(),os:os,osv:g('#b-osv'),cpu:g('#b-cpu').trim(),arch:g('#b-arch'),chip:os==='mac'?g('#b-chip'):'',threads:os==='mac'?null:n('#b-threads'),ram:n('#b-ram'),
+    gpu:os==='mac'?'integrated':g('#b-gpu'),gpuName:os==='mac'?'':g('#b-gpuname').trim(),vram:n('#b-vram'),cap:n('#b-cap'),ssd:g('#b-ssd'),disp:g('#b-disp')}}
+function writeBuy(b){$('input[name=bos][value="'+b.os+'"]').checked=true;onBOS(b.os);
+  var set=function(i,v){if(v!=null&&v!=='')$(i).value=String(v)};
+  $('#b-name').value=b.name||'';set('#b-osv',b.osv);set('#b-arch',b.arch);set('#b-chip',b.chip);$('#b-cpu').value=b.cpu||'';$('#b-threads').value=b.threads==null?'':b.threads;
+  $('#b-ram').value=b.ram==null?'':String(b.ram);$('#b-gpu').value=b.gpu||'unknown';$('#b-gpuname').value=b.gpuName||'';$('#b-vram').value=b.vram==null?'':String(b.vram);
+  $('#b-cap').value=b.cap==null?'':String(b.cap);$('#b-ssd').value=b.ssd||'yes';$('#b-disp').value=b.disp||'';bToggle()}
+function estFree(cap,os){if(!cap)return null;return Math.max(0,Math.round(cap*0.93-(os==='mac'?20:35)))}
+function toSpec(b){return {os:b.os,osv:b.osv,arch:b.arch,chip:b.chip,cores:b.threads,avx2:b.arch==='x86-64'?'yes':'unknown',ram:b.ram,gpu:b.gpu,vram:b.vram,
+  storage:estFree(b.cap,b.os),ssd:b.ssd==='no'?'no':'yes',net:null,disp:b.disp,gpuName:b.gpuName,webgl2:null}}
+function evalBuy(b){var S=toSpec(b),out={};courseSw($('#b-course').value||state.course).forEach(function(id){var e=evaluate(id,S);
+  e.rows=e.rows.filter(function(r){return r.label!=='Internet connection'}).map(function(r){
+    if(r.label==='Free disk space'&&b.cap){r.yours=lab([['64','64 GB'],['128','128 GB'],['256','256 GB'],['512','512 GB'],['1024','1 TB'],['2048','2 TB+']],String(b.cap))+(b.ssd==='no'?' HDD':b.ssd==='emmc'?' eMMC':' SSD')+' (about '+S.storage+' GB free)';if(b.ssd==='emmc'&&r.status==='rec'){r.status='basic';r.note='eMMC storage is much slower than an SSD.'}}
+    if(r.label==='AVX2 instructions'&&r.status==='rec')r.yours='Yes (all current Intel and AMD chips)';return r});
+  if(e.verdict!=='unsupported'){var st=e.rows.map(function(r){return r.status}),unk=st.filter(function(x){return x==='unknown'}).length;e.unknown=unk;e.verdict=st.indexOf('below')>-1?'below':st.indexOf('basic')>-1?'basic':unk===st.length?'unknown':'rec'}
+  out[id]=e});return out}
+var ORDER=['unsupported','below','unknown','basic','rec'];
+function worstOf(res){var w='rec';Object.keys(res).forEach(function(k){if(ORDER.indexOf(res[k].verdict)<ORDER.indexOf(w))w=res[k].verdict});return w}
+var lastBuy=null;
+function showBuy(b){lastBuy=b;var res=evalBuy(b),worst=worstOf(res),cid=$('#b-course').value||state.course,course=COURSES.filter(function(c){return c.id===cid})[0]||COURSES[0];
+  var head={rec:'Good buy for this course',basic:'Works, with limits',below:'Not a good fit',unknown:'Add more specs',unsupported:'Won’t run the course software'}[worst];
+  var sub={rec:'It meets the recommended specs for every program in '+course.code+'.',basic:'Everything will run. The items marked Basic are where it falls short of the recommendation.',below:'At least one program won’t install or run well on it. See the red items.',unknown:'Fill in the missing details to get a result.',unsupported:'At least one program isn’t available for this operating system.'}[worst];
+  var h='<div class="summary '+worst+'"><div><p class="tag" style="margin:0 0 .4rem">'+esc(b.name||'This computer')+' · '+esc(course.code)+'</p><p class="big">'+head+'</p><p>'+sub+'</p></div><div class="facts">'+esc(lab(BOSV[b.os],b.osv))+(b.ram?'<br>'+b.ram+' GB RAM':'')+(b.cap?'<br>'+(b.cap>=1024?b.cap/1024+' TB':b.cap+' GB')+' storage':'')+'</div></div>';
+  Object.keys(res).forEach(function(id){var e=res[id],sw=SOFTWARE[id];
+    h+='<div class="swres"><div class="top"><div><h3 class="d">'+esc(sw.name)+'</h3><span class="ver">'+esc(sw.version)+' · '+esc(OSNAME[b.os])+'</span></div><span class="verdict '+e.verdict+'">'+VERDICT_TEXT[e.verdict]+(e.unknown&&e.verdict!=='unknown'?' · '+e.unknown+' unverified':'')+'</span></div>';
+    if(e.verdict==='unsupported'){h+='<p>'+esc(e.why)+'</p></div>';return}
+    h+='<div class="tbl-wrap"><table><thead><tr><th>Spec</th><th>Basic</th><th>Recommended</th><th>This computer</th><th>Result</th></tr></thead><tbody>'+e.rows.map(function(x){return '<tr><td>'+esc(x.label)+'</td><td>'+esc(x.basic)+'</td><td>'+esc(x.rec==='Same'?x.basic:x.rec)+'</td><td>'+esc(x.yours)+(x.note?'<span class="sub">'+esc(x.note)+'</span>':'')+'</td><td>'+chip(x.status)+'</td></tr>'}).join('')+'</tbody></table></div>';
+    var up=e.rows.filter(function(x){return x.status==='below'||x.status==='basic'});
+    if(up.length)h+='<p class="tag" style="margin:1rem 0 0">To reach recommended, look for</p><ul class="lookfor">'+up.map(function(x){return '<li><b>'+esc(x.label)+':</b> '+esc(x.rec==='Same'?x.basic:x.rec)+'</li>'}).join('')+'</ul>';
+    h+='</div>'});
+  $('#b-results').innerHTML=h;$('#b-resultsSec').style.display='block';}
+$('#b-check').addEventListener('click',function(){var b=readBuy();if(!b.ram&&!b.cap&&!b.threads&&!b.chip){$('#b-msg').textContent='Paste the specs or fill in at least memory and storage.';return}$('#b-msg').textContent='';showBuy(b);$('#b-resultsSec').scrollIntoView({behavior:reduce?'auto':'smooth'})});
+$('#b-add').addEventListener('click',function(){var b=readBuy();state.buy=state.buy||[];if(state.buy.length>=6){$('#b-msg').textContent='You can compare up to 6 computers. Remove one first.';return}
+  b.id=String(Date.now());if(!b.name)b.name='Computer '+(state.buy.length+1);state.buy.push(b);persist(state);renderCompare();showBuy(b);$('#b-msg').textContent='Added “'+b.name+'”.';$('#b-compareSec').scrollIntoView({behavior:reduce?'auto':'smooth'})});
+$('#b-clear').addEventListener('click',function(){$('#b-paste').value='';writeBuy({os:'windows'});$('#b-readmsg').textContent='';$('#b-msg').textContent='';$('#b-resultsSec').style.display='none';lastBuy=null});
+function renderCompare(){var list=state.buy||[],sec=$('#b-compareSec');if(!list.length){sec.style.display='none';return}sec.style.display='block';
+  var sws=courseSw($('#b-course').value||state.course),rank={rec:4,basic:3,unknown:2,below:1,unsupported:0};
+  var rows=list.map(function(b){var r=evalBuy(b);return {b:b,r:r,score:sws.reduce(function(a,id){return a+rank[r[id].verdict]},0)}});
+  var top=Math.max.apply(null,rows.map(function(x){return x.score}));
+  $('#b-compare').innerHTML='<div class="tbl-wrap"><table class="cmp"><thead><tr><th>Computer</th><th>Memory</th><th>Processor / chip</th><th>Graphics</th><th>Storage</th>'+sws.map(function(id){return '<th>'+esc(SOFTWARE[id].name)+'</th>'}).join('')+'<th></th></tr></thead><tbody>'+
+    rows.map(function(x){var b=x.b;return '<tr'+(x.score===top&&rows.length>1?' class="best"':'')+'><td><span class="nm">'+esc(b.name)+'</span><span class="sub" style="margin:0">'+esc(OSNAME[b.os])+'</span></td><td>'+(b.ram?b.ram+' GB':'—')+'</td><td>'+esc(b.os==='mac'?(b.arch==='apple'?(b.chip?lab(CHIP,b.chip):'Apple silicon'):'Intel'):(b.cpu||'—')+(b.threads?' · '+b.threads+' threads':''))+'</td><td>'+esc(b.os==='mac'?'Built-in':(b.gpuName||{integrated:'Integrated',dedicated:'Dedicated',unknown:'—'}[b.gpu])+(b.gpu==='dedicated'&&b.vram?' · '+b.vram+' GB':''))+'</td><td>'+(b.cap?(b.cap>=1024?b.cap/1024+' TB':b.cap+' GB'):'—')+'</td>'+
+      sws.map(function(id){return '<td>'+chip(x.r[id].verdict==='unsupported'?'unsupported':x.r[id].verdict)+'</td>'}).join('')+'<td style="white-space:nowrap"><button class="lnk" data-bview="'+b.id+'">View</button><button class="lnk" data-bdel="'+b.id+'">Remove</button></td></tr>'}).join('')+'</tbody></table></div>'+(rows.length>1?'<p class="muted small" style="margin-top:.8rem">The gold edge marks the best match for this course.</p>':'');
+}
+STLABEL.unsupported='Not supported';
+document.addEventListener('click',function(e){var v=e.target.closest('[data-bview]'),d=e.target.closest('[data-bdel]');
+  if(v){var b=(state.buy||[]).filter(function(x){return x.id===v.dataset.bview})[0];if(b){writeBuy(b);showBuy(b);$('#b-resultsSec').scrollIntoView({behavior:reduce?'auto':'smooth'})}}
+  if(d){state.buy=(state.buy||[]).filter(function(x){return x.id!==d.dataset.bdel});persist(state);renderCompare()}});
+
+/* Read pasted store specs */
+function readListing(t){
+  t=String(t).replace(/[®™]|\((?:R|TM)\)/g,'').replace(/[ \t]+/g,' ');
+  var o={},found=[],low=t.toLowerCase(),m;
+  var isMac=/macbook|imac|mac mini|mac studio|mac pro|macos/i.test(t)||/\bapple m[1-9]\b/i.test(t);
+  if(/chromebook|chrome ?os/i.test(t))o.special='Chromebook';
+  else if(/\bipad\b|android|galaxy tab/i.test(t))o.special='tablet';
+  o.os=isMac?'mac':/windows/i.test(t)?'windows':/ubuntu|linux/i.test(t)?'linux':'';
+  if(o.os)found.push('operating system');
+  if(o.os==='windows')o.osv=/windows 10/i.test(t)&&!/windows 11/i.test(t)?'win10-22h2':'win11-25h2';
+  if(o.os==='mac'){m=t.match(/\bM([1-9])\s*(Pro|Max|Ultra)?\b/);if(m){o.arch='apple';o.chip=m[2]?(/pro/i.test(m[2])?'pro':'max'):'base';o.cpu='Apple M'+m[1]+(m[2]?' '+m[2]:'');found.push('chip')}else if(/intel/i.test(t)){o.arch='x86-64'}o.osv='mac26'}
+  else{
+    m=t.match(/(Intel\s*(?:®|\(R\))?\s*Core\s*(?:™|\(TM\))?\s*(?:Ultra\s*\d\s*\d{3}[A-Z]{0,2}|i[3579][- ]\d{4,5}[A-Z]{0,3}|[3579]\s*\d{3}[A-Z]{0,2})|AMD\s*Ryzen\s*(?:AI\s*)?(?:\d|Max\+?)\s*(?:PRO\s*)?(?:HX\s*)?\d{3,4}[A-Z]{0,3}|Snapdragon\s*X\d?\s*(?:Elite|Plus)?[\w-]*)/i);
+    if(m){o.cpu=m[1].replace(/®|™|\(R\)|\(TM\)/g,'').replace(/\s+/g,' ').trim();found.push('processor')}
+    o.arch=/snapdragon|qualcomm|\barm\b/i.test(t)?'arm':'x86-64';
+    m=t.match(/(\d{1,3})\s*(?:threads|logical processors)/i)||t.match(/threads?\s*[:\-]?\s*(\d{1,3})/i);if(m){o.threads=+m[1];found.push('threads')}
+  }
+  m=t.match(/(\d{1,3})\s*GB\s*(?:of\s*)?(?:(?:LP)?DDR\d\w*|unified memory|system memory|RAM|memory)/i)||t.match(/(?:installed ram|system memory|memory|ram)\s*(?:\(RAM\))?\s*[:\-]?\s*(\d{1,3})\s*GB/i);
+  if(m){o.ram=+m[1];found.push('memory')}
+  m=t.match(/(\d+(?:\.\d+)?)\s*(TB|GB)\s*(?:PCIe\s*)?(?:Gen\s*\d\s*)?(?:NVMe\s*)?(?:M\.2\s*)?(?:TLC\s*)?(SSD|solid[- ]state|HDD|hard (?:disk )?drive|eMMC|UFS|flash storage|storage)/i)||t.match(/(?:storage|hard drive capacity|solid state drive capacity|ssd)\s*[:\-]?\s*(\d+(?:\.\d+)?)\s*(TB|GB)/i);
+  if(m){var cap=parseFloat(m[1])*(/tb/i.test(m[2])?1024:1);o.cap=cap>=2048?2048:cap>=1000?1024:cap>=500?512:cap>=250?256:cap>=120?128:64;var ty=(m[3]||'')+' '+low;
+    o.ssd=/hdd|hard (disk )?drive|rpm/i.test(m[3]||'')?'no':/emmc|ufs/i.test(m[3]||'')||/\bemmc\b/.test(low)?'emmc':'yes';found.push('storage')}
+  if(o.os!=='mac'){
+    m=t.match(/(NVIDIA\s*)?(GeForce\s*RTX\s*\d{4}\w*(?:\s*Ti)?(?:\s*SUPER)?|GeForce\s*(?:GTX|MX)\s*\d{3,4}\w*|RTX\s*(?:A|PRO\s*)?\d{3,4}\w*(?:\s*Ada)?|Quadro\s*\w+|Radeon\s*(?:RX|Pro)\s*\w+(?:\s*XT)?|Intel\s*Arc\s*(?:Pro\s*)?A\d{3}M?)/i);
+    if(m){o.gpu='dedicated';o.gpuName=((m[1]?'NVIDIA ':'')+m[2]).replace(/\s+/g,' ').trim();if(/^Radeon|^RTX|^GeForce|^Quadro/i.test(o.gpuName)&&!m[1]&&/geforce|rtx|quadro/i.test(o.gpuName))o.gpuName='NVIDIA '+o.gpuName;found.push('graphics')}
+    else{m=t.match(/(Intel\s*(?:Iris\s*Xe|UHD|Arc)\s*Graphics|AMD\s*Radeon\s*(?:\d{3}M\s*)?Graphics|Radeon\s*\d{3}M|Qualcomm\s*Adreno\w*)/i);if(m){o.gpu='integrated';o.gpuName=m[1].replace(/\s+/g,' ');found.push('graphics')}}
+    m=t.match(/(\d{1,2})\s*GB\s*(?:G?DDR\d\w*|dedicated|VRAM|video memory|graphics memory)/i);if(m&&o.gpu==='dedicated'){o.vram=snapVram(+m[1]);found.push('VRAM')}
+  }
+  m=t.match(/(\d{4})\s*(?:x|×|-by-|by)\s*(\d{3,4})/i);
+  if(m)o.disp=dispBucket(m[1]);else if(/\b(4k|uhd\+?|3840)\b/i.test(t))o.disp='3840';else if(/\b(qhd\+?|wqxga|2\.5k|2\.8k|3k|1440p|retina)\b/i.test(t))o.disp='2560';else if(/\b(fhd\+?|full hd|1080p|wuxga)\b/i.test(t))o.disp='1920';else if(/\bhd\b/i.test(t))o.disp='1366';
+  if(o.disp)found.push('screen');
+  return {o:o,found:found};
+}
+$('#b-read').addEventListener('click',function(){var t=$('#b-paste').value,msg=$('#b-readmsg');if(!t.trim()){msg.textContent='Paste the product’s specifications first.';return}
+  var r=readListing(t),o=r.o;
+  if(o.special){msg.className='msg err';msg.textContent='This looks like a '+o.special+'. The course software needs a Windows PC or Mac.';return}
+  var cur=readBuy();var os=o.os||cur.os;
+  var merged={name:cur.name,os:os,osv:o.osv||'',arch:o.arch||'',chip:o.chip||'',cpu:o.cpu||'',threads:o.threads==null?null:o.threads,ram:o.ram||null,gpu:o.gpu||'unknown',gpuName:o.gpuName||'',vram:o.vram||null,cap:o.cap||null,ssd:o.ssd||'yes',disp:o.disp||''};
+  writeBuy(merged);
+  var need=[];if(os!=='mac'&&!o.threads)need.push('threads');if(!o.ram)need.push('memory');if(!o.cap)need.push('storage size');if(os!=='mac'&&!o.gpu)need.push('graphics');if(os!=='mac'&&o.gpu==='dedicated'&&!o.vram)need.push('VRAM');if(os==='mac'&&!o.chip&&o.arch!=='x86-64')need.push('chip tier');if(!o.disp)need.push('screen resolution');
+  msg.className='msg ok';msg.textContent='Found '+(r.found.length?r.found.join(', '):'nothing')+'.'+(need.length?' Please fill in: '+need.join(', ')+'.':' Check the fields, then choose Check this computer.');
+});
+
+/* ---------- Load data, then start ---------- */
+function getJSON(url){return fetch(url,{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})}
+function loadData(){
+  var draft=null;
+  if(/[?&]preview=1/.test(location.search)){try{draft=JSON.parse(localStorage.getItem('cc-admin-draft')||'null')}catch(e){}}
+  if(draft&&draft.requirements&&draft.courses)return Promise.resolve({req:draft.requirements,courses:draft.courses,mode:'preview'});
+  return Promise.all([getJSON('data/requirements.json'),getJSON('data/courses.json')]).then(function(r){return {req:r[0],courses:r[1],mode:'live'}})
+    .catch(function(){var fb=JSON.parse(document.getElementById('fallback-data').textContent);return {req:fb.requirements,courses:fb.courses,mode:'fallback'}});
+}
+function banner(html){var b=document.createElement('div');b.className='databanner';b.innerHTML='<div class="wrap">'+html+'</div>';document.body.insertBefore(b,document.getElementById('main'))}
+loadData().then(function(data){
+SOFTWARE=buildSoftware(data.req);COURSES=(data.courses.courses||[]).slice();
+if(data.mode==='preview')banner('<b>Preview.</b> You’re seeing unsaved changes from the admin page. <a href="'+location.pathname+'">Leave preview</a>');
+if(data.mode==='fallback')banner('<b>Offline copy.</b> Couldn’t load the latest requirements, so a built-in copy is shown. It may be out of date.');
+if(!COURSES.some(function(c){return c.id===state.course})){state.course=COURSES[0].id;state.sw=null}
+if(state.buyCourse&&!COURSES.some(function(c){return c.id===state.buyCourse}))state.buyCourse=null;
+if(state.sw)state.sw=state.sw.filter(function(id){return SOFTWARE[id]});
+drawReadout(null);
+$('#f-osv').innerHTML='<option value="">Choose an operating system first</option>';$('#f-arch').innerHTML='<option value="">Choose an operating system first</option>';
+['osv','arch','chip','cores','avx2','ram','gpu','vram','disp','storage','ssd','net'].forEach(function(k){setSrc(k,false)});
+if(state.detected){var d=state.detected;drawReadout(d.ro||null);$('#roState').textContent='Last run '+new Date(d.at).toLocaleDateString();applyDetected(d)}
+if(state.specs){writeForm(state.specs)}
+var guess=(state.specs&&state.specs.os)||(state.detected&&state.detected.os)||(/Mac/.test(navigator.userAgent)?'mac':/Linux/.test(navigator.userAgent)&&!/Android/.test(navigator.userAgent)?'linux':'windows');selTab(guess);selX(xg||guess);
+toggleVram();renderReport();renderCourses();renderReq();renderCourseSelect();onBOS('windows');renderShop();renderCompare();show(true);
+});
+})();
+</script>
+</body>
+</html>
