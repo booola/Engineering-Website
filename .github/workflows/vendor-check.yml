@@ -1,0 +1,38 @@
+name: Vendor check
+
+on:
+  schedule:
+    - cron: '0 13 1 * *'     # 1st of every month, 13:00 UTC (8 or 9 AM in Kentucky)
+  workflow_dispatch:          # adds a "Run workflow" button on the Actions tab
+
+permissions:
+  contents: write             # save snapshots and lastChecked dates
+  issues: write               # open issues when something changes
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install the headless browser (for pages built with JavaScript)
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: Compare vendor pages with saved copies
+        run: node scripts/check-vendors.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Save results
+        run: |
+          git config user.name  "vendor-check"
+          git config user.email "vendor-check@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "Vendor check $(date -u +%F)"
+          git push
