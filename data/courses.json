@@ -1,0 +1,31 @@
+{
+  "courses": [
+    {
+      "id": "egr110",
+      "code": "EGR 110",
+      "title": "Engineering Exploration",
+      "software": ["bambu"],
+      "url": "https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/course-descriptions/egr-engineering/100/egr-110"
+    },
+    {
+      "id": "egr210",
+      "code": "EGR 210",
+      "title": "Introduction to Programming",
+      "software": ["matlab"],
+      "url": "https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/course-descriptions/egr-engineering/200/egr-210"
+    },
+    {
+      "id": "egr215",
+      "code": "EGR 215",
+      "title": "Computer-Aided Design and Drafting",
+      "software": ["fusion"],
+      "url": "https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/course-descriptions/egr-engineering/200/egr-215"
+    },
+    {
+      "id": "any",
+      "code": "Other",
+      "title": "Choose the software yourself",
+      "software": []
+    }
+  ]
+}
