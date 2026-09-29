@@ -1,0 +1,552 @@
+{
+  "software": {
+    "matlab": {
+      "name": "MATLAB",
+      "version": "R2026b",
+      "vendor": "MathWorks",
+      "lastUpdated": "2026-09-29",
+      "lastChecked": "2026-09-29",
+      "links": [
+        {
+          "label": "Windows",
+          "url": "https://www.mathworks.com/support/requirements/matlab-system-requirements.html"
+        },
+        {
+          "label": "Mac",
+          "url": "https://www.mathworks.com/support/requirements/matlab-mac.html"
+        },
+        {
+          "label": "Linux",
+          "url": "https://www.mathworks.com/support/requirements/matlab-linux.html"
+        }
+      ],
+      "storage": {
+        "windows": [4.6, 8],
+        "mac": [3.7, 6],
+        "linux": [4.5, 7]
+      },
+      "notes": "Storage: an all-products install needs about 25 GB on Windows, 17 GB on Mac, and 26 GB on Linux. Some toolboxes are not available on macOS; check the Mac page if your course uses one. GPU computing with Parallel Computing Toolbox is not available on macOS.",
+      "platforms": {
+        "windows": {
+          "supported": true,
+          "items": [
+            {
+              "type": "os",
+              "basic": ["win11-25h2", "win11-24h2", "win10-22h2"],
+              "rec": ["win11-25h2", "win11-24h2", "win10-22h2"],
+              "basicText": "Windows 11 (24H2, 25H2) or Windows 10 (22H2)",
+              "recText": "Same",
+              "notes": {
+                "win11-23h2": "MATLAB R2026b lists Windows 11 24H2 and 25H2. Run Windows Update to move past 23H2."
+              }
+            },
+            {
+              "type": "arch",
+              "basic": ["x86-64", "arm"],
+              "rec": ["x86-64"],
+              "basicText": "Any Intel or AMD x86-64, or Snapdragon X",
+              "recText": "Intel or AMD x86-64",
+              "notes": {
+                "arm": "On Windows ARM, MATLAB runs in Prism emulation and some capabilities are not supported."
+              }
+            },
+            {
+              "type": "number",
+              "field": "cores",
+              "label": "Logical cores",
+              "unit": "",
+              "basic": 1,
+              "rec": 4,
+              "basicText": "Any",
+              "recText": "4 logical cores",
+              "lowNote": ""
+            },
+            {
+              "type": "avx2",
+              "note": "A future MATLAB release will require AVX2."
+            },
+            {
+              "type": "number",
+              "field": "ram",
+              "label": "Memory (RAM)",
+              "unit": "GB",
+              "basic": 8,
+              "rec": 16,
+              "basicText": "8 GB",
+              "recText": "16 GB",
+              "lowNote": ""
+            },
+            {
+              "type": "storage",
+              "basic": 4.6,
+              "rec": 8,
+              "basicText": "4.6 GB (MATLAB only)",
+              "recText": "5–8 GB typical install"
+            },
+            {
+              "type": "gpu-optional",
+              "rec": 2
+            }
+          ]
+        },
+        "mac": {
+          "supported": true,
+          "items": [
+            {
+              "type": "os",
+              "basic": ["mac27", "mac26", "mac15"],
+              "rec": ["mac27", "mac26", "mac15"],
+              "basicText": "macOS 27, 26 Tahoe, or 15 Sequoia",
+              "recText": "Same",
+              "notes": {
+                "mac14": "macOS Sonoma is no longer supported. Update macOS first."
+              }
+            },
+            {
+              "type": "arch",
+              "basic": ["apple"],
+              "rec": ["apple"],
+              "basicText": "Apple silicon (A- or M-series)",
+              "recText": "Apple silicon",
+              "notes": {
+                "x86-64": "MATLAB is no longer available for Macs with Intel processors. Use a campus lab computer or an older MATLAB release your instructor approves."
+              }
+            },
+            {
+              "type": "number",
+              "field": "ram",
+              "label": "Memory (RAM)",
+              "unit": "GB",
+              "basic": 8,
+              "rec": 16,
+              "basicText": "8 GB",
+              "recText": "16 GB",
+              "lowNote": ""
+            },
+            {
+              "type": "storage",
+              "basic": 3.7,
+              "rec": 6,
+              "basicText": "3.7 GB (MATLAB only)",
+              "recText": "4–6 GB typical install"
+            },
+            {
+              "type": "gpu-mac"
+            }
+          ]
+        },
+        "linux": {
+          "supported": true,
+          "items": [
+            {
+              "type": "os",
+              "basic": ["ubuntu2404", "ubuntu2204", "debian13", "debian12", "rhel10", "rhel9", "rhel8", "sled15", "linux-other"],
+              "rec": ["ubuntu2404", "ubuntu2204", "debian13", "debian12", "rhel10", "rhel9", "rhel8", "sled15"],
+              "basicText": "A listed distribution, or kernel 4.18+ and glibc 2.28+",
+              "recText": "Ubuntu 24.04/22.04, Debian 13/12, RHEL 10/9/8, SUSE 15",
+              "notes": {
+                "linux-other": "Other distributions with kernel 4.18+ and glibc 2.28+ will likely work, but MathWorks support is limited."
+              }
+            },
+            {
+              "type": "arch",
+              "basic": ["x86-64"],
+              "rec": ["x86-64"],
+              "basicText": "Intel or AMD x86-64",
+              "recText": "Intel or AMD x86-64",
+              "notes": {
+                "arm": "MATLAB for Linux requires an x86-64 processor."
+              }
+            },
+            {
+              "type": "number",
+              "field": "cores",
+              "label": "Logical cores",
+              "unit": "",
+              "basic": 2,
+              "rec": 4,
+              "basicText": "2 cores",
+              "recText": "4 cores",
+              "lowNote": ""
+            },
+            {
+              "type": "avx2",
+              "note": "A future MATLAB release will require AVX2."
+            },
+            {
+              "type": "number",
+              "field": "ram",
+              "label": "Memory (RAM)",
+              "unit": "GB",
+              "basic": 8,
+              "rec": 16,
+              "basicText": "8 GB",
+              "recText": "16 GB",
+              "lowNote": ""
+            },
+            {
+              "type": "storage",
+              "basic": 4.5,
+              "rec": 7,
+              "basicText": "4.5 GB (MATLAB only)",
+              "recText": "5–7 GB typical install"
+            },
+            {
+              "type": "gpu-optional",
+              "rec": 2
+            }
+          ]
+        }
+      }
+    },
+    "fusion": {
+      "name": "Autodesk Fusion",
+      "version": "Current release",
+      "vendor": "Autodesk",
+      "lastUpdated": "2026-09-29",
+      "lastChecked": "2026-09-29",
+      "links": [
+        {
+          "label": "All platforms",
+          "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/System-requirements-for-Autodesk-Fusion-360.html"
+        }
+      ],
+      "storage": {
+        "windows": [8.5, 15],
+        "mac": [8.5, 15],
+        "linux": [0, 0]
+      },
+      "notes": "Also required: a HID-compliant mouse or trackpad (Wacom tablets and 3Dconnexion SpaceMouse are optional), and TLS 1.2+. On Windows, .NET Framework 4.5+ is needed to send crash reports, and Insider or pre-release builds are not supported. On Mac, some commands prompt to install Rosetta 2, and Macs running OpenCore Legacy Patcher are not supported. For professional work Autodesk recommends certified graphics (Radeon Pro WX, Intel Arc Pro, NVIDIA Quadro); consumer cards like GeForce RTX 4000, Radeon RX 7000, or Arc A700 generally work but are not validated.",
+      "platforms": {
+        "windows": {
+          "supported": true,
+          "items": [
+            {
+              "type": "os",
+              "basic": ["win11-25h2", "win11-24h2", "win11-23h2"],
+              "rec": ["win11-25h2", "win11-24h2", "win11-23h2"],
+              "basicText": "Windows 11, 23H2 (build 22631) or newer",
+              "recText": "Same",
+              "notes": {
+                "win10-22h2": "Autodesk’s minimum is Windows 11 23H2. Fusion may still open on Windows 10, but it is not supported. Upgrade to Windows 11 if your PC is eligible.",
+                "win10-old": "Autodesk’s minimum is Windows 11 23H2. Upgrade to Windows 11 if your PC is eligible.",
+                "win11-old": "Run Windows Update to reach 23H2 (build 22631) or newer. Insider and pre-release builds are not supported."
+              }
+            },
+            {
+              "type": "arch",
+              "basic": ["x86-64", "arm"],
+              "rec": ["x86-64"],
+              "basicText": "x86-64 (ARM64 runs in Prism emulation)",
+              "recText": "Intel or AMD x86-64",
+              "notes": {
+                "arm": "ARM64 devices run Fusion on Windows 11 through Prism emulation. Autodesk has not finished certifying this."
+              }
+            },
+            {
+              "type": "number",
+              "field": "cores",
+              "label": "Cores and threads",
+              "unit": "threads",
+              "basic": 4,
+              "rec": 16,
+              "basicText": "2 performance cores, 4 threads, 3 GHz+ turbo (Core i3, Ryzen 3)",
+              "recText": "8+ performance cores, 16+ threads, 3 GHz+ base (Core i7, Ryzen 7)",
+              "lowNote": "Fusion needs at least 2 performance cores and 4 threads."
+            },
+            {
+              "type": "number",
+              "field": "ram",
+              "label": "Memory (RAM)",
+              "unit": "GB",
+              "basic": 8,
+              "rec": 32,
+              "basicText": "8 GB",
+              "recText": "32 GB+",
+              "lowNote": ""
+            },
+            {
+              "type": "gpu-vram",
+              "basic": 1,
+              "rec": 8
+            },
+            {
+              "type": "display",
+              "basic": 1366,
+              "rec": 3840,
+              "basicText": "1366 × 768 at 60 Hz, 100% scale",
+              "recText": "3840 × 2160 (4K) at 60 Hz, 200% scale"
+            },
+            {
+              "type": "storage",
+              "basic": 8.5,
+              "rec": 15,
+              "basicText": "8.5 GB (hard disk OK)",
+              "recText": "15 GB+ with cache"
+            },
+            {
+              "type": "internet",
+              "basic": 5,
+              "rec": 25,
+              "basicText": "5 Mbps down, 1 Mbps up",
+              "recText": "25+ Mbps down, 5 Mbps up"
+            }
+          ]
+        },
+        "mac": {
+          "supported": true,
+          "items": [
+            {
+              "type": "os",
+              "basic": ["mac27", "mac26", "mac15", "mac14"],
+              "rec": ["mac27", "mac26", "mac15"],
+              "basicText": "macOS 14 Sonoma",
+              "recText": "macOS 15.7 Sequoia or newer, or 26 Tahoe",
+              "notes": {
+                "mac15": "Autodesk recommends Sequoia 15.7 or newer. Install the latest 15.x update.",
+                "mac14": "Supported. Update to Sequoia 15.7 or Tahoe for the recommended setup.",
+                "mac13": "The minimum is macOS 14 Sonoma. Update macOS first. Macs using OpenCore Legacy Patcher are not supported."
+              }
+            },
+            {
+              "type": "mac-chip",
+              "label": "Processor type",
+              "basicText": "1.4 GHz dual-core Intel Core i5 or Apple M1",
+              "recText": "Apple M1 Max or newer"
+            },
+            {
+              "type": "number",
+              "field": "ram",
+              "label": "Memory (RAM)",
+              "unit": "GB",
+              "basic": 4,
+              "rec": 16,
+              "basicText": "4 GB",
+              "recText": "16 GB+",
+              "lowNote": ""
+            },
+            {
+              "type": "mac-chip",
+              "label": "Graphics",
+              "basicText": "Intel HD Graphics 5000 or Apple M1",
+              "recText": "Apple M1 Max or newer"
+            },
+            {
+              "type": "display",
+              "basic": 1366,
+              "rec": 3840,
+              "basicText": "1366 × 768 at 60 Hz, Retina scaling off",
+              "recText": "3840 × 2160 (4K) at 60 Hz, Retina scaling on"
+            },
+            {
+              "type": "storage",
+              "basic": 8.5,
+              "rec": 15,
+              "basicText": "8.5 GB (hard disk OK)",
+              "recText": "15 GB+ with cache"
+            },
+            {
+              "type": "internet",
+              "basic": 5,
+              "rec": 25,
+              "basicText": "5 Mbps down, 1 Mbps up",
+              "recText": "25+ Mbps down, 5 Mbps up"
+            }
+          ]
+        },
+        "linux": {
+          "supported": false,
+          "why": "Autodesk does not make the Fusion desktop app for Linux.",
+          "alt": ["Use Fusion in a web browser (Chrome, Firefox, or Edge). It needs a verified Education entitlement, 5 Mbps down and 1 Mbps up, under 100 ms latency, and a 1366 × 768 or larger screen (1920 × 1080 recommended).", "Use a campus computer lab machine with Fusion installed.", "Install Windows 11 alongside Linux (dual boot) on the same computer."]
+        }
+      }
+    },
+    "bambu": {
+      "name": "Bambu Studio",
+      "version": "Current release",
+      "vendor": "Bambu Lab",
+      "lastUpdated": "2026-09-29",
+      "lastChecked": "2026-09-29",
+      "links": [
+        {
+          "label": "Download page",
+          "url": "https://bambulab.com/en/download/studio"
+        },
+        {
+          "label": "Quick start",
+          "url": "https://wiki.bambulab.com/en/software/bambu-studio/studio-quick-start"
+        }
+      ],
+      "storage": {
+        "windows": [2, 2],
+        "mac": [2, 2],
+        "linux": [2, 2]
+      },
+      "notes": "",
+      "platforms": {
+        "windows": {
+          "supported": true,
+          "items": [
+            {
+              "type": "os",
+              "basic": ["win11-25h2", "win11-24h2", "win11-23h2", "win11-old", "win10-22h2", "win10-old"],
+              "rec": ["win11-25h2", "win11-24h2", "win11-23h2", "win11-old", "win10-22h2", "win10-old"],
+              "basicText": "Windows 10 or newer, 64-bit",
+              "recText": "Same",
+              "notes": {}
+            },
+            {
+              "type": "arch",
+              "basic": ["x86-64", "arm"],
+              "rec": ["x86-64"],
+              "basicText": "64-bit Intel or AMD, 2 GHz or faster",
+              "recText": "64-bit Intel or AMD",
+              "notes": {
+                "arm": "Bambu Lab lists Intel and AMD processors. On an ARM (Snapdragon) PC it runs through Windows emulation."
+              }
+            },
+            {
+              "type": "number",
+              "field": "cores",
+              "label": "Logical cores",
+              "unit": "",
+              "basic": 2,
+              "rec": 2,
+              "basicText": "Dual-core (Intel Core 2, AMD Athlon 64, or newer)",
+              "recText": "Same",
+              "lowNote": ""
+            },
+            {
+              "type": "number",
+              "field": "ram",
+              "label": "Memory (RAM)",
+              "unit": "GB",
+              "basic": 4,
+              "rec": 8,
+              "basicText": "4 GB",
+              "recText": "8 GB",
+              "lowNote": ""
+            },
+            {
+              "type": "gpu-any"
+            },
+            {
+              "type": "storage",
+              "basic": 2,
+              "rec": 2,
+              "basicText": "2 GB",
+              "recText": "2 GB"
+            }
+          ]
+        },
+        "mac": {
+          "supported": true,
+          "items": [
+            {
+              "type": "os",
+              "basic": ["mac27", "mac26", "mac15", "mac14", "mac13"],
+              "rec": ["mac27", "mac26", "mac15", "mac14"],
+              "basicText": "macOS 10.15 Catalina or newer",
+              "recText": "Same",
+              "notes": {
+                "mac13": "Bambu Studio needs macOS 10.15 Catalina or newer. Ventura (13) and Monterey (12) are fine."
+              }
+            },
+            {
+              "type": "arch",
+              "basic": ["apple", "x86-64"],
+              "rec": ["apple", "x86-64"],
+              "basicText": "Apple silicon or Intel",
+              "recText": "Same",
+              "notes": {}
+            },
+            {
+              "type": "number",
+              "field": "ram",
+              "label": "Memory (RAM)",
+              "unit": "GB",
+              "basic": 4,
+              "rec": 8,
+              "basicText": "4 GB",
+              "recText": "8 GB",
+              "lowNote": ""
+            },
+            {
+              "type": "gpu-mac"
+            },
+            {
+              "type": "storage",
+              "basic": 2,
+              "rec": 2,
+              "basicText": "2 GB",
+              "recText": "2 GB"
+            }
+          ]
+        },
+        "linux": {
+          "supported": true,
+          "items": [
+            {
+              "type": "os",
+              "basic": ["ubuntu2404", "ubuntu2204", "debian13", "debian12", "rhel10", "rhel9", "rhel8", "sled15", "linux-other"],
+              "rec": ["ubuntu2404", "ubuntu2204"],
+              "basicText": "Ubuntu 20.04+ or Fedora 36+ (other distributions usually work)",
+              "recText": "Ubuntu 20.04 or newer, or Fedora 36 or newer",
+              "notes": {
+                "debian13": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.",
+                "debian12": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.",
+                "rhel10": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.",
+                "rhel9": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.",
+                "rhel8": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.",
+                "sled15": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support.",
+                "linux-other": "Bambu Lab lists Ubuntu 20.04+ and Fedora 36+. Other distributions usually run the Linux download, with limited support."
+              }
+            },
+            {
+              "type": "arch",
+              "basic": ["x86-64"],
+              "rec": ["x86-64"],
+              "basicText": "64-bit Intel or AMD",
+              "recText": "64-bit Intel or AMD",
+              "notes": {
+                "arm": "Bambu Lab’s Linux download is built for Intel and AMD (x86-64) computers."
+              }
+            },
+            {
+              "type": "number",
+              "field": "cores",
+              "label": "Logical cores",
+              "unit": "",
+              "basic": 2,
+              "rec": 2,
+              "basicText": "Dual-core, 2 GHz or faster",
+              "recText": "Same",
+              "lowNote": ""
+            },
+            {
+              "type": "number",
+              "field": "ram",
+              "label": "Memory (RAM)",
+              "unit": "GB",
+              "basic": 4,
+              "rec": 8,
+              "basicText": "4 GB",
+              "recText": "8 GB",
+              "lowNote": ""
+            },
+            {
+              "type": "gpu-any"
+            },
+            {
+              "type": "storage",
+              "basic": 2,
+              "rec": 2,
+              "basicText": "2 GB",
+              "recText": "2 GB"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

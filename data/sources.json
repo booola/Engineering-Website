@@ -1,0 +1,51 @@
+{
+  "_help": "Pages the monthly vendor check watches. 'start' and 'end' are regular expressions marking the requirements section. render: 'fetch' for plain pages, 'browser' for pages that build their content with JavaScript.",
+  "sources": [
+    {
+      "id": "matlab-windows",
+      "software": "matlab",
+      "label": "MATLAB (Windows)",
+      "url": "https://www.mathworks.com/support/requirements/matlab-system-requirements.html",
+      "render": "fetch",
+      "start": "R\\d{4}[ab] System Requirements for Windows",
+      "end": "Select a Web Site"
+    },
+    {
+      "id": "matlab-mac",
+      "software": "matlab",
+      "label": "MATLAB (Mac)",
+      "url": "https://www.mathworks.com/support/requirements/matlab-mac.html",
+      "render": "fetch",
+      "start": "R\\d{4}[ab] System Requirements for Mac",
+      "end": "Select a Web Site"
+    },
+    {
+      "id": "matlab-linux",
+      "software": "matlab",
+      "label": "MATLAB (Linux)",
+      "url": "https://www.mathworks.com/support/requirements/matlab-linux.html",
+      "render": "fetch",
+      "start": "R\\d{4}[ab] System Requirements for Linux",
+      "end": "Select a Web Site"
+    },
+    {
+      "id": "fusion",
+      "software": "fusion",
+      "label": "Autodesk Fusion (Windows, Mac, browser)",
+      "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/System-requirements-for-Autodesk-Fusion-360.html",
+      "render": "browser",
+      "start": "System Requirements for Autodesk Fusion",
+      "end": "License Type"
+    },
+    {
+      "id": "bambu-studio",
+      "software": "bambu",
+      "label": "Bambu Studio",
+      "url": "https://bambulab.com/en/download/studio",
+      "render": "browser",
+      "start": "System Requirements",
+      "end": "",
+      "maxChars": 1500
+    }
+  ]
+}
