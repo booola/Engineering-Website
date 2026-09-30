@@ -9,8 +9,9 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'data');
 const SNAP = path.join(DATA, 'snapshots');
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -31,7 +32,7 @@ function decode(s) {
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n))
     .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)));
 }
-function htmlToText(html) {
+export function htmlToText(html) {
   return decode(html
     .replace(/<head[\s\S]*?<\/head>/gi, ' ')
     .replace(/<(script|style|noscript|svg|template)[\s\S]*?<\/\1>/gi, ' ')
@@ -41,19 +42,19 @@ function htmlToText(html) {
     .replace(/<\/t[dh]>/gi, ' | ')
     .replace(/<[^>]+>/g, ' '));
 }
-function tidy(text) {
+export function tidy(text) {
   return text.split('\n').map(l => l.replace(/[ \t\u00a0]+/g, ' ').replace(/(\s*\|\s*)+$/, '').trim())
     .filter(Boolean).join('\n');
 }
-async function getText(src) {
+async function getText(src, url, { fetchImpl = fetch, loadBrowser = () => import('playwright') } = {}) {
   if (src.render === 'browser') {
-    const { chromium } = await import('playwright');
+    const { chromium } = await loadBrowser();
     const browser = await chromium.launch();
     try {
       const page = await browser.newPage({ userAgent: UA });
       // Don't wait for "network idle": sites with chat widgets or analytics never go quiet.
       // Load the page, then wait until the requirements heading appears (or give up after 30 s).
-      await page.goto(src.url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
       if (src.start) {
         await page.waitForFunction(re => new RegExp(re, 'i').test(document.body ? document.body.innerText : ''),
           src.start, { timeout: 30000, polling: 1000 }).catch(() => {});
@@ -64,23 +65,54 @@ async function getText(src) {
       return tidy(await page.innerText('body'));
     } finally { await browser.close(); }
   }
-  try {
-    const res = await fetch(src.url, { headers: { 'User-Agent': UA, 'Accept-Language': 'en-US,en' } });
-    if (!res.ok) throw new Error('The page answered with HTTP ' + res.status);
-    return tidy(htmlToText(await res.text()));
-  } catch (e) {
-    // Some sites block plain downloads; try once more in a real browser.
-    if (src.noBrowserRetry) throw e;
-    return getText({ ...src, render: 'browser', noBrowserRetry: true });
-  }
+  const res = await fetchImpl(url, {
+    headers: { 'User-Agent': UA, 'Accept-Language': 'en-US,en', ...src.headers }
+  });
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  const body = await res.text();
+  const type = res.headers?.get?.('content-type') || '';
+  return tidy(type.includes('html') ? htmlToText(body) : body);
 }
-function section(text, src) {
+export function section(text, src) {
   let a = 0, b = text.length;
   if (src.start) { const m = new RegExp(src.start, 'i').exec(text); if (!m) return null; a = m.index; }
   if (src.end) { const m = new RegExp(src.end, 'i').exec(text.slice(a + 1)); if (m) b = a + 1 + m.index; }
   let out = text.slice(a, b).trim();
   if (src.maxChars) out = out.slice(0, src.maxChars);
   return out;
+}
+
+export async function readSource(src, options = {}) {
+  const primary = { url: src.url, render: src.render || 'fetch', isFallback: false };
+  const fallbacks = (src.fallbackUrls || []).map(item => ({
+    render: 'fetch',
+    ...(typeof item === 'string' ? { url: item } : item),
+    isFallback: true
+  }));
+  const attempts = src.preferFallback ? [...fallbacks, primary] : [primary, ...fallbacks];
+  const failures = [];
+  let preview = '', length = 0;
+
+  for (const attempt of attempts) {
+    try {
+      const full = await getText({ ...src, ...attempt }, attempt.url, options);
+      const text = section(full, src);
+      if (text && text.length >= (src.minChars || 80)) {
+        return { text, usedFallback: attempt.isFallback, sourceUrl: attempt.url };
+      }
+      preview = full.split('\n').slice(0, 80).join('\n').slice(0, 4000);
+      length = full.length;
+      failures.push(`${attempt.render} ${attempt.url}: requirements section not found`);
+    } catch (error) {
+      failures.push(`${attempt.render} ${attempt.url}: ${error.message}`);
+    }
+  }
+
+  const error = new Error('Couldn’t read the requirements section after ' + attempts.length +
+    ' attempt' + (attempts.length === 1 ? '' : 's') + ':\n' + failures.join('\n'));
+  error.preview = preview;
+  error.length = length;
+  throw error;
 }
 
 /* ---------- Line diff (longest common subsequence) ---------- */
@@ -129,24 +161,21 @@ async function openIssue(title, body) {
 }
 
 /* ---------- Main ---------- */
-const sources = JSON.parse(await fs.readFile(path.join(DATA, 'sources.json'), 'utf8')).sources;
-const reqPath = path.join(DATA, 'requirements.json');
-const req = JSON.parse(await fs.readFile(reqPath, 'utf8'));
-await fs.mkdir(SNAP, { recursive: true });
+async function main() {
+  const sources = JSON.parse(await fs.readFile(path.join(DATA, 'sources.json'), 'utf8')).sources;
+  const reqPath = path.join(DATA, 'requirements.json');
+  const req = JSON.parse(await fs.readFile(reqPath, 'utf8'));
+  await fs.mkdir(SNAP, { recursive: true });
 
-const bySoftware = {};   // software id -> list of statuses
-const summary = [];
-for (const src of sources) {
+  const bySoftware = {};   // software id -> list of statuses
+  const summary = [];
+  let errorCount = 0;
+  for (const src of sources) {
   let status, note = '';
   try {
-    const full = await getText(src);
-    const text = section(full, src);
-    if (!text || text.length < 80) {
-      const err = new Error('Couldn’t find the requirements section on the page (looked for “' + src.start + '”).');
-      err.preview = full.split('\n').slice(0, 80).join('\n').slice(0, 4000);
-      err.length = full.length;
-      throw err;
-    }
+    const result = await readSource(src);
+    const text = result.text;
+    const fallbackNote = result.usedFallback ? 'Used the configured fallback reader.' : '';
     const file = path.join(SNAP, src.id + '.txt');
     let old = null; try { old = await fs.readFile(file, 'utf8'); } catch {}
     if (old === null) { status = 'baseline'; note = 'First run: saved a copy to compare against next time.'; }
@@ -170,9 +199,10 @@ ${diff(old.trim(), text.trim())}
 
 Lines starting with \`-\` were removed and \`+\` were added. If the change is only wording or layout, just close the issue.`);
     }
+    note = [note, fallbackNote].filter(Boolean).join(' ');
     await fs.writeFile(file, text + '\n');
   } catch (e) {
-    status = 'error'; note = e.message;
+    status = 'error'; note = e.message; errorCount++;
     await openIssue(`Vendor check couldn’t read: ${src.label}`,
 `The monthly check couldn’t read the [${src.label} requirements page](${src.url}).
 
@@ -192,14 +222,18 @@ This issue stays open until you close it; the check won’t open a duplicate.`);
   (bySoftware[src.software] ||= []).push(status);
   summary.push(`| ${src.label} | ${status} | ${note.replace(/\|/g, '/')} |`);
   console.log(`${src.label}: ${status}${note ? ' — ' + note : ''}`);
+  }
+
+  // Software whose pages all read cleanly with no changes: refresh lastChecked.
+  let touched = false;
+  for (const [id, list] of Object.entries(bySoftware)) {
+    if (req.software[id] && list.every(s => s === 'unchanged' || s === 'baseline')) { req.software[id].lastChecked = TODAY; touched = true; }
+  }
+  if (touched) await fs.writeFile(reqPath, fmt(req));
+
+  const table = ['## Vendor check ' + TODAY, '', '| Page | Result | Note |', '|---|---|---|', ...summary].join('\n');
+  if (process.env.GITHUB_STEP_SUMMARY) await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, table + '\n');
+  if (errorCount) process.exitCode = 1;
 }
 
-// Software whose pages all read cleanly with no changes: refresh lastChecked.
-let touched = false;
-for (const [id, list] of Object.entries(bySoftware)) {
-  if (req.software[id] && list.every(s => s === 'unchanged' || s === 'baseline')) { req.software[id].lastChecked = TODAY; touched = true; }
-}
-if (touched) await fs.writeFile(reqPath, fmt(req));
-
-const table = ['## Vendor check ' + TODAY, '', '| Page | Result | Note |', '|---|---|---|', ...summary].join('\n');
-if (process.env.GITHUB_STEP_SUMMARY) await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, table + '\n');
+if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) await main();

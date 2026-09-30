@@ -4,7 +4,8 @@
   "type": "module",
   "description": "Computer Requirements for Engineering Program, Centre College",
   "scripts": {
-    "check": "node scripts/check-vendors.mjs"
+    "check": "node scripts/check-vendors.mjs",
+    "test": "node --test"
   },
   "devDependencies": {
     "playwright": "^1.47.0"

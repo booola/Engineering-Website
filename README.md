@@ -91,7 +91,8 @@ Add an entry to `data/sources.json`:
 
 - `software` must match the software's id in `requirements.json`.
 - `start` and `end` are text (regular expressions) that mark where the requirements section begins and ends. The check compares only that section, so ads and news elsewhere on the page don't cause false alarms.
-- `render`: use `"fetch"` for ordinary pages. Use `"browser"` for pages that build their content with JavaScript (Autodesk's and Bambu Lab's do). If a plain fetch is blocked, the check retries in a browser automatically.
+- `render`: use `"fetch"` for ordinary pages. Use `"browser"` for pages that build their content with JavaScript.
+- `fallbackUrls` (optional) lists alternate readers to try when the vendor blocks GitHub-hosted runners. Set `"preferFallback": true` when the fallback should be used consistently, so switching extraction formats does not create a false change. The checked-in MathWorks and Autodesk entries use Jina Reader to read their public official pages; no API key is required.
 - `maxChars` (optional) stops after that many characters when there's no good `end` marker.
 
 ---
@@ -129,10 +130,10 @@ The computer requirements page loads its data files from the web server, so doub
 python3 -m http.server 8000
 ```
 
-To test the vendor check locally: `npm install`, `npx playwright install chromium`, then `npm run check`. Without GitHub credentials it prints the issues it would open instead of opening them.
+To test the vendor check locally: `npm install`, `npx playwright install chromium`, `npm test`, then `npm run check`. Without GitHub credentials it prints the issues it would open instead of opening them.
 
 ## Notes
 - The built-in copy of the data inside `computer-requirements.html` is only a backup for when the data files can't load. The data files are what the live site uses.
-- Autodesk and Bambu Lab sometimes block automated visitors. If they do, you'll get a "couldn't read" issue each time the check runs; check those pages by hand and use **Mark checked today**.
+- MathWorks and Autodesk may block GitHub-hosted runners, so their source entries use a public text-reader fallback. If both the official page and its fallback fail, the Action fails visibly and opens one deduplicated "couldn't read" issue for that page.
 - Each guide has a **Home** button in its menu and footer that returns to `index.html`.
 - The degree plan page is self-contained: its courses and prerequisites are written into `degree-plan.html` itself, not the data files. Edit that file to change the degree plan.
