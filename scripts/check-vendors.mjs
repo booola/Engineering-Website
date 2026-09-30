@@ -51,8 +51,16 @@ async function getText(src) {
     const browser = await chromium.launch();
     try {
       const page = await browser.newPage({ userAgent: UA });
-      await page.goto(src.url, { waitUntil: 'networkidle', timeout: 60000 });
-      await page.waitForTimeout(2500);
+      // Don't wait for "network idle": sites with chat widgets or analytics never go quiet.
+      // Load the page, then wait until the requirements heading appears (or give up after 30 s).
+      await page.goto(src.url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      if (src.start) {
+        await page.waitForFunction(re => new RegExp(re, 'i').test(document.body ? document.body.innerText : ''),
+          src.start, { timeout: 30000, polling: 1000 }).catch(() => {});
+      } else {
+        await page.waitForTimeout(8000);
+      }
+      await page.waitForTimeout(1500);   // let the rest of the section finish drawing
       return tidy(await page.innerText('body'));
     } finally { await browser.close(); }
   }
@@ -133,7 +141,12 @@ for (const src of sources) {
   try {
     const full = await getText(src);
     const text = section(full, src);
-    if (!text || text.length < 80) throw new Error('Couldn’t find the requirements section on the page (looked for “' + src.start + '”).');
+    if (!text || text.length < 80) {
+      const err = new Error('Couldn’t find the requirements section on the page (looked for “' + src.start + '”).');
+      err.preview = full.split('\n').slice(0, 80).join('\n').slice(0, 4000);
+      err.length = full.length;
+      throw err;
+    }
     const file = path.join(SNAP, src.id + '.txt');
     let old = null; try { old = await fs.readFile(file, 'utf8'); } catch {}
     if (old === null) { status = 'baseline'; note = 'First run: saved a copy to compare against next time.'; }
@@ -164,7 +177,14 @@ Lines starting with \`-\` were removed and \`+\` were added. If the change is on
 `The monthly check couldn’t read the [${src.label} requirements page](${src.url}).
 
 > ${e.message}
+${e.preview !== undefined ? `
+<details><summary>What the check saw on the page (${e.length} characters of text)</summary>
 
+\`\`\`text
+${e.preview || '(the page had no readable text)'}
+\`\`\`
+</details>
+` : ''}
 The page may have moved, changed its layout, or blocked the automated check. Please check it by hand. If the address or section heading changed, update this page’s entry in \`data/sources.json\`.
 
 This issue stays open until you close it; the check won’t open a duplicate.`);
