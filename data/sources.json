@@ -41,7 +41,7 @@
       "id": "bambu-studio",
       "software": "bambu",
       "label": "Bambu Studio",
-      "url": "https://bambulab.com/en/download/studio",
+      "url": "https://wiki.bambulab.com/en/software/bambu-studio/studio-quick-start",
       "render": "browser",
       "start": "System Requirements",
       "end": "",
