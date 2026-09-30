@@ -1,0 +1,40 @@
+System Requirements
+Download & Installation
+Setup Wizard
+Select Login Region
+Printer Selection
+Filament Selection
+Install Bambu Network Plug-in
+First Print
+Log in to your account (optional, but strongly recommended)
+Connect the Printer to the Bambu Studio
+Create a new project
+Add a model
+Select Printer/Filament/Process presets
+Slice plate
+Send print job
+Remote Control
+End Notes
+TAGS
+bambu studio
+studio
+LAST EDITED BY
+Aether
+02/11/2026
+What is Bambu Studio?
+Bambu Studio is based on PrusaSlicer by Prusa Research, which is from Slic3r by Alessandro Ranellucci and the RepRap community.
+Bambu Studio is our cutting-edge, feature-rich slicing software developed by Bambu Lab, which is used to prepare the files for 3D printing. It contains project-based workflows, systematically optimized slicing algorithms, and an easy-to-use graphic interface, bringing users an incredibly smooth printing experience.
+System Requirements
+Windows 10 or higher
+Mac OS X v10.15 or higher
+Linux Ubuntu 20.02 or higher/Fedora 36 or higher (Linux version needs to be downloaded from github)
+Intel® Core 2 or AMD Athlon® 64 processor; 2 GHz or faster processor
+OpenGL 2.0-capable system
+Recommend 8GB RAM, at least 4GB
+2.0 GB or more of available hard-disk space
+Download & Installation
+Download Bambu Studio
+Install Bambu Studio by following the step by step guide
+Setup Wizard
+Select Login Region
+The first step is to select the region you are located in. A user account registered in North America for example, canno
