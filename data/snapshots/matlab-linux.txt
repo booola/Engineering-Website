@@ -1,0 +1,32 @@
+R2026b System Requirements for Linux
+[View Previous Releases](https://www.mathworks.com/support/requirements/previous-releases.html)
+#### Other Platforms: [Windows](https://www.mathworks.com/support/requirements/matlab-system-requirements.html) | [Mac](https://www.mathworks.com/support/requirements/matlab-mac.html)
+* * *
+### Distribution Ubuntu 24.04 LTS
+Ubuntu 22.04 LTS
+Debian 13
+Debian 12
+Red Hat Enterprise Linux 10
+Red Hat Enterprise Linux 9 (minimum 9.2)
+Red Hat Enterprise Linux 8 (minimum 8.6)
+SUSE Linux Enterprise Desktop 15 (minimum SP4)
+SUSE Linux Enterprise Server 15 (minimum SP4)
+### Processor**Minimum**: Any Intel or AMD x86-64 processor with two or more cores
+**Recommended**: Any Intel or AMD x86-64 processor with four or more cores and AVX2 instruction set support
+**Note:**A future release of MATLAB will require a processor with AVX2 instruction set support
+### RAM**Minimum**: 8 GB
+**Recommended**: 16 GB
+### Storage 4.5 GB for just MATLAB
+5-7 GB for a typical installation
+26 GB for an all products installation
+An SSD is strongly recommended
+### Graphics A GPU supporting WebGL 2.0 with at least 2 GB of memory is recommended for performant graphics rendering. Use of vendor-supplied proprietary drivers is strongly recommended.
+Graphics performance may be diminished on machines without a GPU.
+GPU acceleration using Parallel Computing Toolbox requires a GPU with a specific range of compute capability. For more information, see[GPU Computing Requirements](https://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html).
+### Running MATLAB and Simulink on Linux
+MATLAB and Simulink have been validated on the Linux distributions listed on this page. It is likely that other distributions with Linux kernel version 4.18 or later and glibc version 2.28 or later can successfully run MATLAB and Simulink, but technical support will be limited.
+MathWorks follows the vendors’ lifecycle guidance to determine which minor versions of each distribution are validated. Refer the vendors’ websites for more information.
+MATLAB and Simulink are validated on standard installations of the distributions listed on this page. “Minimal” or “core” installations of Linux may lack the necessary software packages required to install and run MATLAB and Simulink. Information about [which packages are required to run MATLAB](https://www.mathworks.com/matlabcentral/answers/2018166) is available on MATLAB Answers.
+### Products Not Available for Linux
+* Spreadsheet Link
+![Image 2: MathWorks](https://www.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/mathworks-logo.20260902221426407.svg)![Image 3: MathWorks](https://www.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/mathworks-logo-rev.20260902221426407.svg)

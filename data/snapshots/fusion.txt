@@ -1,0 +1,54 @@
+Supported Platforms
+#### Operating systems
+* [Microsoft Windows](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/System-requirements-for-Autodesk-Fusion-360.html#how)
+* [Apple macOS](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/System-requirements-for-Autodesk-Fusion-360.html#h_3276661335361782926419506)
+* [Web Browser](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/System-requirements-for-Autodesk-Fusion-360.html#h_20710670737851782926431903)
+#### Minimum
+_Minimum_ is relevant for legacy hardware or newer ultraportable, low-power devices. These devices are generally sufficient for _basic modeling activities_ like learning CAD or slicing STLs, but may struggle to navigate hundred-component assemblies, long chains of parametric design history, or mission-critical toolpaths, as well as the high resolution graphics associated with these workflows.
+#### Recommended
+_Recommended_ reflects a _minimum hardware performance baseline_ for professionals and those with mission-critical, resource-heavy workflows with local processing, large assemblies, or longtail parametric history, rendered with high quality canvas graphics and DPI scaling.
+Tool path generation and simulation are multi-threaded operations that will benefit from an increase in core count. The user interface and many modeling operations will benefit from an increase in single-threaded clock speed.
+#### About Certified Graphics Hardware
+Cards and drivers listed on the[Certified Graphics Hardware](https://www.autodesk.com/support/system-requirements/certified-graphics-hardware/fusion-360) page have been tested by card vendors or product teams, and results have been reviewed by Autodesk product teams. The tests verify that the hardware supports the product features. Cards and drivers not listed may still work with the product, but Autodesk has not yet received or verified test results.
+* * *
+### Microsoft Windows requirements
+**!****Click to expand -**Media Feature Pack is required before installing Autodesk Fusion on Windows How to install Media Feature pack for Windows:
+1. Close Autodesk Fusion.
+2. Go to[Media Feature pack for Windows](https://support.microsoft.com/en-us/topic/media-feature-pack-list-for-windows-n-editions-c1c6fffa-d052-8338-7a79-a4bb980a700a).
+3. Select the MFP for your Windows version.
+4. Install media pack.
+5. Restart machine (recommended).
+6. Start Autodesk Fusion.
+| **System Requirements for Autodesk Fusion (Windows)**
+| ---
+| | **Minimum** | **Recommended**
+| **Operating System** | Windows 11, 23H2 (Build 22631 or newer) _[Microsoft Modern Lifecycle Policy](https://learn.microsoft.com/en-us/windows/release-health/supported-versions-windows-client#windows-10-supported-versions)_ _Pre-release and Insider Windows builds are not eligible for product support._
+| **CPU (Processor)** | x86-64 processor 2 performance cores, 4 threads 3GHz+turbo clock rate _Example: Intel Core i3, AMD Ryzen 3, or similar_ _ARM64 devices can run Fusion on Windows 11 using[XtaJIT64/Prism emulation](https://blogs.windows.com/windows-insider/2020/12/10/introducing-x64-emulation-in-preview-for-windows-10-on-arm-pcs-to-the-windows-insider-program/). This functionality has not yet completed certification by Autodesk Fusion._ | x86-64 processor 8+ performance cores, 16+ threads 3GHz+ base clock rate _Example: Intel Core i7, AMD Ryzen 7, or similar_
+| **RAM (Memory)** | 8GB | 32GB+
+| **GPU (Graphics)** | 1GB Memory Dedicated/Integrated Graphics DirectX11 (Direct3D 10.1 or greater) _Example: Intel UHD and Iris Pro, AMD Radeon RX Vega, Nvidia MX series Legacy graphics drivers are not supported.Driver updates must be supported by GPU manufacturer._ | 8GB+ Memory Dedicated Graphics DirectX11 (Direct3D 10.1 or greater) _For professional Fusion usage, Autodesk recommends[Certified Graphics Hardware](https://www.autodesk.com/support/system-requirements/certified-graphics-hardware/fusion-360)like_ _AMD Radeon Pro WX,Intel Arc Pro,and Nvidia Quadro or similar._ _For hobbyist usage, consumer graphics similar to AMD Radeon RX 7000, Intel Arc A700, and Nvidia GeForce RTX 4000 series are generally compatible with Fusion, but have not been validated for use with the application by card vendors nor Autodesk._
+| **Display Resolution** | 1366x768 @60hz (100% scale) Standard canvas graphics | 3480x2160 (4K) @60Hz (200% scale) High resolution canvas graphics
+| **Storage** | 8.5GB _for installation_ Hard Disk Drive | 15GB+_for installation and cached data_ Solid State Disk
+| **Input Device** | HID-compliant mouse or trackpad, optional Wacom tablet and 3Dconnexion SpaceMouse support
+| **Internet** | 5 Mbps download; 1 Mbps upload _See also:[Ports and Domains required by Fusion](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Fusion-360-cannot-access-the-services-through-proxy.html)_ | 25+ Mbps download; 5 Mbps upload _See also:[Ports and Domains required by Fusion](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Fusion-360-cannot-access-the-services-through-proxy.html)_
+| **Dependencies** | SSL 3.0, TLS 1.2+, .NET Framework 4.5 or newer required to submit crash reports
+### Apple macOS requirements
+| **System Requirements for Autodesk Fusion (macOS)**
+| ---
+| | **Minimum** | **Recommended**
+| **Operating System** | macOS 14 Sonoma _OpenCore Legacy Patcher is not supported_ _See also: [Autodesk Fusion Unsupported Mac Hardware Configurations](https://www.autodesk.com/support/technical/article/Autodesk-Fusion-Unsupported-Mac-Hardware-Configurations)_ | macOS 15.7 Sequoia or newer macOS 26 Tahoe or newer Note:[Relief Pattern appearance on macOS 14 w/ Apple silicon](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Relief-Pattern-Bump-parameter-on-appearance-is-not-working-in-Fusion.html)
+| **Processor/Chip** | 1.4GHz dual-core Intel Core i5 processor or Apple silicon M1 chip | Apple silicon M1 Max chip or newer
+| **RAM (Memory)** | 4GB | 16GB+
+| **GPU (Graphics)** | Intel HD Graphics 5000 or Apple M1 | Apple M1 Max chip or newer _For professional usage, Autodesk recommends[Certified Graphics Hardware](https://www.autodesk.com/support/system-requirements/certified-graphics-hardware/fusion-360)_
+| **Display Resolution** | 1366x768 @60hz Retina scaling disabled Standard canvas graphics | 3480x2160 (4K) @60Hz Retina scaling enabled High resolution canvas graphics
+| **Storage** | 8.5GB _for installation_ Hard Disk Drive | 15GB+_for installation and cached data_ Solid State Disk
+| **Input Device** | HID-compliant mouse or trackpad, optional Wacom tablet and 3Dconnexion SpaceMouse support
+| **Internet** | 5 Mbps download; 1 Mbps upload _See also:[Ports and Domains required by Fusion](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Fusion-360-cannot-access-the-services-through-proxy.html)_ | 25+ Mbps download; 5 Mbps upload _See also:[Ports and Domains required by Fusion](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Fusion-360-cannot-access-the-services-through-proxy.html)_
+| **Dependencies** | SSL 3.0, TLS 1.2+, Rosetta 2 _Note: While Autodesk Fusion itself is a native Apple silicon application, some specific commands are transitioning to ARM64 and will prompt for installation of Rosetta 2 as-needed._
+### Web Browser requirements
+| System Requirements for Autodesk Fusion (Web Browser access)
+| ---
+| Browser | HTML-5 compatible web browser, similar to: Google Chrome Mozilla Firefox Apple Safari Microsoft Edge
+| Resolution | 1366x768 (1920x1080 or greater at 100% scale recommended)
+| Input Device | HID-compliant mouse, trackpad, or touchscreen
+| Internet | 5 Mbps download; 1 Mbps upload; <100ms roundtrip latency _See also:[Browser Access to Autodesk Fusion FAQ](https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/4GAYwrd9SV4MJlh68wUATv.html)_
+|

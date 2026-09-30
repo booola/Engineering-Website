@@ -1,0 +1,24 @@
+R2026b System Requirements for Windows
+[View Previous Releases](https://www.mathworks.com/support/requirements/previous-releases.html)
+#### Other Platforms: [Mac](https://www.mathworks.com/support/requirements/matlab-mac.html) | [Linux](https://www.mathworks.com/support/requirements/matlab-linux.html)
+* * *
+### Operating System Windows 11(versions 24H2 and 25H2)
+Windows 10 (version 22H2)
+Windows Server 2025
+Windows Server 2022
+### Processor**x86-64****Minimum:** Any Intel or AMD x86–64 processor
+**Recommended:** Any Intel or AMD x86–64 processor with four logical cores and AVX2 instruction set support
+**Note:** A future release of MATLAB will require a processor with AVX2 instruction set support
+**ARM****Minimum:**Any Qualcomm Snapdragon X series chip
+**Note:**On Windows ARM devices, MATLAB runs in Prism emulation
+[Some capabilties are not supported on Windows ARM devices](https://www.mathworks.com/matlabcentral/answers/2182415)
+### RAM**Minimum**: 8 GB
+**Recommended**: 16 GB
+### Storage 4.6 GB for just MATLAB
+5-8 GB for a typical installation
+25 GB for an all products installation
+An SSD is strongly recommended
+### Graphics A GPU supporting WebGL 2.0 with at least 2 GB of memory is recommended for performant graphics rendering.
+Graphics performance may be diminished on machines without a GPU.
+GPU acceleration using Parallel Computing Toolbox requires a GPU with a specific range of compute capability. For more information, see [GPU Support by Release.](https://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html)
+![Image 2: MathWorks](https://www.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/mathworks-logo.20260902221426407.svg)![Image 3: MathWorks](https://www.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/mathworks-logo-rev.20260902221426407.svg)

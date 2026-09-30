@@ -1,0 +1,44 @@
+R2026b System Requirements for Mac
+[View Previous Releases](https://www.mathworks.com/support/requirements/previous-releases.html)
+#### Other Platforms: [Windows](https://www.mathworks.com/support/requirements/matlab-system-requirements.html) | [Linux](https://www.mathworks.com/support/requirements/matlab-linux.html)
+* * *
+### Operating System macOS Golden Gate (27)
+macOS Tahoe (26)
+macOS Sequoia (15)
+**Note:**macOS Sonoma is no longer supported.
+### Processor**Minimum**: Any A-series or M-series chip**Note:**MATLAB is no longer available for Macs with Intel processors
+### RAM**Minimum**: 8 GB
+**Recommended**: 16 GB
+### Storage 3.7 GB for just MATLAB
+4-6 GB for a typical installation
+17 GB for an all products installation
+An SSD is strongly recommended
+### Graphics Any Mac able to run macOS Sonoma has a GPU able to run MATLAB.
+GPU acceleration with Parallel Computing Toolbox is [not available on macOS](https://www.mathworks.com/matlabcentral/answers/442324-can-i-use-matlab-with-an-nvidia-gpu-on-macos-10-14-mojave-and-newer).
+## Products Not Available for macOS
+* C2000 Microcontroller Blockset
+* Data Acquisition Toolbox
+* Deep Learning HDL Toolbox
+* GPU Coder
+* HDL Verifier
+* MATLAB Parallel Server
+* MATLAB Production Server
+* Model-Based Calibration Toolbox
+* Polyspace Access
+* Polyspace Client for Ada
+* Polyspace Server for Ada
+* Polyspace Test Server
+* RoadRunner
+* RoadRunner Asset Library
+* RoadRunner Scenario
+* RoadRunner Scene Builder
+* Signal Integrity Toolbox
+* Simulink 3D Animation
+* Simulink Code Inspector
+* Simulink Real-Time
+* SoC Blockset (for AMD)
+* Spreadsheet Link
+* STM32 Microcontroller Blockset
+* Vehicle Network Toolbox
+* Vision HDL Toolbox
+![Image 2: MathWorks](https://www.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/mathworks-logo.20260902221426407.svg)![Image 3: MathWorks](https://www.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/mathworks-logo-rev.20260902221426407.svg)
