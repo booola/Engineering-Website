@@ -41,4 +41,4 @@ GPU acceleration with Parallel Computing Toolbox is [not available on macOS](htt
 * STM32 Microcontroller Blockset
 * Vehicle Network Toolbox
 * Vision HDL Toolbox
-![Image 2: MathWorks](https://www.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/mathworks-logo.20260902221426407.svg)![Image 3: MathWorks](https://www.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/mathworks-logo-rev.20260902221426407.svg)
+![Image 2: MathWorks](https://www.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/mathworks-logo.20260923201132813.svg)![Image 3: MathWorks](https://www.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/mathworks-logo-rev.20260923201132813.svg)

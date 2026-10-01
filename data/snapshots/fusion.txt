@@ -35,7 +35,7 @@ Cards and drivers listed on the[Certified Graphics Hardware](https://www.autodes
 | **System Requirements for Autodesk Fusion (macOS)**
 | ---
 | | **Minimum** | **Recommended**
-| **Operating System** | macOS 14 Sonoma _OpenCore Legacy Patcher is not supported_ _See also: [Autodesk Fusion Unsupported Mac Hardware Configurations](https://www.autodesk.com/support/technical/article/Autodesk-Fusion-Unsupported-Mac-Hardware-Configurations)_ | macOS 15.7 Sequoia or newer macOS 26 Tahoe or newer Note:[Relief Pattern appearance on macOS 14 w/ Apple silicon](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Relief-Pattern-Bump-parameter-on-appearance-is-not-working-in-Fusion.html)
+| **Operating System** | macOS 14 Sonoma _OpenCore Legacy Patcher is not supported_ _See also: [Autodesk Fusion Unsupported Mac Hardware Configurations](https://www.autodesk.com/support/technical/article/Autodesk-Fusion-Unsupported-Mac-Hardware-Configurations)_ | macOS 15.7 Sequoia macOS 26 Tahoe Note:[Relief Pattern appearance on macOS 14 w/ Apple silicon](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Relief-Pattern-Bump-parameter-on-appearance-is-not-working-in-Fusion.html)
 | **Processor/Chip** | 1.4GHz dual-core Intel Core i5 processor or Apple silicon M1 chip | Apple silicon M1 Max chip or newer
 | **RAM (Memory)** | 4GB | 16GB+
 | **GPU (Graphics)** | Intel HD Graphics 5000 or Apple M1 | Apple M1 Max chip or newer _For professional usage, Autodesk recommends[Certified Graphics Hardware](https://www.autodesk.com/support/system-requirements/certified-graphics-hardware/fusion-360)_
