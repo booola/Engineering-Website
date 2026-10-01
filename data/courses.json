@@ -5,6 +5,7 @@
       "code": "EGR 110",
       "title": "Engineering Exploration",
       "software": ["bambu"],
+      "optionalSoftware": ["revit"],
       "url": "https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/course-descriptions/egr-engineering/100/egr-110"
     },
     {
@@ -19,6 +20,7 @@
       "code": "EGR 215",
       "title": "Computer-Aided Design and Drafting",
       "software": ["fusion"],
+      "optionalSoftware": ["revit"],
       "url": "https://centre.smartcatalogiq.com/en/catalog-and-handbooks/catalog/course-descriptions/egr-engineering/200/egr-215"
     },
     {

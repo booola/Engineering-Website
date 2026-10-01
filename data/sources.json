@@ -54,6 +54,17 @@
       "start": "System Requirements",
       "end": "",
       "maxChars": 1500
+    },
+    {
+      "id": "revit",
+      "software": "revit",
+      "label": "Autodesk Revit 2026 (Windows)",
+      "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/System-requirements-for-Revit-2026-products.html",
+      "render": "fetch",
+      "preferFallback": true,
+      "fallbackUrls": [{"url": "https://r.jina.ai/https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/System-requirements-for-Revit-2026-products.html", "headers": {"User-Agent": "Mozilla/5.0", "Accept": "text/plain"}}],
+      "start": "Revit 2026 Minimum: Entry-Level Configuration",
+      "end": "Revit Cloud Worksharing"
     }
   ]
 }

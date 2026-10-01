@@ -7,7 +7,7 @@ Centre College's student guides for the engineering program:
 - **`computer-requirements.html`**: *Get ready*, for checking whether a student's computer, or one they plan to buy, can run the software used in engineering courses
 - **`admin.html`**: the maintenance page for the computer requirements (edit, preview, publish)
 - **`assets/`**: Centre logos used by every page
-- **`data/requirements.json`**: software requirements (MATLAB, Autodesk Fusion, Bambu Studio)
+- **`data/requirements.json`**: software requirements (MATLAB, Autodesk Fusion, Bambu Studio, and optional Autodesk Revit)
 - **`data/courses.json`**: courses and the software each one uses
 - **`data/sources.json`**: vendor pages the monthly check watches
 - **`scripts/check-vendors.mjs`** and **`.github/workflows/vendor-check.yml`**: the monthly vendor check

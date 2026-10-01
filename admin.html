@@ -454,6 +454,8 @@ function renderSoftware(){var p=$('[data-panel=software]'),S=D.req.software,ids=
   h+='<div class="item"><div class="ih"><b>About '+esc(sw.name)+'</b><span><button class="mini danger" id="delSw">Delete this software</button></span></div><div class="ib">'+
     inp('Name',sw.name,'data-sw-f="name"')+inp('Version shown to students',sw.version,'data-sw-f="version"',false,'e.g. R2027a or “Current release.”')+inp('Vendor',sw.vendor,'data-sw-f="vendor"')+
     '<div class="field"><label>Dates</label><p style="margin:.4rem 0 0">Checked '+fmtDate(sw.lastChecked)+' · Updated '+fmtDate(sw.lastUpdated)+'</p><p class="hint">Set automatically when you save changes.</p></div>'+
+    '<div class="field wide"><label style="display:flex;justify-content:flex-start;gap:.6rem;align-items:center"><input type="checkbox" id="optionalSw" style="width:20px;height:20px;accent-color:#000"'+(sw.optional?' checked':'')+'> Optional personal software</label><p class="hint">Optional software stays out of default course and buying checks until a student selects it.</p></div>'+
+    '<div class="field wide"><label>Optional-software note</label><textarea data-sw-f="optionalNote">'+esc(sw.optionalNote||'')+'</textarea></div>'+
     '<div class="field wide"><label>Extra notes on the requirements page</label><textarea data-sw-f="notes">'+esc(sw.notes||'')+'</textarea></div>'+
     '<div class="field wide"><label>Vendor links</label>'+(sw.links||[]).map(function(l,i){return '<div style="display:grid;grid-template-columns:1fr 3fr auto;gap:.5rem;margin-bottom:.4rem"><input type="text" value="'+esc(l.label)+'" data-link="'+i+'" data-lf="label" aria-label="Link label"><input type="text" value="'+esc(l.url)+'" data-link="'+i+'" data-lf="url" aria-label="Link address"><button class="mini danger" data-dellink="'+i+'">Remove</button></div>'}).join('')+'<button class="mini" id="addLink">+ Add link</button></div></div></div>';
   h+='<div class="tabs" role="tablist" style="margin-top:2rem">'+['windows','mac','linux'].map(function(os){return '<button role="tab" data-os="'+os+'" aria-selected="'+(os===cur.os)+'">'+OSN[os]+'</button>'}).join('')+'</div>';
@@ -473,6 +475,7 @@ function bindSw(p){var S=D.req.software,sw=S[cur.sw];
     S[id]={name:name,version:'Current release',vendor:'',lastUpdated:today(),lastChecked:today(),links:[],storage:{},notes:'',platforms:pl};ORIG.sw[id]='';cur.sw=id;renderAll()};
   if(!sw)return;
   var del=$('#delSw',p);if(del)del.onclick=function(){if(!confirm('Delete '+sw.name+'? Courses that use it will stop checking it.'))return;delete S[cur.sw];D.courses.courses.forEach(function(c){c.software=c.software.filter(function(x){return x!==cur.sw})});cur.sw=Object.keys(S)[0];renderAll()};
+  $('#optionalSw',p).onchange=function(){sw.optional=this.checked;touch()};
   $$('[data-sw-f]',p).forEach(function(i){i.oninput=function(){sw[i.dataset.swF]=i.value;touch()}});
   $$('[data-link]',p).forEach(function(i){i.oninput=function(){sw.links[+i.dataset.link][i.dataset.lf]=i.value;touch()}});
   $$('[data-dellink]',p).forEach(function(b){b.onclick=function(){sw.links.splice(+b.dataset.dellink,1);renderAll()}});

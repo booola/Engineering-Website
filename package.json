@@ -5,6 +5,7 @@
   "description": "Computer Requirements for Engineering Program, Centre College",
   "scripts": {
     "check": "node scripts/check-vendors.mjs",
+    "sync-fallback": "node scripts/sync-fallback.mjs",
     "test": "node --test"
   },
   "devDependencies": {

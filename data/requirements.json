@@ -361,6 +361,101 @@
         }
       }
     },
+    "revit": {
+      "name": "Autodesk Revit",
+      "version": "2026",
+      "vendor": "Autodesk",
+      "optional": true,
+      "optionalNote": "Revit is available on the engineering lab PCs. Check these requirements only if you plan to install and run Revit on your own computer.",
+      "lastUpdated": "2026-10-01",
+      "lastChecked": "2026-10-01",
+      "links": [
+        {
+          "label": "Revit 2026",
+          "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/System-requirements-for-Revit-2026-products.html"
+        }
+      ],
+      "storage": {
+        "windows": [30, 100],
+        "mac": [0, 0],
+        "linux": [0, 0]
+      },
+      "notes": "Revit requires an internet connection for license registration and prerequisite downloads, a mouse-compatible pointing device, and Chrome, Edge, or Firefox. Revit 2026 uses .NET 8; Autodesk notes that versions 2026.5 and later require .NET 10. The recommended values shown here use Autodesk’s balanced ‘Value’ configuration.",
+      "platforms": {
+        "windows": {
+          "supported": true,
+          "items": [
+            {
+              "type": "os",
+              "basic": ["win11-25h2", "win11-24h2", "win11-23h2", "win11-old", "win10-22h2", "win10-old"],
+              "rec": ["win11-25h2", "win11-24h2", "win11-23h2"],
+              "basicText": "64-bit Windows 10 version 1809 or later, or Windows 11",
+              "recText": "A current version of Windows 11",
+              "notes": {
+                "win11-old": "Revit supports Windows 11, but installing current Windows updates is recommended.",
+                "win10-22h2": "Supported by Revit 2026. Windows 11 is the better choice for a new personal computer.",
+                "win10-old": "Revit requires Windows 10 version 1809 or later. Confirm your exact Windows version before installing."
+              }
+            },
+            {
+              "type": "arch",
+              "basic": ["x86-64"],
+              "rec": ["x86-64"],
+              "basicText": "64-bit Intel or AMD processor, 2 GHz+ base clock",
+              "recText": "Intel or AMD processor with a high single-core clock speed",
+              "notes": {
+                "arm": "Autodesk lists Intel and AMD processors for Revit 2026. Windows ARM devices are not supported."
+              }
+            },
+            {
+              "type": "number",
+              "field": "ram",
+              "label": "Memory (RAM)",
+              "unit": "GB",
+              "basic": 16,
+              "rec": 32,
+              "basicText": "16 GB (models up to about 300 MB)",
+              "recText": "32 GB+ (models up to about 600 MB)",
+              "lowNote": "Revit 2026 requires at least 16 GB of memory."
+            },
+            {
+              "type": "gpu-vram",
+              "basic": 4,
+              "rec": 6,
+              "basicText": "DirectX 11, Shader Model 5, 24-bit color; 4 GB VRAM",
+              "recText": "DirectX 11, Shader Model 5; 6 GB VRAM",
+              "basicNote": "Suitable for the entry-level configuration. The balanced configuration calls for 6 GB of graphics memory.",
+              "lowNote": "Use a DirectX 11-capable graphics card with Shader Model 5; Autodesk recommends at least 4 GB of graphics memory."
+            },
+            {
+              "type": "display",
+              "basic": 1280,
+              "rec": 1680,
+              "basicText": "1280 × 1024 with true color",
+              "recText": "1680 × 1050 or larger with true color"
+            },
+            {
+              "type": "storage",
+              "basic": 30,
+              "rec": 100,
+              "basicText": "30 GB for installation",
+              "recText": "100 GB free for temporary files",
+              "ssdRecommended": false
+            }
+          ]
+        },
+        "mac": {
+          "supported": false,
+          "why": "Autodesk does not provide a native macOS version of Revit.",
+          "alt": ["Use Revit on an engineering lab PC.", "If you choose a personal installation, Autodesk documents running Windows through Parallels Desktop. That setup needs its own Windows and Parallels licenses, 16 GB assigned to the virtual machine, at least 4 GB of graphics memory, and 40–100 GB of free disk space."]
+        },
+        "linux": {
+          "supported": false,
+          "why": "Autodesk does not provide a Linux version of Revit.",
+          "alt": ["Use Revit on an engineering lab PC.", "Use a supported 64-bit Windows computer for a personal installation."]
+        }
+      }
+    },
     "bambu": {
       "name": "Bambu Studio",
       "version": "Current release",

@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import vm from 'node:vm';
 
 import { readSource, section } from '../scripts/check-vendors.mjs';
 
@@ -68,4 +70,40 @@ test('readSource reports every failed attempt', async () => {
     }, { fetchImpl }),
     error => /after 2 attempts/.test(error.message) && /vendor\.example/.test(error.message) && /reader\.example/.test(error.message)
   );
+});
+
+test('Revit is opt-in and its monitored section matches the Autodesk page format', async () => {
+  const requirements = JSON.parse(await readFile(new URL('../data/requirements.json', import.meta.url), 'utf8'));
+  const sources = JSON.parse(await readFile(new URL('../data/sources.json', import.meta.url), 'utf8'));
+  const revit = requirements.software.revit;
+  const source = sources.sources.find(item => item.software === 'revit');
+
+  assert.equal(revit.optional, true);
+  assert.match(revit.optionalNote, /lab PCs/i);
+  assert.ok(source);
+  assert.match(section(
+    'Navigation\nRevit 2026 Minimum: Entry-Level Configuration\nMemory | 16-GB RAM\nRevit Cloud Worksharing\nMore content',
+    source
+  ), /16-GB RAM/);
+});
+
+test('the requirements page script parses and its offline data includes Revit', async () => {
+  const html = await readFile(new URL('../computer-requirements.html', import.meta.url), 'utf8');
+  const executable = html.match(/<script>\s*(\(function\(\)\{[\s\S]*?)<\/script>\s*<\/body>/);
+  const fallback = html.match(/<script type="application\/json" id="fallback-data">([\s\S]*?)<\/script>/);
+
+  assert.ok(executable, 'main page script not found');
+  assert.ok(fallback, 'offline requirements data not found');
+  new vm.Script(executable[1]);
+  assert.equal(JSON.parse(fallback[1]).requirements.software.revit.optional, true);
+});
+
+test('EGR 110 and EGR 215 list Revit as optional, not required', async () => {
+  const courses = JSON.parse(await readFile(new URL('../data/courses.json', import.meta.url), 'utf8')).courses;
+  for (const id of ['egr110', 'egr215']) {
+    const course = courses.find(item => item.id === id);
+    assert.ok(course);
+    assert.ok(!course.software.includes('revit'));
+    assert.deepEqual(course.optionalSoftware, ['revit']);
+  }
 });
